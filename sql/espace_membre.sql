@@ -27,13 +27,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `chat` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nomExp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `prenomExp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `contenuMes` text COLLATE utf8_unicode_ci NOT NULL,
   `dateMes` datetime NOT NULL,
   `avatarMes` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `attributExp` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `attributExp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -58,7 +59,7 @@ INSERT INTO `chat` (`id`, `nomExp`, `prenomExp`, `contenuMes`, `dateMes`, `avata
 --
 
 CREATE TABLE `membres` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `mail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `motdepasse` text COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -68,7 +69,8 @@ CREATE TABLE `membres` (
   `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `specialite` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `attribut` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `parcours` text COLLATE utf8_unicode_ci NOT NULL
+  `parcours` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -89,11 +91,12 @@ INSERT INTO `membres` (`id`, `mail`, `motdepasse`, `nom`, `prenom`, `date`, `gen
 --
 
 CREATE TABLE `messages` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_expediteur` int(11) NOT NULL,
   `id_destinataire` int(11) NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
-  `lu` int(11) NOT NULL
+  `lu` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
@@ -111,10 +114,11 @@ INSERT INTO `messages` (`id`, `id_expediteur`, `id_destinataire`, `message`, `lu
 --
 
 CREATE TABLE `recuperation` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `mail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `code` int(11) NOT NULL,
-  `confirme` int(11) NOT NULL
+  `confirme` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -131,51 +135,7 @@ INSERT INTO `recuperation` (`id`, `mail`, `code`, `confirme`) VALUES
 --
 -- Index pour la table `chat`
 --
-ALTER TABLE `chat`
-  ADD PRIMARY KEY (`id`);
 
---
--- Index pour la table `membres`
---
-ALTER TABLE `membres`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `recuperation`
---
-ALTER TABLE `recuperation`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `chat`
---
-ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT pour la table `membres`
---
-ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
---
--- AUTO_INCREMENT pour la table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT pour la table `recuperation`
---
-ALTER TABLE `recuperation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
