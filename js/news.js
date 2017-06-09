@@ -3,9 +3,9 @@ $(document).ready(function () {
         $.ajax({
             url:'./news.php',
             success:
-            function(){
+            function(retour){
             //$('.col-md-10 col-lg-offset-1').html(retour); // rafraichi toute ta DIV "bien sur il lui faut un id "
-            $('.col-md-10 col-lg-offset-1').load('./news.php');
+            $('.col-md-10 col-lg-offset-1').load(retour);
             }
         });
     }, 5000);

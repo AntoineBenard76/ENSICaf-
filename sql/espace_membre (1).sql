@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 09 Juin 2017 à 16:44
+-- Généré le :  Ven 09 Juin 2017 à 23:04
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -19,6 +19,35 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `espace_membre`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `actu`
+--
+
+CREATE TABLE `actu` (
+  `id` int(11) NOT NULL,
+  `auteur` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `contenu` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `fichier` text COLLATE utf8_unicode_ci NOT NULL,
+  `typefichier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stockage` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nbLike` int(11) NOT NULL,
+  `nbDislike` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `actu`
+--
+
+INSERT INTO `actu` (`id`, `auteur`, `contenu`, `date`, `type`, `fichier`, `typefichier`, `stockage`, `nbLike`, `nbDislike`) VALUES
+(3, 'Antoine', 'coucou', '2017-06-07 00:00:00', '', '', '', '', 5, 3),
+(9, 'Jonathan', 'test news', '2017-06-12 12:11:00', 'annonce', '', '', '', 1, 5),
+(10, 'Antoine', 'autre test news', '2017-06-12 13:11:00', 'annonce', '', '', '', 1, 5),
+(11, 'Thomas', 'test ajax', '2017-06-11 09:46:00', '', '', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -49,7 +78,12 @@ INSERT INTO `chat` (`id`, `nomExp`, `prenomExp`, `contenuMes`, `dateMes`, `avata
 (29, 'BÃ©nard', 'Antoine', 'dazda', '2017-06-09 15:20:34', 'default.jpg', 'Etudiant'),
 (30, 'Perles', 'Thomas', 'Bandes de salauds', '2017-06-09 15:56:40', 'default.jpg', 'Etudiant'),
 (31, 'Perles', 'Thomas', 'Bandes de putes', '2017-06-09 15:58:23', '18.jpg', 'Etudiant'),
-(32, 'BÃ©nard', 'Antoine', 'Wesh les nazes', '2017-06-09 16:21:35', 'default.jpg', 'Etudiant');
+(32, 'BÃ©nard', 'Antoine', 'Wesh les nazes', '2017-06-09 16:21:35', 'default.jpg', 'Etudiant'),
+(33, 'BÃ©nard', 'Antoine', 'test', '2017-06-09 16:47:46', '17.gif', 'Etudiant'),
+(34, 'BÃ©nard', 'Antoine', 'test', '2017-06-09 17:15:36', '17.gif', 'Etudiant'),
+(35, 'BÃ©nard', 'Antoine', 'test', '2017-06-09 17:16:09', '17.gif', 'Etudiant'),
+(36, 'BÃ©nard', 'Antoine', 'test', '2017-06-09 17:17:48', '17.gif', 'Etudiant'),
+(37, 'Bénard', 'Antoine', 'za', '2017-06-09 23:02:44', '17.gif', 'Etudiant');
 
 -- --------------------------------------------------------
 
@@ -129,6 +163,12 @@ INSERT INTO `recuperation` (`id`, `mail`, `code`, `confirme`) VALUES
 --
 
 --
+-- Index pour la table `actu`
+--
+ALTER TABLE `actu`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `chat`
 --
 ALTER TABLE `chat`
@@ -157,15 +197,20 @@ ALTER TABLE `recuperation`
 --
 
 --
+-- AUTO_INCREMENT pour la table `actu`
+--
+ALTER TABLE `actu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT pour la table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
