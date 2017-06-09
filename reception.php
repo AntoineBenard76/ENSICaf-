@@ -28,7 +28,11 @@
         --------------------------------------------------------<br/>
         <?php } ?>
     
-    
+    <div align="center">
+        <form method="POST" action="nonlu.php">
+            <input type="submit" value="Marquer tous les messages comme non lus"/>
+        </form>    
+    </div>
     </div>
     <!-- /#à enlever -->
 
