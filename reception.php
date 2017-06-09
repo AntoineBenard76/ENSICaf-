@@ -26,13 +26,24 @@
             </div>
             <!-- /#header -->
 
+            <!-- Barre de navigation -->
             <div class="collapse navbar-collapse" id="reception-navbar-collapse">
-                
+                <ul class="nav navbar-nav">
+                    <li>
+                        <p class="navbar-btn">
+                            <a href="profil.php?id=<?= $_SESSION['id'] ?>" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span>Profil</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="navbar-btn">
+                            <a href="envoi.php" class="btn btn-info"><span class="glyphicon glyphicon-envelope"></span>Envoyer un message</a>
+                        </p>
+                    </li>
+                </ul>
             </div>
+            <!-- /#barre-de-navigation -->
         </nav>
 
-        <a href="profil.php?id=<?= $_SESSION['id'] ?>"> Profil </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="envoi.php"> Nouveau message</a><br /><br /><br />
-        <h3> Votre boîte de réception :</h3>
         <?php 
             if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
             while($m = $msg->fetch()) {
