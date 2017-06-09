@@ -560,12 +560,20 @@ button:focus {
     color: #25252d;
 }
 
-.panel-footer .glyphicon, .chat .glyphicon {
+.chat .glyphicon {
     margin-right: 5px;
 }
 
 .panel-footer {
     background-color: #25252d;
+}
+
+.panel-footer > .input-group > form > input {
+    width: 80%;
+}
+
+.panel-footer > .input-group > form > input {
+    width: 80%;
 }
 
 ::-webkit-scrollbar-track {
