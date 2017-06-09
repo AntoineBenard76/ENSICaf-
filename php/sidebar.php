@@ -13,15 +13,15 @@
                             <img    class="img-circle" 
                                     src="img/avatars/<?= $_SESSION['avatar']?>"
                                     style="width: 30px; height: 30px;"/>
-                            <?= $_SESSION['nom'] ;?>
-                            <?= $_SESSION['prenom'];?>
+                            <?= utf8_decode($_SESSION['nom']) ;?>
+                            <?= utf8_decode($_SESSION['prenom']);?>
                         </a>
                     </li>
                     <li><a href="club.php">Clubs</a></li>
                     <li><a href="reception.php">Boîte de réception</a></li>
                     <li><a href="#">Annonces</a></li>
                     <li><a href="#">Cercles</a></li>
-                    <li><a href="#">A propos</a></li>
+                    <li><a href="apropos.php">A propos</a></li>
                 </ul>
             </div>
         </div>
