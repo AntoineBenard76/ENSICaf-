@@ -18,7 +18,7 @@
                     $id_destinataire = $id_destinataire->fetch();
                     $id_destinataire = $id_destinataire['id'];
                     $lu = 0;
-                    $ins = $bdd->prepare('INSERT INTO messages(id_expediteur, id_destinataire, message, lu) VALUES (?, ?, ?, ?)');
+                    $ins = $bdd->prepare('INSERT INTO messages(id_expediteur, id_destinataire, message, lu, dateEnvoi) VALUES (?, ?, ?, ?, NOW())');
                     $ins->execute(array($_SESSION['id'],$id_destinataire,$message, $lu));
                     
                     $_SESSION['erreur'] = "Votre message a bien été envoyé !";
