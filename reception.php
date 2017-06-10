@@ -44,6 +44,45 @@
             <!-- /#barre-de-navigation -->
         </nav>
 
+        <hr class="divider">
+
+<!--         <table id="clickable-table"> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Message 1 -->
+                    <div class="media media-middle reception-list" id="menu_1">
+                        <span class="pull-left">
+                            <img class="img-circle media-object" src="img/profile_test1.png" alt="profile_test1.png">
+                        </span>
+                        <div class="media-body media-middle">
+                            <h5 class="media-heading">Le super chat</h5>
+                            <span class="label label-info">Chat</span>
+                            <small class="text-muted"><span class="glyphicon glyphicon-time"></span> La date ici</small>
+                            <p>Vous avez reçu un message !</p>
+                        </div>
+                    </div>
+                    <!-- /#message 1 -->
+
+                    <hr class="divider">
+
+                    <!-- Message 2 -->
+                    <div class="media media-middle reception-list" id="menu_1">
+                        <a class="pull-left" href="#">
+                            <img class="img-circle media-object" src="img/profile_test2.jpg" alt="profile_test2.jpg">
+                        </a>
+                        <div class="media-body media-middle">
+                            <h5 class="media-heading">La super grenouille</h5>
+                            <span class="label label-success">Grenouille</span>
+                            <p>Vous avez reçu un message !</p>
+                        </div>
+                    </div>
+                    <!-- /#message 2 -->
+                </div>
+            </div>
+<!--         </table> -->
+
+        <hr class="divider">
+
         <?php 
             if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
             while($m = $msg->fetch()) {
@@ -52,8 +91,8 @@
             $p_exp = $p_exp->fetch();
             $p_exp = $p_exp['mail'];
         ?>
-        <?php if($m['lu'] == 1){ ?> <i>(Lu)</i> <?php } ?> <b><?= $p_exp ?></b> vous a envoyé <a href="lecture.php?id=<?= $m['id'] ?>">ce message</a> <br />
-        --------------------------------------------------------<br/>
+        <?php if($m['lu'] == 1){ ?> <i>(Lu)</i> <?php } ?> <b><?= $p_exp ?></b> vous a envoyé <a href="lecture.php?id=<?= $m['id'] ?>">un message</a> <br />
+        <hr class="divider">
         <?php } ?>
     
     <div align="center">
