@@ -52,7 +52,7 @@
             $p_exp = $p_exp->fetch();
             $p_exp = $p_exp['mail'];
         ?>
-        <?php if($m['lu'] == 1){ ?> <i>(Lu)</i> <?php } ?> <b><?= $p_exp ?></b> vous a envoyé <a href="lecture.php?id=<?= $m['id'] ?>">ce message</a> <br />
+        <?php echo $m['dateEnvoi']; ?><?php if($m['lu'] == 1){ ?> <i>(Lu)</i> <?php } ?> <b><?= $p_exp ?></b> vous a envoyé <a href="lecture.php?id=<?= $m['id'] ?>">ce message</a> <br />
         --------------------------------------------------------<br/>
         <?php } ?>
     
