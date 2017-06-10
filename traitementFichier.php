@@ -29,6 +29,9 @@ if(isset($_POST['poster'])){
 	$extensionsvid = array('.mp4', '.ogv', '.webm');
 	$extension = strrchr($_FILES['file-preview']['name'], '.'); 
 	echo $extension;
+    //Récupération avatar de l'auteur et son attribut
+    $avatarActu=htmlspecialchars($_SESSION['avatar']);
+    $attributActu=htmlspecialchars($_SESSION['attribut']);
 	//Début des vérifications de sécurité...
 	if(in_array($extension, $extensionsimg)/* && empty($_POST['url'])*/) //Si l'extension est pas dans le tableau
 	{
@@ -117,8 +120,8 @@ $_SESSION['dossier2']=$dossier2;
 if(!empty($_POST['publier'])){
 	$publier = htmlspecialchars($_POST['publier']);
 	$type="actualite";
-    $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0)'); 
-    $insertion->execute(array($_SESSION['auteur'],$_POST['publier'],$type,$fichier2,$status,$stockage));
+    $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
+    $insertion->execute(array($_SESSION['auteur'],$_POST['publier'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }
 header("Location:accueil.php");
 ?>

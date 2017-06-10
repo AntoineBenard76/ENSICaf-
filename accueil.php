@@ -158,12 +158,14 @@
 
 
     <!-- ********** POST : publications sur la page d'accueil ********** -->
-
+    <script src="js/news.js" type="text/javascript"></script>
     <div class="row">
         <div class="col-md-10 col-lg-offset-1">
-            <?php 
-                include('news.php');
-            ?>        
+            <ul id="news">
+                <?php 
+                   include('news.php');
+                ?>
+            </ul>
         </div>
     </div>
     <!-- /#post -->

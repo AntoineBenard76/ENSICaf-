@@ -19,7 +19,7 @@
                     </li>
                     <li><a href="club.php">Clubs</a></li>
                     <li><a href="reception.php">Boîte de réception</a></li>
-                    <li><a href="#">Annonces</a></li>
+                    <li><a href="annonce.php">Annonces</a></li>
                     <li><a href="#">Cercles</a></li>
                     <li><a href="#">A propos</a></li>
                 </ul>

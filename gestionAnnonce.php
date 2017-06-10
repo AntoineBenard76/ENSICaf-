@@ -7,9 +7,9 @@
     }
 
 if(!isset($_GET['id']))
-  $req=$bdd->prepare("SELECT * FROM `actu` ORDER BY date DESC LIMIT 3");
+  $req=$bdd->prepare("SELECT * FROM `actu` WHERE type='annonce' ORDER BY date DESC LIMIT 5");
 else
- $req=$bdd->prepare("SELECT * FROM `actu` WHERE id>'".addslashes($_GET['id'])."' ORDER BY date LIMIT 1");
+ $req=$bdd->prepare("SELECT * FROM `actu` WHERE id>'".addslashes($_GET['id'])."'AND type='annonce' ORDER BY date LIMIT 1");
 
 $req->execute();
 $first = true;
@@ -18,11 +18,7 @@ while($res = $req->fetch()){
         print '<script>setId('.$res['id'].');</script>';
         $first = false;
     }
-    /*$req_avatar=$bdd->prepare('SELECT avatar, attribut FROM profil WHERE prenom=? OR nom=?');
-    $req_avatar->execute(array($res['auteur'],$res['auteur']));
-    $req_avatar=$req_avatar->fetch();*/
-    //while($res2 = $req_avatar->fetch()){
-        print '<li>';
+    print '<li>';
 ?>
     <!-- Post 1 -->
     <div class="[panel panel-default] panel-custom">
@@ -69,7 +65,6 @@ while($res = $req->fetch()){
             </div>
             <!-- /#post1 -->
 <?php
-        print '</li>';
-   // }
+    print '</li>';
 }
 ?>
