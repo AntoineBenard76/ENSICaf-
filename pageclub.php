@@ -21,7 +21,7 @@
     <div class="club-body"><br>
         <div class="media">
             <div class="media-left">
-                <img class="media-object" src="<?php echo $res['photo']; ?>" alt="photo_club" />
+                <img class="media-object" src="img/avatars/<?php echo $res['photo']; ?>" alt="photo_club" />
             </div>
             <!--Peu de style--> 
             <div class="media-body">
