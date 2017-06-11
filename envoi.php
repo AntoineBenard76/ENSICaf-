@@ -6,6 +6,27 @@
 
 <div class="container">
 
+    <legend>Envoyer un message</legend>
+
+    <div class="jumbotron custom-jumbotron">
+        <div class="row">
+            <form method="post" action="traitementEnvoi.php">
+                <label class="col-md-2 control-label">Destinataire</label>
+                <div class="col-md-3">
+                    <select class="form-control">
+                        <option>Barbapapa</option>
+                        <option>Pétanque</option>
+                        <option>Whatever</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div class="panel">
+            
+        </div>
+    </div>
+
     <!-- à enlever -->
     <div class="jumbotron" style="background-color: white;">
         <form method="POST" action="traitementEnvoi.php">

@@ -12,9 +12,8 @@
 
 <div class="container">
 
-    <!-- à enlever -->
-    <div class="jumbotron panel-reception">
-        <legend>Vos messages</legend>
+    <legend>Vos messages</legend>
+    <div class="jumbotron custom-jumbotron panel-reception">
 
         <nav class="navbar navbar-default">
             <!-- Header : collapse pour les écrans réduits -->
@@ -46,7 +45,6 @@
 
         <hr class="divider">
 
-<!--         <table id="clickable-table"> -->
             <div class="row">
                 <div class="col-md-12">
                     <!-- Message 1 -->
@@ -86,7 +84,6 @@
                     <!-- /#message 2 -->
                 </div>
             </div>
-<!--         </table> -->
 
         <hr class="divider">
 
@@ -109,7 +106,6 @@
         </form>    
     </div>
     </div>
-    <!-- /#à enlever -->
 
 </div>
 
