@@ -26,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <p class="navbar-btn">
-                            <a href="profil.php?id=<?= $_SESSION['id'] ?>" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span>Profil</a>
+                            <a href="profil.php?id=<?= $_SESSION['id']?>" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span>Profil</a>
                         </p>
                     </li>
                     <li>
@@ -44,22 +44,37 @@
         <!-- Envoyer un message -->
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <form class="form-envoi" method="post" action="traitementEnvoi.php">
+                <form class="form-envoi" method="POST" action="traitementEnvoi.php">
                     <!-- Destinataire -->
                     <label class="col-md-2 control-label envoi-destinataire">Destinataire</label>
-                    <div class="col-md-3">
-                        <select class="form-control">
-                            <option>Barbapapa</option>
-                            <option>Pétanque</option>
-                            <option>Whatever</option>
+    <!--problème de taille de la case pour les destinataires-->
+                    <div class="col-md-4">
+                        <select class="form-control" name="destinataire">
+                <?php
+                    $destinataires=$bdd->query('SELECT mail FROM membres ORDER BY mail');
+                    if(isset($_GET['r']) AND !empty($_GET['r']))
+                    {
+                        $r = htmlspecialchars($_GET['r']);?>
+                        <option><?= $r ;?></option>
+                    <?php }
+                    else { while($d = $destinataires->fetch()) { 
+                ?>
+                <option><?= $d['mail']; ?></option>
+                <?php 
+                    }
+                }
+                ?>
                         </select>
                     </div>
                     <!-- /#destinataire -->
 
                     <!-- Input -->
-                    <textarea class="form-control" rows="4"></textarea>
-                    <button type="submit" class="btn btn-warning btn-envoi">Envoyer</button>
+                    <textarea class="form-control" name="message" rows="4"></textarea>
+                    <button type="submit" class="btn btn-warning btn-envoi" name="envoi_message">Envoyer</button>
                     <button type="reset" class="btn btn-danger btn-envoi">Annuler</button>
+                    <?php
+                if(isset($_SESSION['erreur'])) { echo '<span style="color:red">'.$_SESSION['erreur'].'</span>'; $_SESSION['erreur'] = "";}
+            ?>
                     <!-- /#input -->
                 </form>
             </div>
@@ -67,39 +82,6 @@
         <!-- /#Envoyer un message -->
     </div>
     <!-- /#jumbotron -->
-
-
-
-
-    <!-- ********** à enlever ********** -->
-    <div class="jumbotron" style="background-color: white;">
-        <form method="POST" action="traitementEnvoi.php">
-            <label> Destinataire :</label>
-            <select name="destinataire">
-                <?php
-                    $destinataires=$bdd->query('SELECT mail FROM membres ORDER BY mail');
-                    while($d = $destinataires->fetch()) { 
-                ?>
-                <option><?= $d['mail'] ?></option>
-                <?php } ?>
-            </select>
-            <!---->
-            <br /><br />
-            <textarea placeholder="Votre message" name="message"></textarea>
-            <br /><br />
-            <input type="submit" value="Envoyer" name="envoi_message"/>
-            <br /><br />
-            <?php
-                if(isset($_SESSION['erreur'])) { echo '<span style="color:red">'.$_SESSION['erreur'].'</span>'; }
-            ?>
-        </form>
-        <br />
-        <a href="reception.php"> Boîte de réception </a>&nbsp;&nbsp;
-        <a href="profil.php?id=<?= $_SESSION['id']?>">Retour au profil</a>
-
-    </div>
-    <!-- ********** /#à enlever ********** -->
-
 </div>
 
 <!-- Contenu principal -->
