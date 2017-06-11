@@ -903,40 +903,8 @@ legend > span {
 
 /* ---------- apropos.php ---------- */
 
-.panel-apropos .panel-equipe .media-list img {
+.apropos > .row > .media-list img {
     border: 5px solid #E8DE97;
-    height: 125px;
-    width: 125px;
-}
-
-.panel-apropos .panel-equipe .media-list .media-body h4 {
-    display: inline-block;
-}
-
-.panel-apropos .panel-equipe .media-list .media-body span {
-    font-size: 12px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-.panel-apropos .panel-equipe .media-list .media-body blockquote {
-    border-left: none;
-    margin-bottom: 0;
-}
-
-.panel-apropos > .panel > .panel-heading > a {
-    color: #F7F3D3;
-    font-size: 18px;
-    margin-left: 5px;
-    text-decoration: none;
-}
-
-.panel-apropos .panel-origine 
-
-#logo-ensisa {
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: -10px;
-    max-height: 100px;
+    height: 150px;
+    width: 150px;
 }
