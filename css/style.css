@@ -496,7 +496,7 @@ legend > span {
     margin-top: 15px;
 }
 
-.panel-custom > .panel-body > .pull-left > .input-placeholder {    /* Commenter */
+.panel-custom > .panel-body > .pull-left > .input-placeholder {
     border: 1px solid rgb(217, 217, 217);
     border-radius: 6px;
     display: inline-block;
@@ -506,7 +506,7 @@ legend > span {
     margin-left: -20px;
 }
 
-.panel-custom > .panel-body > .pull-left > .input-placeholder:hover {    /* Commenter */
+.panel-custom > .panel-body > .pull-left > .input-placeholder:hover {
     background-color: #F6F6F6;
     cursor: pointer;
 }
@@ -532,7 +532,7 @@ legend > span {
 }
 
 .panel-custom > .panel-body > .pull-right > .btn-dislike:hover {
-    background-color: #b3b3b3;
+    background-color: #cccccc;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
