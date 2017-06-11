@@ -24,6 +24,18 @@ button:focus {
     outline: 0 !important;
 }
 
+#img-logo {
+    display: inline-block;
+    max-height: 50px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+#slogan {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
 legend {
     background-color: #25252D;
     border: 0px solid #E8DE97;
