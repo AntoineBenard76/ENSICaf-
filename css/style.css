@@ -31,17 +31,19 @@ legend {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     color: #F7F3D3;
+    margin: auto;
     margin-bottom: 0px;
     padding: 5px;
     padding-left: 20px;
+    width: 59.4%;
 }
 
-.custom-jumbotron {
-    background-color: #FFFFFF;
-    border: 1px solid #E8DE97;
-    border-top: none;
-    border-top-right-radius: 0px !important;
-    border-top-left-radius: 0px !important;
+legend > span {
+    margin-right: 10px;
+}
+
+.legend-settings {
+    width: 38%;
 }
 
 /* Notification message avec des couleurs */
@@ -56,6 +58,26 @@ legend {
     top: 60px;
     left: 0px;
     width: 100%;
+}
+
+/* ---------- Jumbotron ---------- */
+
+.custom-jumbotron {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DE97;
+    border-top: none;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+.custom-jumbotron > .navbar {
+    margin-top: -40px;
+    margin-bottom: -20px;
+}
+
+.custom-jumbotron li,
+.custom-jumbotron li span {
+    margin-right: 5px;
 }
 
 /* ---------- Navigation Bar ---------- */
@@ -84,7 +106,13 @@ legend {
 .navbar-inverse .navbar-nav > li > a:focus {
     color: #25252d;
     background-color: #f7f3d3;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     line-height: 25px;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 /* ---------- Media ---------- */
@@ -226,10 +254,20 @@ legend {
     color: #f7f3d3;
 }
 
+.sidebar-nav li span {
+    margin-left: -20px;
+    margin-right: 5px; 
+}
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #FFF;
     background: rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .sidebar-nav li a:active,
@@ -786,16 +824,6 @@ legend {
 
 /* ---------- reception.php ---------- */
 
-.panel-reception li,
-.panel-reception li span {
-    margin-right: 5px;
-}
-
-.panel-reception > .navbar {
-    margin-top: -40px;
-    margin-bottom: -20px;
-}
-
 .reception-list {
     padding-top: 20px;
 }
@@ -841,3 +869,30 @@ legend {
     font-style: italic;
     opacity: 0.5;
 }
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- envoi.php ---------- */
+
+.form-envoi label {
+    line-height: 30px;
+}
+
+.form-envoi > .envoi-destinataire {
+    margin: 0px -30px 15px 0px;
+}
+
+.form-envoi > .btn-envoi {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- apropos.php ---------- */
