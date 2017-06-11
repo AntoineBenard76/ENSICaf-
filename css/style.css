@@ -903,11 +903,7 @@ legend > span {
 
 /* ---------- apropos.php ---------- */
 
-<<<<<<< HEAD
 .panel-apropos > .panel-equipe .media-list img {
-=======
-.apropos > .row > .media-list img {
->>>>>>> 08f7d40d20b7655eccbffbeaf60227145a528f5e
     border: 5px solid #E8DE97;
     height: 125px;
     width: 125px;
