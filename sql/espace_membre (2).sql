@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 10 Juin 2017 à 13:22
+-- Généré le :  Dim 11 Juin 2017 à 22:12
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -50,7 +50,7 @@ INSERT INTO `actu` (`id`, `auteur`, `contenu`, `date`, `type`, `fichier`, `typef
 (17, 'Jonathan', 'test refresh', '2017-06-12 11:11:00', 'annonce', '', '', '', 1, 3, '14.png', 'Professeur'),
 (18, 'Jonathan', 'test annonce refresh', '2017-06-12 00:31:00', 'annonce', '', '', '', 1, 3, '14.png', 'Professeur'),
 (19, 'Jonathan', 'test actu refresh', '2017-06-12 01:31:00', 'actualité', '', '', '', 1, 3, '14.png', 'Professeur'),
-(20, 'Antoine', 'enfin', '2017-06-13 19:00:00', 'annonce', '', '', '', 4, 0, '', 'Etudiant');
+(20, 'Antoine', 'setrdtgf', '2017-06-13 19:00:00', 'annonce', '', '', '', 4, 0, '', 'Etudiant');
 
 -- --------------------------------------------------------
 
@@ -95,6 +95,31 @@ INSERT INTO `chat` (`id`, `nomExp`, `prenomExp`, `contenuMes`, `dateMes`, `avata
 (43, 'Bénard', 'Antoine', 'za', '2017-06-09 23:37:06', '17.gif', 'Etudiant'),
 (44, 'Bénard', 'Antoine', 'za', '2017-06-09 23:44:43', '17.gif', 'Etudiant'),
 (45, 'Bénard', 'Antoine', 'za', '2017-06-09 23:46:32', '17.gif', 'Etudiant');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `clubs`
+--
+
+CREATE TABLE `clubs` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `photo` text COLLATE utf8_unicode_ci NOT NULL,
+  `membres` int(11) NOT NULL,
+  `president` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `realisation` text COLLATE utf8_unicode_ci NOT NULL,
+  `evenements` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `clubs`
+--
+
+INSERT INTO `clubs` (`id`, `nom`, `description`, `photo`, `membres`, `president`, `realisation`, `evenements`) VALUES
+(1, 'XID', 'Club info', '8.png', 1, 'test', 'rejerkj', 'jrhekzjr'),
+(2, 'JDR', 'Jeux de roles', '', 1, 'erezr', 'erzegf', 'erzER');
 
 -- --------------------------------------------------------
 
@@ -186,6 +211,12 @@ ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `clubs`
+--
+ALTER TABLE `clubs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `membres`
 --
 ALTER TABLE `membres`
@@ -217,6 +248,11 @@ ALTER TABLE `actu`
 --
 ALTER TABLE `chat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+--
+-- AUTO_INCREMENT pour la table `clubs`
+--
+ALTER TABLE `clubs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
