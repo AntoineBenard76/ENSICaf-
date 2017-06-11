@@ -386,6 +386,7 @@ legend > span {
     background-color: #25252D;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    cursor: pointer;
     text-align: center;
 }
 

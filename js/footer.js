@@ -52,7 +52,7 @@
         $('.preview-filename').val("");
         $('.preview-clear').hide();
         $('.preview-input input:file').val("");
-        $(".preview-input-title").text("Browse"); 
+        $(".preview-input-title").text("Image"); 
         }); 
 
         // Montre le nom du fichier à upload
@@ -60,7 +60,7 @@
             var file = this.files[0];
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(".preview-input-title").text("Change");
+                $(".preview-input-title").text("Autre");
                 $(".preview-clear").show();
                 $(".preview-filename").val(file.name);
             }  
