@@ -41,7 +41,7 @@
                                 <small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span><?php echo utf8_decode($msg['dateMes']);?></small>
                             </div>
                             <p>
-                                <?php echo $msg['contenuMes'];?>
+                                <?php echo utf8_decode($msg['contenuMes']);?>
                             </p>
                         </div>
                     </li>
