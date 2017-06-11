@@ -902,3 +902,9 @@ legend > span {
 
 
 /* ---------- apropos.php ---------- */
+
+.apropos > .row > .media-list img {
+    border: 5px solid #E8DE97;
+    height: 150px;
+    width: 150px;
+}
