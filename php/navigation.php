@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav pull-right">
 
                     <li><a href="accueil.php"><span class="glyphicon glyphicon-check"></span> Accueil</a></li>
-                    <li><a href="reception.php"><span class="glyphicon glyphicon-envelope"></span> Messages <?php $mescount = $reqmes->rowCount(); if($mescount > 0){ ?><span class="badge"><?php echo $mescount; ?></span> <?php } ?></a></li>
+                    <li><a href="reception.php"><span class="glyphicon glyphicon-envelope"></span> Messages <?php $mescount = $reqmes->rowCount(); if($mescount > 0){ ?><span class="label label-danger label-as-badge"><?php echo $mescount; ?></span> <?php } ?></a></li>
                     <li><a href="deconnexion.php"><span class="glyphicon glyphicon-check"></span> Se déconnecter</a></li>
 
                 </ul>

@@ -37,7 +37,7 @@
                     {
             ?>
                     
-                    <!-- Message 1 -->
+                    <!-- Message -->
                     <li class="left clearfix">
                         <span class="chat-img pull-left"><img src="img/<?php echo $msg['avatarMes'];?>" alt="user_profile" class="img-circle" /></span>
                         <div class="chat-body clearfix">
@@ -51,6 +51,7 @@
                             </p>
                         </div>
                     </li>
+                    <!-- /#message -->
                     <?php 
                     }
                     ?>
@@ -61,10 +62,14 @@
             <!-- Chatbox footer : envoyer un message -->
             <div class="panel-footer">
                 <div class="input-group">
-                <form method="post" action="">
-                    <textarea type="text" width="250px" name="contenuMes" placeholder="Votre message"></textarea><br />
-                    <input type="submit" value="Envoyer"/>
-                </form>
+                    <form class="chatbox-send" method="post" role="form" action="">
+                        <input type="text" name="contenuMes" class="form-control" placeholder="Envoyer un message...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-warning">
+                                <span class="glyphicon glyphicon-send"></span>
+                            </button>
+                        </span>
+                    </form>
                 </div>
             </div>
             <!-- /#chatbox footer -->
