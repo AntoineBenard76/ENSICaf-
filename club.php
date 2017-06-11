@@ -1,5 +1,14 @@
 <?php
     include('php/header.php');
+//Possibilité d'utiliser un explode 
+    $club=$bdd->query('SELECT nom FROM clubs ORDER BY id DESC');
+    if(isset($_POST['recherche']) AND !empty($_POST['recherche'])){
+        $nom=htmlspecialchars($_POST['recherche']);
+        $club=$bdd->query('SELECT nom FROM clubs WHERE nom LIKE "%"'.$nom.'"%"');
+        if($club->rowCount()==0){
+            $club=$bdd->query('SELECT nom FROM clubs WHERE CONCAT(nom,description) LIKE "%'.$nom.'%"');
+        }
+    }
 ?>
 
 <div class="container">
@@ -12,16 +21,38 @@
             </div>
 
             <div class="collapse navbar-collapse">
-            	<form class="navbar-form navbar-left">
+            	<form class="navbar-form navbar-left" method="post">
             		<div class="form-group">
-            			<input type="text" name="recherche" class="form-control" placeholder="Chercher un club...">
+            			<input type="search" id="recherche" class="form-control" placeholder="Chercher un club...">
             		</div>
-            		<button type="submit" class="btn btn-info">Chercher</button>
+            		<input type="submit" id="search" class="btn btn-info" value="Chercher" />
             	</form>
 
             	<ul class="nav navbar-nav navbar-right">
-            		<li><a href="#"><button type="button" class="btn btn-info">Créer un club</button></a></li>
+                    <li><button type="button" class="btn btn-info" id="creer">Créer un club</button>
+                    </li>
             	</ul>
+                
+                <!--Permet de cacher toute la liste des clubs-->
+                <script>
+                $(document).ready(function(){
+                    $("#resultat").hide();
+                    $("#search").click(function(){
+                        $("#resultat").show();
+                    });
+                    /*$(".btn1").click(function(){
+                        $("form").hide();
+                       //$("button:first").hide();
+                    });*/
+                });
+                </script>
+                <?php if($club->rowCount() >0){?>
+                    <ul id='resultat'>
+                    <?php while($c=$club->fetch()){ ?>
+                        <li><?php echo $c['nom'];?></li>
+                    <?php } ?>
+                    </ul>
+                <?php } else { echo 'Aucun résultat pour : '.$nom; } ?>
             </div>
         </div>
         <!-- /#navigation-club -->
@@ -29,56 +60,53 @@
     
 	<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<!-- CLUB 1 -->
-				<div class="club-panel">
-					<div class="club-title">
-						<div class="club-caption">
-							<span class="caption-name text-uppercase">XiD</span>
-						</div>
-						<div class="club-actions pull-right">
-							<a href="#">
-                                <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span>Voir</button>
-							</a>
-						</div>
-					</div>
-					<div class="club-body"><br>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="img/profile_test1.png" alt="photo_club" />
-                            </div>
-                            <div class="media-body">
-                                <p>En géomorphologie, une grotte est une cavité souterraine naturelle comportant au moins une partie horizontale accessible ; ce qui la distingue d'un aven, d'un gouffre, d'un abîme, etc. La première édition du Dictionnaire de l'Académie française (1694) précise qu'elle peut être « naturelle ou faite par artifice ».</p>
-                            </div>
-                        </div>
-					</div>
-				</div>
-				<!-- /#CLUB 1 -->
+                <!--On cache le formulaire de création de club-->
+                <script>
+                    $(document).ready(function(){
+                            $("#form-club").hide();
+                            //$("button:first").hide();
+                        $("#creer").click(function(){
+                            $("#form-club").show();
+                            //$("button:first").show();
+                        });
+                        $(".btn1").click(function(){
+                            $("#form-club").hide();
+                           //$("button:first").hide();
+                        });
+                    });
+                </script>
+                <!--Création d'un club-->
+                <div class="club-panel" id="form-club">
+                    <div class="innter-form">
+                        <form method="POST" action="traitementClub.php" id="creerClub" class="sa-innate-form">
+                            <label>Nom du club</label>
+                            <input type=text name="nom" placeholder="Nom du club" required="required"/>
+
+                            <label>Description</label>
+                            <input type=text name="description" placeholder="Description" required="required"/>
+
+                            <label>Photo</label>
+                            <input type=text name="photo" placeholder="Insérer un photo"/>
+
+                            <label>Nombre de membres</label>
+                            <input type=integer name="membres" placeholder="Nombre de membres" required="required"/>
+
+                            <label>Nom du president</label>
+                            <input type=text name="nompres" placeholder="Nom president" required="required"/>
+
+                            <label>Réalisation</label>
+                            <textarea name="realisations" placeholder="Réalisations"></textarea>
+
+                            <label>Evénements</label>
+                            <textarea name="evenements" placeholder="Evénements"></textarea>
+                            <input type="submit" value="Enregistrer" class="btn btn-info"/>
+                        </form>
+                    </div>
+                </div>
                 
-                <!-- CLUB 1 -->
-				<div class="club-panel">
-					<div class="club-title">
-						<div class="club-caption">
-							<span class="caption-name text-uppercase">Club musique</span>
-						</div>
-						<div class="club-actions pull-right">
-							<a href="#">
-                                <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span>Voir</button>
-							</a>
-                            <!--<input class="btn btn-info" type="button" value="Voir" onclick="" /> <span class="glyphicon glyphicon-log-in"></span>-->
-						</div>
-					</div>
-					<div class="club-body"><br>
-						<div class="media">
-                            <div class="media-body">
-                                <p>La dépression (également appelée dépression caractérisée, dépression clinique ou dépression majeure) est un trouble mental caractérisé par des épisodes de baisse d'humeur (tristesse) accompagnée d'une faible estime de soi et d'une perte de plaisir ou d'intérêt dans des activités habituellement ressenties comme agréables par l'individu. Cet ensemble de symptômes (syndrome) individualisé et anciennement classifié dans le groupe des troubles de l'humeur par le manuel diagnostique de l'association américaine de psychiatrie, figure depuis la sortie du DSM-5 en mai 2013 dans la catégorie appelée "Troubles dépressifs". Le terme de « dépression » est cependant ambigu ; il est en effet parfois utilisé dans le langage courant pour décrire d'autres troubles de l'humeur ou d'autres types de baisse d'humeur moins significatifs qui ne sont pas des dépressions proprement dites.</p>
-                            </div>
-                            <div class="media-right">
-                                <img class="media-object" src="img/profile_test2.jpg" alt="photo_club" />
-                            </div>
-                        </div>
-					</div>
-				</div>
-				<!-- /#CLUB 1 -->
+				<?php
+                    include('php/liste_club.php');
+                ?>
 			</div>
 	</div>
 </div>

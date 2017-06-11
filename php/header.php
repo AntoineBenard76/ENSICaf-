@@ -16,7 +16,8 @@
 
 <body>
     <!--Librairie jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="./js/jquery.js" type="text/javascript"></script>
     <?php
     include('navigation.php');
     ?>
