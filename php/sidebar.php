@@ -16,6 +16,7 @@
                                     alt="avatar_img"/>
                             <?= $_SESSION['nom'] ;?>
                             <?= $_SESSION['prenom'];?>
+
                         </a>
                     </li>
                     <li><a href="club.php">Clubs</a></li>

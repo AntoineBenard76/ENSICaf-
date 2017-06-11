@@ -50,6 +50,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <?php 
+
             if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
             while($m = $msg->fetch()) {
             $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
@@ -57,7 +58,7 @@
             $donnees_exp = $p_exp->fetch();
             $mail_exp = $donnees_exp['mail'];
         ?>
-                    <!-- Message 1 -->
+              <!-- Message 1 -->
                     <div class="media media-middle reception-list" id="msg_1">
                         <a href="lecture.php?id=<?= $m['id'] ?>" class="msg-anchor">
                             <span class="pull-left">
