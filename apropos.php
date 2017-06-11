@@ -4,12 +4,14 @@
 
 <!-- Contenu principal -->
 
-<div class="container">
+<legend class="text-uppercase legend-apropos">
+    <span class="glyphicon glyphicon-question-sign"></span>
+    L'équipe
+</legend>
 
-    <!-- à enlever -->
-    <div class="jumbotron" style="background-color: white;">
+<div class="container">
+    <div class="jumbotron custom-jumbotron">
         <div>
-            <p><b>L'EQUIPE : </b></p>
             <p><img src="img/equipe/antoine.jpg" width=100 height=100 alt="Bug Antoine"/> Chef du Projet ensicafé, étudiant dynamique et motivé qui a fait de son mieux pour booster les troupes ! :D</p>
             <p><img src="img/equipe/olivier.jpg" width=100 height=100 alt="Bug Olivier"/> Roi du design, cet homme a rendu non-radioactif le style de tout le projet !</p>
             <p><img src="img/equipe/nolwenn.jpg" width=100 height=160 alt="Bug Nolwenn"/> Travailleuse acharnée, elle est également la touche féminine de ce projet !</p>
@@ -18,10 +20,7 @@
             <p><b> REMERCIEMENTS : </b></p>
             <p>Un grand remerciement à toute l'équipe de ce projet sans qui rien ne se serait fait ! Et un big-up spécial à François Straebler dont le soutien a été incroyable !</p>
         </div>
-        
     </div>
-    <!-- /#à enlever -->
-
 </div>
 
 <!-- Contenu principal -->

@@ -16,14 +16,13 @@
                                     alt="avatar_img"/>
                             <?= $_SESSION['nom'] ;?>
                             <?= $_SESSION['prenom'];?>
-
                         </a>
                     </li>
-                    <li><a href="club.php">Clubs</a></li>
-                    <li><a href="reception.php">Boîte de réception</a></li>
-                    <li><a href="#">Annonces</a></li>
-                    <li><a href="#">Cercles</a></li>
-                    <li><a href="apropos.php">A propos</a></li>
+                    <li><a href="club.php"><span class="glyphicon glyphicon-pawn"></span>Clubs</a></li>
+                    <li><a href="reception.php"><span class="glyphicon glyphicon-envelope"></span>Boîte de réception</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span>Annonces</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cercles</a></li>
+                    <li><a href="apropos.php"><span class="glyphicon glyphicon-question-sign"></span>A propos</a></li>
                 </ul>
             </div>
         </div>

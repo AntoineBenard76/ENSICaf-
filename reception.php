@@ -10,9 +10,12 @@
 
 <!-- Contenu principal -->
 
-<div class="container">
+<legend>
+    <span class="glyphicon glyphicon-envelope"></span>
+    Vos messages
+</legend>
 
-    <legend>Vos messages</legend>
+<div class="container">
     <div class="jumbotron custom-jumbotron panel-reception">
 
         <nav class="navbar navbar-default">
@@ -77,8 +80,6 @@
                                 <?php } ?>
                 </div>
             </div>
-
-        <hr class="divider">
     
     <div align="center">
         <form method="POST" action="nonlu.php">
