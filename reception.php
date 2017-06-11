@@ -18,6 +18,7 @@
 <div class="container">
     <div class="jumbotron custom-jumbotron panel-reception">
 
+        <!-- Navigation -->
         <nav class="navbar navbar-default">
             <!-- Header : collapse pour les écrans réduits -->
             <div class="navbar-header">
@@ -45,21 +46,21 @@
             </div>
             <!-- /#barre-de-navigation -->
         </nav>
+        <!-- /#navigation -->
 
         <hr class="divider">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <?php 
-
-            if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
-            while($m = $msg->fetch()) {
-            $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
-            $p_exp->execute(array($m['id_expediteur']));
-            $donnees_exp = $p_exp->fetch();
-            $mail_exp = $donnees_exp['mail'];
-        ?>
-              <!-- Message 1 -->
+        <div class="row">
+            <div class="col-md-12">
+                <?php 
+                    if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
+                    while($m = $msg->fetch()) {
+                    $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
+                    $p_exp->execute(array($m['id_expediteur']));
+                    $donnees_exp = $p_exp->fetch();
+                    $mail_exp = $donnees_exp['mail'];
+                ?>
+                    <!-- Message -->
                     <div class="media media-middle reception-list" id="msg_1">
                         <a href="lecture.php?id=<?= $m['id'] ?>" class="msg-anchor">
                             <span class="pull-left">
@@ -76,10 +77,11 @@
                             </div>
                         </a>
                     </div>
-                    <hr class="divider">
-                                <?php } ?>
-                </div>
+                    <!-- /#message -->
+                <hr class="divider">
+                <?php } ?>
             </div>
+        </div>
     
     <div align="center">
         <form method="POST" action="nonlu.php">
