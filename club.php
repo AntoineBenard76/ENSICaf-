@@ -100,7 +100,7 @@
 
                             <label>Evénements</label>
                             <textarea name="evenements" placeholder="Evénements" required="required"></textarea>
-                            <input type="submit" value="Enregistrer" class="btn btn-info"/>
+                            <input type="submit" name="enregistrer" value="Enregistrer" class="btn btn-info"/>
                         </form>
                     </div>
                 </div>
