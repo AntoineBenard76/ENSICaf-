@@ -27,6 +27,7 @@
                     <li>
                         <p class="navbar-btn">
                             <a href="profil.php?id=<?= $_SESSION['id']?>" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span>Profil</a>
+
                         </p>
                     </li>
                     <li>
@@ -47,9 +48,9 @@
                 <form class="form-envoi" method="POST" action="traitementEnvoi.php">
                     <!-- Destinataire -->
                     <label class="col-md-2 control-label envoi-destinataire">Destinataire</label>
-    <!--problème de taille de la case pour les destinataires-->
                     <div class="col-md-4">
                         <select class="form-control" name="destinataire">
+
                 <?php
                     $destinataires=$bdd->query('SELECT mail FROM membres ORDER BY mail');
                     if(isset($_GET['r']) AND !empty($_GET['r']))
@@ -81,7 +82,6 @@
         </div>
         <!-- /#Envoyer un message -->
     </div>
-    <!-- /#jumbotron -->
 </div>
 
 <!-- Contenu principal -->
