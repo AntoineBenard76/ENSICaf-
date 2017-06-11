@@ -21,7 +21,7 @@ else{
    mkdir($dossier2);
 }
    // traitement du fichier
-if(isset($_POST['poster'])){
+if(isset($_POST['Poster'])){
 	$fichier = basename($_FILES['file-preview']['name']);
 	$taille_maxi = 100000000;
 	$taille = filesize($_FILES['file-preview']['tmp_name']);
@@ -117,9 +117,12 @@ if(isset($_POST['poster'])){
 $_SESSION['dossier']=$dossier;
 $_SESSION['dossier2']=$dossier2;
 // fin traitement du fichier
-if(!empty($_POST['publier'])){
+if(isset($_POST['Poster'])){
 	$publier = htmlspecialchars($_POST['contenu']);
-	$type=htmlspecialchars($_POST['btn-publication']);
+	//$type=htmlspecialchars($_POST['btn-publication']);
+    $type = "test";
+    $stockage = "neutre";
+    $status = "ok";
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
     $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }

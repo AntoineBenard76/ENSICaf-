@@ -113,7 +113,7 @@
 
                 <div id="collapse-publication" class="panel-collapse collapse" role="tabpanel">
                     <div class="panel-body">
-                        <form accept-charset="utf-8" class="form-group publication-msg" method="post" action="traitementFichier.php">
+                        <form accept-charset="utf-8" class="form-group publication-msg" method="POST" action="traitementFichier.php">
                             <!-- Envoyer une image -->
                             <div class="input-group preview">
                                 <input type="text" class="form-control preview-filename" disabled="disabled">
@@ -136,7 +136,7 @@
                             <!--<form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">-->
                                 <textarea class="form-control" placeholder="Entrez votre message" rows="2" name="contenu"></textarea>
                                 <!--<button class="[ btn btn-primary disabled ]" type="submit" id="poster">Poster</button>-->
-                                <input class="[ btn btn-primary ]" type="submit" id="poster" value="Poster" />
+                                <input class="[ btn btn-primary ]" type="submit" name="Poster" value="Poster" />
                                 <button class="[ btn btn-default ]" type="reset">Annuler</button>
                                 <div class="btn-group pull-right" data-toggle="buttons">
                                     <label class="btn btn-info active">
