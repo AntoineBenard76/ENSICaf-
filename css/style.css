@@ -429,6 +429,10 @@ legend > span {
 
 /* ---------- Panel Publications ---------- */
 
+#news li {
+    list-style-type: none;
+}
+
 .panel-custom {                             /* Post (fil d'actualité) */
     position: relative;
     border-radius: 10px;
@@ -507,9 +511,12 @@ legend > span {
     cursor: pointer;
 }
 
+.panel-custom > .panel-body > .pull-right {
+    margin-right: -30px;
+}
+
 .panel-custom > .panel-body > .pull-right > button {
-    margin-left: 40px;
-    margin-right: -10px;
+    margin-left: 20px;
 }
 
 .panel-custom > .panel-body > .pull-right > .btn-circle {
@@ -522,6 +529,27 @@ legend > span {
 
 .panel-custom > .panel-body > .pull-right > .btn-circle:focus {
     outline: none;
+}
+
+.panel-custom > .panel-body > .pull-right > .btn-dislike:hover {
+    background-color: #b3b3b3;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.panel-custom > .panel-body > .pull-right > .btn-like {
+    background-color: #d9534f;
+    color: white;
+}
+
+.panel-custom > .panel-body > .pull-right > .btn-like:hover {
+    background-color: #d1332e;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .panel-custom.panel-custom-show-comment > .panel-body > .pull-left > .input-placeholder {

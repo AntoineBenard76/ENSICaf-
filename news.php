@@ -47,12 +47,19 @@ while($res = $req->fetch()){
                         <div class="input-placeholder">Commenter...</div>
                     </div>
 
-                    <!-- Réactions : dislike / like / love -->
-                    <!--Affichage peu esthétique-->
+                    <!-- Réactions : dislike / like -->
                     <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button><?php echo $res['nbDislike']; ?>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button><?php echo $res['nbLike']; ?>
+                        <button type="button" class="btn btn-dislike btn-circle">
+                            <span class="glyphicon glyphicon-heart dislike"></span>
+                        </button>
+                        <span class="text-muted"><?php echo $res['nbDislike']; ?></span>
+
+                        <button type="button" class="btn btn-like btn-circle">
+                            <span class="glyphicon glyphicon-heart like"></span>
+                        </button>
+                        <span class="text-muted"><?php echo $res['nbLike']; ?></span>
                     </div>
+                    <!-- /#réactions -->
                 </div>
         <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
