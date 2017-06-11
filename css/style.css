@@ -614,7 +614,7 @@ legend > span {
     height: 250px;
 }
 
-.panel .panel-heading {         /* Barre chat général */
+.chatbox-panel .panel-heading {         /* Barre chat général */
     background-color: #25252D;
     cursor: pointer;
     margin-bottom: -1px;
@@ -773,6 +773,10 @@ legend > span {
     font-size: 12px;
 }
 
+.panel-profile .panel-heading {
+    background-color: #25252D;
+}
+
 .panel-profile .panel-heading a {
     color: #F7F3D3;
     margin-left: 5px;
@@ -828,6 +832,44 @@ legend > span {
     margin-right: 5px;
 }
 
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- pageclub.php ---------- */
+
+.panel-page-club .panel-info-club img {
+    height: 200px;
+    width: 200px;
+}
+
+.panel-page-club .panel-info-club p,
+.panel-page-club .hidden-description-club p {
+    font-size: 12px;
+}
+
+.panel-page-club .panel-event-list .panel {
+    margin-bottom: 20px;
+}
+
+.panel-page-club .panel-event-list .panel-heading {
+    background-color: #25252D;
+}
+
+.panel-page-club .panel-event-list .panel-heading a {
+    color: #F7F3D3;
+    text-decoration: none;
+}
+
+.panel-page-club .panel-event-list .panel-heading h4 {
+    display: inline;
+    margin-left: 10px;
+}
+
+.panel-page-club .panel-event-list .panel-heading .date-event-club {
+    margin-right: 10px;
+}
 
 /* ----------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------- */
@@ -930,6 +972,10 @@ legend > span {
 
 
 /* ---------- apropos.php ---------- */
+
+.panel-apropos .panel-heading {
+    background-color: #25252D;
+}
 
 .panel-apropos > .panel-equipe .media-list img {
     border: 5px solid #E8DE97;
