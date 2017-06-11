@@ -14,8 +14,8 @@
                                     src="img/avatars/<?= $_SESSION['avatar']?>"
                                     style="width: 30px; height: 30px;"
                                     alt="avatar_img"/>
-                            <?= utf8_decode($_SESSION['nom']) ;?>
-                            <?= utf8_decode($_SESSION['prenom']);?>
+                            <?= $_SESSION['nom'] ;?>
+                            <?= $_SESSION['prenom'];?>
                         </a>
                     </li>
                     <li><a href="club.php">Clubs</a></li>
