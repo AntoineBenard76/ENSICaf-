@@ -10,11 +10,13 @@
 
 <!-- Contenu principal -->
 
-<div class="container">
+<legend>
+    <span class="glyphicon glyphicon-envelope"></span>
+    Vos messages
+</legend>
 
-    <!-- à enlever -->
-    <div class="jumbotron panel-reception">
-        <legend>Vos messages</legend>
+<div class="container">
+    <div class="jumbotron custom-jumbotron panel-reception">
 
         <nav class="navbar navbar-default">
             <!-- Header : collapse pour les écrans réduits -->
@@ -46,7 +48,6 @@
 
         <hr class="divider">
 
-<!--         <table id="clickable-table"> -->
             <div class="row">
                 <div class="col-md-12">
                     <?php 
@@ -79,9 +80,6 @@
                                 <?php } ?>
                 </div>
             </div>
-<!--         </table> -->
-
-        <hr class="divider">
     
     <div align="center">
         <form method="POST" action="nonlu.php">
@@ -89,7 +87,6 @@
         </form>    
     </div>
     </div>
-    <!-- /#à enlever -->
 
 </div>
 

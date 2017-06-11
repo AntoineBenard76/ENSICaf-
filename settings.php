@@ -87,13 +87,16 @@
 
 <!-- Contenu principal -->
 
+<legend class="legend-settings">
+    <span class="glyphicon glyphicon-cog"></span>
+    Paramètres
+</legend>
+
 <div class="container">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-settings">
 
 			<div class="panel-body">
-			<legend>Paramètres</legend>
-				
                 <!-- Avatar -->
 				<div class="media settings-avatar">
                     <div class="media-left">
@@ -127,9 +130,9 @@
                 <!-- /#avatar -->
 
                 <br>
-
-                <!-- Mail -->
+                
                 <form method="POST">
+                    <!-- Mail -->
                     <div class="form-group">
     					<label class="col-md-4 control-label">Adresse mail</label>
     					<div class="col-md-4">
