@@ -30,7 +30,7 @@ while($res = $req->fetch()){
                         <span aria-hidden="true">&times;</span>
                         <span class="sr-only">Close</span>
                     </button>
-                    <img class="[ img-circle pull-left ]" src="<?php echo $res['avatarActu']; ?>" alt="profile.jpg"/>
+                    <img class="[ img-circle pull-left ]" src="img/avatars/<?php echo $res['avatarActu']; ?>" alt="profile.jpg"/>
                     <h3><?php echo $res['auteur']; ?></h3>
                     <span class="label label-info"><?php echo $res['attributActu']; ?></span>
                     <h5><span></span><?php echo $res['date']; ?></h5>
