@@ -24,6 +24,45 @@ button:focus {
     outline: 0 !important;
 }
 
+#img-logo {
+    display: inline-block;
+    max-height: 50px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+#slogan {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+legend {
+    background-color: #25252D;
+    border: 0px solid #E8DE97;
+    border-bottom: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #F7F3D3;
+    margin: auto;
+    margin-bottom: 0px;
+    padding: 5px;
+    padding-left: 20px;
+    width: 59.4%;
+}
+
+legend > span {
+    margin-right: 10px;
+}
+
+.legend-settings {
+    width: 38%;
+}
+
+/* Notification message avec des couleurs */
+.label-as-badge {
+    border-radius: 1em;
+}
+
 /* ---------- Alert ---------- */
 
 .alert {
@@ -33,6 +72,26 @@ button:focus {
     width: 100%;
 }
 
+/* ---------- Jumbotron ---------- */
+
+.custom-jumbotron {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DE97;
+    border-top: none;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+.custom-jumbotron > .navbar {
+    margin-top: -40px;
+    margin-bottom: -20px;
+}
+
+.custom-jumbotron li,
+.custom-jumbotron li span {
+    margin-right: 5px;
+}
+
 /* ---------- Navigation Bar ---------- */
 
 .navbar {
@@ -40,12 +99,6 @@ button:focus {
     min-height: 60px;
     position: relative;
     background: #FFFFFF;
-}
-
-.navbar h1 {
-    float: left;
-    color: #25252d;
-    margin-top: -5px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -59,7 +112,13 @@ button:focus {
 .navbar-inverse .navbar-nav > li > a:focus {
     color: #25252d;
     background-color: #f7f3d3;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     line-height: 25px;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 /* ---------- Media ---------- */
@@ -201,10 +260,20 @@ button:focus {
     color: #f7f3d3;
 }
 
+.sidebar-nav li span {
+    margin-left: -20px;
+    margin-right: 5px; 
+}
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #FFF;
     background: rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .sidebar-nav li a:active,
@@ -560,12 +629,20 @@ button:focus {
     color: #25252d;
 }
 
-.panel-footer .glyphicon, .chat .glyphicon {
+.chat .glyphicon {
     margin-right: 5px;
 }
 
 .panel-footer {
     background-color: #25252d;
+}
+
+.panel-footer > .input-group > form > input {
+    width: 80%;
+}
+
+.panel-footer > .input-group > form > input {
+    width: 80%;
 }
 
 ::-webkit-scrollbar-track {
@@ -753,40 +830,81 @@ button:focus {
 
 /* ---------- reception.php ---------- */
 
-.panel-reception {
-    background-color: #FFFFFF;
-    border: 1px solid #E8DE97;
+.reception-list {
+    padding-top: 20px;
 }
 
-.conversation-wrap div:hover{
+.reception-list:hover {
     background-color: #F7F3D3;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    padding: 5px;
+    padding-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
-.conversation-wrap div.active {
-    background-color: #F7F3D3;
-    padding: 5px;
-    border: 1px solid #E8DE97;
-    border-radius: 5px;
+.reception-list p {
+    font-size: 15px;
 }
 
-.conversation-wrap .conversation .pull-left img,
-.message-wrap .msg .pull-left img {
+.reception-list > .msg-anchor {
+    color: #25252D;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.reception-list > .msg-anchor > .pull-left > img {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
 }
 
-.message-wrap .media-body .media-heading {
+.reception-list > .msg-anchor > .media-body > h5 {
+    display: inline-block;
+    margin-right: 5px;
     font-weight: 600;
 }
 
-.message-wrap > form > textarea {
-    margin-top: 20px;
-    margin-bottom: 10px;
+.reception-list > .msg-anchor > .media-body > small {
+    margin-left: 5px;
 }
 
-.message-wrap > form > button {
-    margin-right: 8px;
+.reception-list > .msg-anchor > .media-body > .msg-lu {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- envoi.php ---------- */
+
+.form-envoi label {
+    line-height: 30px;
+}
+
+.form-envoi > .envoi-destinataire {
+    margin: 0px -30px 15px 0px;
+}
+
+.form-envoi > .btn-envoi {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- apropos.php ---------- */
+
+.apropos > .row > .media-list img {
+    border: 5px solid #E8DE97;
+    height: 150px;
+    width: 150px;
 }

@@ -24,7 +24,7 @@
     <!-- à enlever -->
     <div class="jumbotron" style="background-color: white;">
         <a href="reception.php"> Boîte de réception </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="envoi.php?r=<?= urlencode($p_exp) ?>"> Répondre </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="supprimer.php?id=<?= urlencode($m['id']) ?>"> Supprimer le message </a><br /><br /><br />
-        <h3 align="center"> Lecture du message #<?= $id_message ?></h3>
+        <h3 align="center"> Message :</h3>
         <div align="center">
             <?php if($msg_nbr == 0){ echo "ERREUR"; } else {?>
             <b><?= $p_exp ?></b> vous a envoyé : <br />
