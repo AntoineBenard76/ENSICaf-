@@ -38,7 +38,8 @@ CREATE TABLE `actu` (
   `nbLike` int(11) NOT NULL,
   `nbDislike` int(11) NOT NULL,
   `avatarActu` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `attributActu` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `attributActu` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -65,7 +66,8 @@ CREATE TABLE `chat` (
   `contenuMes` text COLLATE utf8_unicode_ci NOT NULL,
   `dateMes` datetime NOT NULL,
   `avatarMes` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `attributExp` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `attributExp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -110,7 +112,8 @@ CREATE TABLE `clubs` (
   `membres` int(11) NOT NULL,
   `president` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `realisation` text COLLATE utf8_unicode_ci NOT NULL,
-  `evenements` text COLLATE utf8_unicode_ci NOT NULL
+  `evenements` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -138,7 +141,8 @@ CREATE TABLE `membres` (
   `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `specialite` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `attribut` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `parcours` text COLLATE utf8_unicode_ci NOT NULL
+  `parcours` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -163,7 +167,8 @@ CREATE TABLE `messages` (
   `id_expediteur` int(11) NOT NULL,
   `id_destinataire` int(11) NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
-  `lu` int(11) NOT NULL
+  `lu` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
@@ -184,7 +189,8 @@ CREATE TABLE `recuperation` (
   `id` int(11) NOT NULL,
   `mail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `code` int(11) NOT NULL,
-  `confirme` int(11) NOT NULL
+  `confirme` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -193,46 +199,6 @@ CREATE TABLE `recuperation` (
 
 INSERT INTO `recuperation` (`id`, `mail`, `code`, `confirme`) VALUES
 (1, 'antoine.benard@uha.fr', 94992485, 0);
-
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `actu`
---
-ALTER TABLE `actu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `chat`
---
-ALTER TABLE `chat`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `clubs`
---
-ALTER TABLE `clubs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `membres`
---
-ALTER TABLE `membres`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `recuperation`
---
-ALTER TABLE `recuperation`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
