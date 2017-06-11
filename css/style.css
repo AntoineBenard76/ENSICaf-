@@ -101,12 +101,6 @@ legend > span {
     background: #FFFFFF;
 }
 
-.navbar h1 {
-    float: left;
-    color: #25252d;
-    margin-top: -5px;
-}
-
 .navbar-inverse .navbar-nav > li > a {
     color: #25252d;
     float: right;

@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="col-sm-7 col-md-5">
             <div class="navbar-header">
-                <a class="navbar-brand" href="accueil.php"><img src="img/logo_ensicafe.png" id="img-logo"><small id="slogan">le réseau social dopé à la caféine</small></a>
+                <a class="navbar-brand" href="accueil.php"><img src="img/logo_ensicafe.png" id="img-logo"><small class="text-muted" id="slogan">le réseau social dopé à la caféine</small></a>
             </div>
         </div>
         <div class="col-sm-5 col-md-7">
