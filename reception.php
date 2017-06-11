@@ -51,7 +51,7 @@
                 <div class="col-md-12">
                     <!-- Message 1 -->
                     <div class="media media-middle reception-list" id="msg_1">
-                        <a href="envoi.php" class="msg-anchor">
+                        <a href="lecture.php" class="msg-anchor">
                             <span class="pull-left">
                                 <img class="img-circle media-object" src="img/profile_test1.png" alt="profile_test1.png">
                             </span>
@@ -70,7 +70,7 @@
 
                     <!-- Message 2 -->
                     <div class="media media-middle reception-list" id="msg_2">
-                        <a href="envoi.php" class="msg-anchor">
+                        <a href="lecture.php" class="msg-anchor">
                             <span class="pull-left">
                                 <img class="img-circle media-object" src="img/profile_test2.jpg" alt="profile_test2.jpg">
                             </span>
