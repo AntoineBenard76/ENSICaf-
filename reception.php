@@ -16,7 +16,7 @@
     <div class="jumbotron panel-reception">
         <legend>Vos messages</legend>
 
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default">
             <!-- Header : collapse pour les écrans réduits -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="reception-navbar-collapse">
@@ -50,31 +50,38 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- Message 1 -->
-                    <div class="media media-middle reception-list" id="menu_1">
-                        <span class="pull-left">
-                            <img class="img-circle media-object" src="img/profile_test1.png" alt="profile_test1.png">
-                        </span>
-                        <div class="media-body media-middle">
-                            <h5 class="media-heading">Le super chat</h5>
-                            <span class="label label-info">Chat</span>
-                            <small class="text-muted"><span class="glyphicon glyphicon-time"></span> La date ici</small>
-                            <p>Vous avez reçu un message !</p>
-                        </div>
+                    <div class="media media-middle reception-list" id="msg_1">
+                        <a href="envoi.php" class="msg-anchor">
+                            <span class="pull-left">
+                                <img class="img-circle media-object" src="img/profile_test1.png" alt="profile_test1.png">
+                            </span>
+                            <div class="media-body media-middle">
+                                <h5 class="media-heading">Le super chat</h5>
+                                <span class="label label-info">Chat</span>
+                                <small class="text-muted"><span class="glyphicon glyphicon-time"></span> La date ici</small>
+                                <!-- Message non lu -->
+                                <p>Vous avez reçu un message !</p>
+                            </div>
+                        </a>
                     </div>
                     <!-- /#message 1 -->
 
                     <hr class="divider">
 
                     <!-- Message 2 -->
-                    <div class="media media-middle reception-list" id="menu_1">
-                        <a class="pull-left" href="#">
-                            <img class="img-circle media-object" src="img/profile_test2.jpg" alt="profile_test2.jpg">
+                    <div class="media media-middle reception-list" id="msg_2">
+                        <a href="envoi.php" class="msg-anchor">
+                            <span class="pull-left">
+                                <img class="img-circle media-object" src="img/profile_test2.jpg" alt="profile_test2.jpg">
+                            </span>
+                            <div class="media-body media-middle">
+                                <h5 class="media-heading">La super grenouille</h5>
+                                <span class="label label-success">Grenouille</span>
+                                <small class="text-muted"><span class="glyphicon glyphicon-time"></span> La date ici</small>
+                                <!-- Message lu -->
+                                <p class="msg-lu">Vous avez reçu un message !</p>
+                            </div>
                         </a>
-                        <div class="media-body media-middle">
-                            <h5 class="media-heading">La super grenouille</h5>
-                            <span class="label label-success">Grenouille</span>
-                            <p>Vous avez reçu un message !</p>
-                        </div>
                     </div>
                     <!-- /#message 2 -->
                 </div>

@@ -12,7 +12,8 @@
                         <a href="profil.php?id=<?= $_SESSION['id']?>">
                             <img    class="img-circle" 
                                     src="img/avatars/<?= $_SESSION['avatar']?>"
-                                    style="width: 30px; height: 30px;"/>
+                                    style="width: 30px; height: 30px;"
+                                    alt="avatar_img"/>
                             <?= utf8_decode($_SESSION['nom']) ;?>
                             <?= utf8_decode($_SESSION['prenom']);?>
                         </a>
