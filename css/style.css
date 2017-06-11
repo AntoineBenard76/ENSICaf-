@@ -666,9 +666,9 @@ legend > span {
     position: fixed;
     color: #f7f3d3;
     background-color: #25252d;
-    right: 0;
+    right: 0px;
     bottom: 0px;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 30px;
     text-align: center;
@@ -930,8 +930,6 @@ legend > span {
     margin-left: 5px;
     text-decoration: none;
 }
-
-.panel-apropos .panel-origine 
 
 #logo-ensisa {
     display: block;
