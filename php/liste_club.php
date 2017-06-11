@@ -6,7 +6,7 @@
         die('Erreur : '.$e->getMessage()); 
     }
 
-    $clubs = $bdd->query('SELECT nom,description FROM clubs');
+    $clubs = $bdd->query('SELECT id,nom,description,photo FROM clubs');
 
     foreach ($clubs as $value){   
 ?>
@@ -18,14 +18,16 @@
 				<div class="club-actions pull-right">
 					<!--<a href="#">-->
                             <!--<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span>Voir</button>-->
-                    <input type="button" class="btn btn-info" value="Voir" onclick="javascript:location.href='./pageclub.php'"/><span class="glyphicon glyphicon-log-in"></span>
+                    <!--Problème avec l'icone-->
+                    <!--<input type="button" class="btn btn-info" value="Voir" onclick="javascript:location.href='./pageclub.php'"/><span class="glyphicon glyphicon-log-in"></span>-->
+                    <a class="btn btn-info" href="pageclub.php?nb=<?php echo $value['id']; ?>">Voir <span class="glyphicon glyphicon-log-in"></span></a>
 					<!--</a>-->
 				</div>
 			</div>
 			<div class="club-body"><br>
                 <div class="media">
                     <div class="media-left">
-                        <img class="media-object" src="img/profile_test1.png" alt="photo_club" />
+                        <img class="media-object" src="<?php echo $value['photo']; ?>" alt="photo_club" />
                     </div>
                     <div class="media-body">
                         <p><?php echo $value['description']; ?></p>

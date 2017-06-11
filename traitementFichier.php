@@ -118,10 +118,10 @@ $_SESSION['dossier']=$dossier;
 $_SESSION['dossier2']=$dossier2;
 // fin traitement du fichier
 if(!empty($_POST['publier'])){
-	$publier = htmlspecialchars($_POST['publier']);
-	$type="actualite";
+	$publier = htmlspecialchars($_POST['contenu']);
+	$type=htmlspecialchars($_POST['btn-publication']);
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
-    $insertion->execute(array($_SESSION['auteur'],$_POST['publier'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
+    $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }
 header("Location:accueil.php");
 ?>

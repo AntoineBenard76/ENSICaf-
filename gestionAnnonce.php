@@ -18,6 +18,7 @@ while($res = $req->fetch()){
         print '<script>setId('.$res['id'].');</script>';
         $first = false;
     }
+    //Supprimer la puce avec le css
     print '<li>';
 ?>
     <!-- Post 1 -->
@@ -47,6 +48,7 @@ while($res = $req->fetch()){
                     </div>
 
                     <!-- Réactions : dislike / like / love -->
+                    <!--Affichage peu esthétique-->
                     <div class="pull-right">
                         <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button><?php echo $res['nbDislike']; ?>
                         <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button><?php echo $res['nbLike']; ?>

@@ -76,6 +76,7 @@
                     });
                 </script>
                 <!--Création d'un club-->
+                <!--Peu esthétique-->
                 <div class="club-panel" id="form-club">
                     <div class="innter-form">
                         <form method="POST" action="traitementClub.php" id="creerClub" class="sa-innate-form">
@@ -86,7 +87,7 @@
                             <input type=text name="description" placeholder="Description" required="required"/>
 
                             <label>Photo</label>
-                            <input type=text name="photo" placeholder="Insérer un photo"/>
+                            <input type=text name="photo" placeholder="Insérer un photo" required="required"/>
 
                             <label>Nombre de membres</label>
                             <input type=integer name="membres" placeholder="Nombre de membres" required="required"/>
@@ -95,10 +96,10 @@
                             <input type=text name="nompres" placeholder="Nom president" required="required"/>
 
                             <label>Réalisation</label>
-                            <textarea name="realisations" placeholder="Réalisations"></textarea>
+                            <textarea name="realisations" placeholder="Réalisations" required="required"></textarea>
 
                             <label>Evénements</label>
-                            <textarea name="evenements" placeholder="Evénements"></textarea>
+                            <textarea name="evenements" placeholder="Evénements" required="required"></textarea>
                             <input type="submit" value="Enregistrer" class="btn btn-info"/>
                         </form>
                     </div>

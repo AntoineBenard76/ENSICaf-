@@ -18,11 +18,8 @@ while($res = $req->fetch()){
         print '<script>setId('.$res['id'].');</script>';
         $first = false;
     }
-    /*$req_avatar=$bdd->prepare('SELECT avatar, attribut FROM profil WHERE prenom=? OR nom=?');
-    $req_avatar->execute(array($res['auteur'],$res['auteur']));
-    $req_avatar=$req_avatar->fetch();*/
-    //while($res2 = $req_avatar->fetch()){
-        print '<li>';
+    //Supprimer la puce avec le css
+    print '<li>';
 ?>
     <!-- Post 1 -->
     <div class="[panel panel-default] panel-custom">
@@ -51,6 +48,7 @@ while($res = $req->fetch()){
                     </div>
 
                     <!-- Réactions : dislike / like / love -->
+                    <!--Affichage peu esthétique-->
                     <div class="pull-right">
                         <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button><?php echo $res['nbDislike']; ?>
                         <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button><?php echo $res['nbLike']; ?>

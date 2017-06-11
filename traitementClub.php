@@ -7,33 +7,15 @@
     }
 
     if(isset($_POST['enregistrer'])){
-        if(!empty($_POST['nom'])){
-            $nom = htmlspecialchars($_POST['nom']);   
-
-            if(!empty($_POST['description'])){
-                $description = htmlspecialchars($_POST['description']);   
-
-                if(!empty($_POST['photo'])){
-                    $photo = htmlspecialchars($_POST['photo']);   
-
-                    if(!empty($_POST['membres'])){
-                        $membres = htmlspecialchars($_POST['membres']);   
-
-                        if(!empty($_POST['nompres'])){
-                            $nompres = htmlspecialchars($_POST['nompres']);   
-
-                            if(!empty($_POST['realisations'])){
-                                $realisations = htmlspecialchars($_POST['realisations']);   
-
-                                if(!empty($_POST['evenements'])){
-                                    $evenements = htmlspecialchars($_POST['evenements']); 
-                                    $sql=$bdd->query('INSERT INTO clubs VALUES (NULL"'.$nom.'","'.$description.'","'.$photo.'","'.$membres.'","'.$nompres.'","'.$realisations.'","'.$evenements.'")');
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        $nom = htmlspecialchars($_POST['nom']);   
+        $description = htmlspecialchars($_POST['description']);   
+        $photo = htmlspecialchars($_POST['photo']);   
+        $membres = htmlspecialchars($_POST['membres']);   
+        $nompres = htmlspecialchars($_POST['nompres']);   
+        $realisations = htmlspecialchars($_POST['realisations']);   
+        $evenements = htmlspecialchars($_POST['evenements']); 
+        $sql=$bdd->prepare('INSERT INTO clubs(nom,description,photo,membres,president,realisation,evenements) VALUES (?,?,?,?,?,?,?)');
+        $sql->execute(array($nom,$description,$photo,$membres,$nompres,$realisations,$evenements));
     }
+    header("Location:club.php");
 ?>
