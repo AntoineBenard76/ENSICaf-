@@ -49,59 +49,39 @@
 <!--         <table id="clickable-table"> -->
             <div class="row">
                 <div class="col-md-12">
-                    <!-- Message 1 -->
+                    <?php 
+
+            if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
+            while($m = $msg->fetch()) {
+            $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
+            $p_exp->execute(array($m['id_expediteur']));
+            $donnees_exp = $p_exp->fetch();
+            $mail_exp = $donnees_exp['mail'];
+        ?>
+              <!-- Message 1 -->
                     <div class="media media-middle reception-list" id="msg_1">
-                        <a href="lecture.php" class="msg-anchor">
+                        <a href="lecture.php?id=<?= $m['id'] ?>" class="msg-anchor">
                             <span class="pull-left">
-                                <img class="img-circle media-object" src="img/profile_test1.png" alt="profile_test1.png">
+                                <img class="img-circle media-object" src="img/avatars/<?php echo $donnees_exp['avatar'];?>" alt="Erreur chargement image">
                             </span>
                             <div class="media-body media-middle">
-                                <h5 class="media-heading">Le super chat</h5>
-                                <span class="label label-info">Chat</span>
-                                <small class="text-muted"><span class="glyphicon glyphicon-time"></span> La date ici</small>
-                                <!-- Message non lu -->
+                                <h5 class="media-heading"><?php echo $mail_exp;?></h5>
+                                <span class="label label-info"><?php echo $donnees_exp['attribut'];?></span>
+                                <small class="text-muted"><span class="glyphicon glyphicon-time"></span><?php echo $m['dateEnvoi']; ?></small>
+                                <?php if($m['lu'] == 0){ ?>
                                 <p>Vous avez reçu un message !</p>
+                                <?php } else { ?>
+                                <p class="msg-lu">Vous avez reçu un message !</p> <?php } ?>
                             </div>
                         </a>
                     </div>
-                    <!-- /#message 1 -->
-
                     <hr class="divider">
-
-                    <!-- Message 2 -->
-                    <div class="media media-middle reception-list" id="msg_2">
-                        <a href="lecture.php" class="msg-anchor">
-                            <span class="pull-left">
-                                <img class="img-circle media-object" src="img/profile_test2.jpg" alt="profile_test2.jpg">
-                            </span>
-                            <div class="media-body media-middle">
-                                <h5 class="media-heading">La super grenouille</h5>
-                                <span class="label label-success">Grenouille</span>
-                                <small class="text-muted"><span class="glyphicon glyphicon-time"></span> La date ici</small>
-                                <!-- Message lu -->
-                                <p class="msg-lu">Vous avez reçu un message !</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- /#message 2 -->
+                                <?php } ?>
                 </div>
             </div>
 <!--         </table> -->
 
         <hr class="divider">
-
-        <?php 
-            if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
-            while($m = $msg->fetch()) {
-            $p_exp = $bdd->prepare('SELECT mail FROM membres WHERE id = ?');
-            $p_exp->execute(array($m['id_expediteur']));
-            $p_exp = $p_exp->fetch();
-            $p_exp = $p_exp['mail'];
-        ?>
-
-        <?php echo $m['dateEnvoi']; ?><?php if($m['lu'] == 1){ ?> <i>(Lu)</i> <?php } ?> <b><?= $p_exp ?></b> vous a envoyé <a href="lecture.php?id=<?= $m['id'] ?>">ce message</a> <br />
-        --------------------------------------------------------<br/>
-        <?php } ?>
     
     <div align="center">
         <form method="POST" action="nonlu.php">
