@@ -23,6 +23,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `actu`
+--
+
+CREATE TABLE `actu` (
+  `id` int(11) NOT NULL,
+  `auteur` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `contenu` text COLLATE utf8_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `fichier` text COLLATE utf8_unicode_ci NOT NULL,
+  `typefichier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stockage` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nbLike` int(11) NOT NULL,
+  `nbDislike` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `actu`
+--
+
+INSERT INTO `actu` (`id`, `auteur`, `contenu`, `date`, `type`, `fichier`, `typefichier`, `stockage`, `nbLike`, `nbDislike`) VALUES
+(3, 'Antoine', 'coucou', '2017-06-07 00:00:00', '', '', '', '', 5, 3),
+(9, 'Jonathan', 'test news', '2017-06-12 12:11:00', 'annonce', '', '', '', 1, 5),
+(10, 'Antoine', 'autre test news', '2017-06-12 13:11:00', 'annonce', '', '', '', 1, 5),
+(11, 'Thomas', 'test ajax', '2017-06-11 09:46:00', '', '', '', '', 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `chat`
 --
 
@@ -96,6 +126,7 @@ CREATE TABLE `messages` (
   `id_destinataire` int(11) NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   `lu` int(11) NOT NULL,
+  `dateEnvoi` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
@@ -103,9 +134,9 @@ CREATE TABLE `messages` (
 -- Contenu de la table `messages`
 --
 
-INSERT INTO `messages` (`id`, `id_expediteur`, `id_destinataire`, `message`, `lu`) VALUES
-(11, 17, 16, 'coucou jacky\r\n', 0),
-(12, 17, 16, 'earzarter', 0);
+INSERT INTO `messages` (`id`, `id_expediteur`, `id_destinataire`, `message`, `lu`, `dateEnvoi`) VALUES
+(11, 17, 16, 'coucou jacky\r\n', 0, '0000-00-00 00:00:00'),
+(12, 17, 16, 'earzarter', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
