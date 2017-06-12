@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 12 Juin 2017 à 11:23
+-- Généré le :  Lun 12 Juin 2017 à 17:06
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -85,7 +85,9 @@ INSERT INTO `chat` (`id`, `nomExp`, `prenomExp`, `contenuMes`, `dateMes`, `avata
 (36, 'BÃ©nard', 'Antoine', 'Ã§a marche ?', '2017-06-11 10:35:14', '17.gif', 'Etudiant'),
 (37, 'Weber', 'Jonathan', 'Bonsoir', '2017-06-11 18:30:47', '14.png', 'Professeur'),
 (38, 'Muche', 'Chloé', 'Coucou tout le monde', '2017-06-11 22:02:26', 'default.jpg', 'Etudiant'),
-(39, 'Muche', 'Chloé', 'Coucou tout le monde', '2017-06-11 22:03:08', 'default.jpg', 'Etudiant');
+(39, 'Muche', 'Chloé', 'Coucou tout le monde', '2017-06-11 22:03:08', 'default.jpg', 'Etudiant'),
+(40, 'BÃ©nard', 'Antoine', 'prout', '2017-06-12 11:31:50', '17.gif', 'Etudiant'),
+(41, 'Muche', 'Chloé', 'test', '2017-06-12 11:32:33', '20.png', 'Etudiant');
 
 -- --------------------------------------------------------
 
@@ -101,17 +103,19 @@ CREATE TABLE `clubs` (
   `membres` int(11) NOT NULL,
   `president` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `realisation` text COLLATE utf8_unicode_ci NOT NULL,
-  `evenements` text COLLATE utf8_unicode_ci NOT NULL
+  `evenements` text COLLATE utf8_unicode_ci NOT NULL,
+  `nomEvenement` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `clubs`
 --
 
-INSERT INTO `clubs` (`id`, `nom`, `description`, `photo`, `membres`, `president`, `realisation`, `evenements`) VALUES
-(1, 'XID', 'Club info', '8.png', 1, 'test', 'zrze', 'zrzrtet'),
-(2, 'JDR', 'Jeux de rôles', '', 1, 'Georges', 'rzqefqz', 'zefzef'),
-(3, 'Rototo', 'uzrghurege', '1.jpg', 10, 'azrt', 'zefz', 'zef');
+INSERT INTO `clubs` (`id`, `nom`, `description`, `photo`, `membres`, `president`, `realisation`, `evenements`, `nomEvenement`) VALUES
+(1, 'XID', 'Club info', '8.png', 1, 'test', 'zrze', 'Mardi 25 venez nombreux', 'Soirée codage'),
+(2, 'JDR', 'Jeux de rôles', '', 1, 'Georges', 'rzqefqz', 'zefzef', ''),
+(3, 'Rototo', 'uzrghurege', '1.jpg', 10, 'azrt', 'zefz', 'zef', ''),
+(4, 'Try', 'super club', '1.jpg', 15, 'AntoineLeThug', 'Création d\'une église', 'Grosse fiesta vers l\'ensisa', 'SUPER SOIREE');
 
 -- --------------------------------------------------------
 
@@ -171,15 +175,13 @@ INSERT INTO `messages` (`id`, `id_expediteur`, `id_destinataire`, `message`, `lu
 (13, 17, 16, 'prout ahah', 1, '0000-00-00 00:00:00'),
 (14, 16, 17, 'prout', 1, '2017-06-10 14:23:44'),
 (16, 18, 17, 'Coucou t\'es pas beau !', 1, '2017-06-11 14:05:37'),
-(17, 17, 17, 'coucou', 1, '2017-06-11 18:16:13'),
 (18, 17, 14, 'Bonsoir monsieur', 0, '2017-06-11 18:27:07'),
 (19, 17, 14, 'test 2', 1, '2017-06-11 18:29:48'),
 (20, 14, 17, 'Sale gosse !', 1, '2017-06-11 18:30:20'),
 (21, 17, 16, 'Cool merci pour le message !', 0, '2017-06-11 18:35:15'),
 (22, 20, 16, 'zeifru', 0, '2017-06-11 22:03:31'),
 (23, 17, 17, 'rargaeg', 1, '2017-06-11 23:55:05'),
-(24, 17, 17, 'zefzef', 1, '2017-06-11 23:55:50'),
-(26, 17, 17, 'tezrgerge', 0, '2017-06-12 11:19:39');
+(24, 17, 17, 'zefzef', 1, '2017-06-11 23:55:50');
 
 -- --------------------------------------------------------
 
@@ -254,12 +256,12 @@ ALTER TABLE `actu`
 -- AUTO_INCREMENT pour la table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT pour la table `clubs`
 --
 ALTER TABLE `clubs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
@@ -269,7 +271,7 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `recuperation`
 --
