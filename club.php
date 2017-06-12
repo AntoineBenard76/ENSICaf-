@@ -97,9 +97,7 @@
 
                             <label>Réalisation</label>
                             <textarea name="realisations" placeholder="Réalisations" required="required"></textarea>
-
-                            <label>Evénements</label>
-                            <textarea name="evenements" placeholder="Evénements" required="required"></textarea>
+                            
                             <input type="submit" name="enregistrer" value="Enregistrer" class="btn btn-info"/>
                         </form>
                     </div>

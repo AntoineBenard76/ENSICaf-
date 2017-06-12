@@ -13,9 +13,10 @@
         $membres = htmlspecialchars($_POST['membres']);   
         $nompres = htmlspecialchars($_POST['nompres']);   
         $realisations = htmlspecialchars($_POST['realisations']);   
-        $evenements = htmlspecialchars($_POST['evenements']); 
-        $sql=$bdd->prepare('INSERT INTO clubs(nom,description,photo,membres,president,realisation,evenements) VALUES (?,?,?,?,?,?,?)');
-        $sql->execute(array($nom,$description,$photo,$membres,$nompres,$realisations,$evenements));
+        $evenements = "A venir";
+        $nomEvenement = "A choisir";
+        $sql=$bdd->prepare('INSERT INTO clubs(nom,description,photo,membres,president,realisation,evenements,nomEvenement) VALUES (?,?,?,?,?,?,?,?)');
+        $sql->execute(array($nom,$description,$photo,$membres,$nompres,$realisations,$evenements,$nomEvenement));
     }
     header("Location:club.php");
 ?>
