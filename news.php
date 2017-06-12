@@ -54,8 +54,8 @@ while($res = $req->fetch()){
 								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="400" height="400"/>une video</video>';
 							}
 							if($res['stockage']=="url"){
-								$save=$vid['url'];
-								$url=substr($vid['url'],0,23);
+								$save=$res['fichier'];
+								$url=substr($res['fichier'],0,23);
 								$url=$url."/embed/".substr($save,32);
 								echo '<iframe width="400" height="400" src="'.$url.'" frameborder="0" allowfullscreen></iframe>';
 							}

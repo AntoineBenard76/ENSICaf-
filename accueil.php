@@ -130,7 +130,8 @@
                                 </span>
                             </div>
                             <!-- /#envoyer-une-image -->
-
+								<input type="text" name="image" placeholder="pour l'url d'une image" />
+								<input type="text" name="video" placeholder="pour l'url d'une video" />
                             <!-- Envoyer un message -->
                             <!--<form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">-->
                                 <textarea class="form-control" placeholder="Entrez votre message" rows="2" name="contenu"></textarea>
