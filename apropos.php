@@ -96,7 +96,7 @@
                             <!-- Thomas -->
                             <li class="media">
                                 <div class="media-left">
-                                    <img class="img-circle" src="img/profile_test1.png" alt="thomas.jpg"/>
+                                    <img class="img-circle" src="img/equipe/thomas.jpg" alt="thomas.jpg"/>
                                 </div>
                                 <div class="media-body">
                                     <h4>Thomas Blangero</h4>

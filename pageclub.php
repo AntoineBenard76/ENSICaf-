@@ -230,7 +230,7 @@
                         <!-- Header -->
                         <div class="panel-heading">
                             <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseEvent_1">
-                                <h4><?= $res['nomEvenement'];?></h4>
+                                <h4><?= utf8_decode($res['nomEvenement']);?></h4>
                                 <span class="pull-right date-event-club">Date <span class="glyphicon glyphicon-calendar"></span></span>
                             </a>
                         </div>
@@ -238,7 +238,7 @@
                         <!-- Contenu -->
                         <div id="collapseEvent_1" class="panel-collapse collapse in" role="tabpanel">
                             <div class="panel-body">
-                                <p><?= $res['evenements'];?></p>
+                                <p><?= utf8_decode($res['evenements']);?></p>
                             </div>
                         </div>
                     </div>
