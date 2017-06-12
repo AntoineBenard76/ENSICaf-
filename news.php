@@ -33,7 +33,9 @@ while($res = $req->fetch()){
                         <span class="sr-only">Close</span>
                     </button>
                     <img class="[ img-circle pull-left ]" src="img/avatars/<?php echo $res['avatarActu']; ?>" alt="profile.jpg"/>
+
                     <h3><?php echo utf8_decode($res['auteur']); ?></h3>
+
                     <span class="label label-info"><?php echo $res['attributActu']; ?></span>
                     <h5><span></span><?php echo $res['date']; ?></h5>
                     <div class="border-bottom"></div>
@@ -48,6 +50,7 @@ while($res = $req->fetch()){
                     <div class="pull-left">
                         <div class="input-placeholder">Commenter...</div>
                     </div>
+
 
                     <!-- Réactions : dislike / like / love -->
                     <div class="pull-right">
@@ -86,6 +89,7 @@ while($res = $req->fetch()){
                             }
                         ?>
                     </ul>
+
                 </div>
                 <!-- Panel caché pour commenter -->
                 <div class="panel-comment">

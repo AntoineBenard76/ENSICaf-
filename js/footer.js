@@ -52,7 +52,7 @@
         $('.preview-filename').val("");
         $('.preview-clear').hide();
         $('.preview-input input:file').val("");
-        $(".preview-input-title").text("Browse"); 
+        $(".preview-input-title").text("Image"); 
         }); 
 
         // Montre le nom du fichier à upload
@@ -60,23 +60,10 @@
             var file = this.files[0];
             var reader = new FileReader();
             reader.onload = function (e) {
-                $(".preview-input-title").text("Change");
+                $(".preview-input-title").text("Autre");
                 $(".preview-clear").show();
                 $(".preview-filename").val(file.name);
             }  
             reader.readAsDataURL(file);
-            });  
-        });
-
-        // reception.php : cache et affiche les messages en fonction de la personne sélectionnée
-        $(document).ready(function() {
-            $('#msg-wrap').hide();
-            $('.conversation').click(function() {
-                var id = this.id.substring(5); // Récupère les 5 premiers caractères de l'id qui sont menu_ et numero de l'id (menu_1,...)
-                $(this).siblings('.conversation').removeClass('active');
-                $(this).addClass('active');
-                $('[id^=message_]').hide();
-                $('#message_'+id).show();
-                $('#msg-wrap').show();
             });  
         });
