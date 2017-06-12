@@ -57,7 +57,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
                     </li>
                     <li>
                         <p class="navbar-btn">
-                            <a href="#" class="btn btn-info">
+                            <a href="envoi.php?r=<?= urlencode($p_exp) ?>" class="btn btn-info">
                                 <span class="glyphicon glyphicon-envelope"></span>
                                 Répondre
                             </a>
@@ -65,7 +65,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
                     </li>
                     <li>
                         <p class="navbar-btn">
-                            <a href="#" class="btn btn-danger">
+                            <a href="supprimer.php?id=<?= urlencode($m['id']) ?>" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span>
                                 Supprimer
                             </a>
@@ -77,21 +77,17 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
         </nav>
         <!-- /#navigation -->
 
-    </div>
-    <!-- /#panel-lecture -->
+        <hr class="divider">
 
-    <!-- à enlever -->
-    <div class="jumbotron" style="background-color: white;">
-        <a href="reception.php"> Boîte de réception </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="envoi.php?r=<?= urlencode($p_exp) ?>"> Répondre </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="supprimer.php?id=<?= urlencode($m['id']) ?>"> Supprimer le message </a><br /><br /><br />
-        <h3 align="center"> Message :</h3>
-        <div align="center">
+        <div class="jumbotron lecture-message">
             <?php if($msg_nbr == 0){ echo "ERREUR"; } else {?>
-            <b><?= $p_exp ?></b> vous a envoyé : <br />
-            <?= nl2br($m['message']) ?><br/>
+                <b><?= $p_exp ?></b> vous a envoyé :
+                <p><?= nl2br($m['message']) ?><br/></p>
             <?php } ?>
         </div>
+
     </div>
-    <!-- /#à enlever -->
+    <!-- /#panel-lecture -->
 
 </div>
 
@@ -103,5 +99,6 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
 
     }
 }
+include('chatbox.php');
 include('php/footer.php');
 ?>
