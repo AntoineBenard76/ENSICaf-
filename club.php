@@ -62,7 +62,6 @@
         <div class="row">
             <div class="col-md-12">
                 <!--Création d'un club-->
-                <!--Peu esthétique-->
                 <div class="club-panel" id="form-club">
                     <form method="POST" action="traitementClub.php" id="creerClub" class="form-inline">
                         <div class="form-group">
@@ -75,25 +74,25 @@
                             <input class="form-control" type=text name="description" placeholder="Description rapide" required="required"/>
                         </div>                            
 
-<!--                         <div class="form-group">
+                        <div class="form-group">
                             <label for="photo">Photo</label>
-                            <input class="form-control" type=text name="photo" placeholder="Insérer une photo" required="required"/>
-                        </div> -->
-
-<!--                         <div class="form-group">
-                            <label for="membres">Nombre de membres</label>
-                            <input class="form-control" type=integer name="membres" placeholder="Nombre de membres"/>
+                            <input class="form-control" type="file" name="photo" placeholder="Insérer une photo" required="required"/>
                         </div>
- -->
+
+                        <div class="form-group">
+                            <label for="membres">Nombre de membres</label>
+                            <input class="form-control" type=integer name="membres" placeholder="Nombre de membres" required="required"/>
+                        </div>
+
                         <div class="form-group">
                             <label for="nompres">Nom du president</label>
                             <input class="form-control" type=text name="nompres" placeholder="Président du club" required="required"/>
                         </div>
 
-<!--                         <div class="form-group">
+                        <div class="form-group">
                             <label for="realisations">Réalisation</label>
-                            <textarea class="form-control" name="realisations" placeholder="Réalisations"></textarea>
-                        </div>           -->                  
+                            <textarea class="form-control" name="realisations" placeholder="Réalisations" required="required"></textarea>
+                        </div>                            
 
                         <button type="submit" name="enregistrer" value="Enregistrer" class="btn btn-primary form-control"/>Enregistrer</button>
                     </form>
