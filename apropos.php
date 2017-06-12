@@ -13,7 +13,8 @@
                 <!-- Header -->
                 <div class="panel-heading">
                     <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapse-equipe">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"> L'équipe</span>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        L'équipe
                     </a>
                 </div>
                 <!-- /#header -->
@@ -132,7 +133,8 @@
                 <!-- Header -->
                 <div class="panel-heading">
                     <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapse-origine">
-                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"> L'origine du projet</span>
+                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                        L'origine du projet
                     </a>
                 </div>
                 <!-- /#header -->
@@ -156,7 +158,8 @@
                 <!-- Header -->
                 <div class="panel-heading">
                     <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapse-remerciement">
-                        <span class="glyphicon glyphicon-heart" aria-hidden="true"> Remerciement</span>
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                        Remerciement
                     </a>
                 </div>
                 <!-- /#header -->
