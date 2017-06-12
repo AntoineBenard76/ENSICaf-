@@ -800,13 +800,41 @@ button:focus {
     padding: 20px;
 }
 
+.club-panel > .form-inline > .form-group,
+.club-panel > .form-inline > .form-group > label {
+    margin-right: 5px;
+}
+
+.club-panel > .form-inline > button[type=submit] {
+    margin-top: 10px;
+}
+
+.club-panel {
+    border: none;
+}
+
+.club-panel > .club-title {
+    background-color: #25252D;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #F7F3D3;
+}
+
 .club-panel > .club-title > .club-caption {
     display: inline;
+    padding-left: 10px;
 }
 
 .club-panel > .club-title > .club-caption > .caption-name {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.club-panel > .club-title > .club-actions a {
+    color: #F7F3D3;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 5px;
 }
 
 .club-panel > .club-title > .club-actions span {
@@ -819,11 +847,19 @@ button:focus {
     border-bottom: 1px solid #eee;
 }
 
-.club-panel > .club-body > .media > .media-left > img,
-.club-panel > .club-body > .media > .media-right > img {
-    border: 2px solid #E8DE97;
+.club-panel > .club-body {
+    background-color: #FFFFFF;
+    border: 1px solid #e9e9e9;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-top: -1px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.club-panel > .club-body > .media > .media-left > img {
     max-width: 200px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 

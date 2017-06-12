@@ -17,7 +17,7 @@
     <div class="panel panel-default">
         <div class="panel-heading panel-page-title">
             <span class="glyphicon glyphicon-pawn"></span>
-            Liste des clubs de l'ensisa
+            Liste des clubs
         </div>
     </div>
     <!-- /#titre -->
@@ -58,7 +58,61 @@
 
         <hr class="divider">
 
-        <!-- idk -->
+        <!-- Création club -->
+        <div class="row">
+            <div class="col-md-12">
+                <!--Création d'un club-->
+                <!--Peu esthétique-->
+                <div class="club-panel" id="form-club">
+                    <form method="POST" action="traitementClub.php" id="creerClub" class="form-inline">
+                        <div class="form-group">
+                            <label for="nom">Nom du club</label>
+                            <input class="form-control" type=text name="nom" placeholder="Nom du club" required="required"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input class="form-control" type=text name="description" placeholder="Description rapide" required="required"/>
+                        </div>                            
+
+<!--                         <div class="form-group">
+                            <label for="photo">Photo</label>
+                            <input class="form-control" type=text name="photo" placeholder="Insérer une photo" required="required"/>
+                        </div> -->
+
+<!--                         <div class="form-group">
+                            <label for="membres">Nombre de membres</label>
+                            <input class="form-control" type=integer name="membres" placeholder="Nombre de membres"/>
+                        </div>
+ -->
+                        <div class="form-group">
+                            <label for="nompres">Nom du president</label>
+                            <input class="form-control" type=text name="nompres" placeholder="Président du club" required="required"/>
+                        </div>
+
+<!--                         <div class="form-group">
+                            <label for="realisations">Réalisation</label>
+                            <textarea class="form-control" name="realisations" placeholder="Réalisations"></textarea>
+                        </div>           -->                  
+
+                        <button type="submit" name="enregistrer" value="Enregistrer" class="btn btn-primary form-control"/>Enregistrer</button>
+                    </form>
+                </div>
+                
+                <?php
+                include('php/liste_club.php');
+                ?>
+            </div>
+        </div>
+        <!-- /#création-club -->
+
+    </div>
+    <!-- /#jumbotron -->
+    
+
+</div>
+
+<!-- ??? -->
         <?php
             if ($club->rowCount() > 0) { ?>
                 <ul id='resultat'>
@@ -67,47 +121,6 @@
                     <?php } ?>
                 </ul>
         <?php } else { echo 'Aucun résultat pour : '.$nom; } ?>
-
-    </div>
-    <!-- /#jumbotron -->
-    
-	<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-                
-                <!--Création d'un club-->
-                <!--Peu esthétique-->
-                <div class="club-panel" id="form-club">
-                    <div class="innter-form">
-                        <form method="POST" action="traitementClub.php" id="creerClub" class="sa-innate-form">
-                            <label>Nom du club</label>
-                            <input type=text name="nom" placeholder="Nom du club" required="required"/>
-
-                            <label>Description</label>
-                            <input type=text name="description" placeholder="Description" required="required"/>
-
-                            <label>Photo</label>
-                            <input type=text name="photo" placeholder="Insérer un photo" required="required"/>
-
-                            <label>Nombre de membres</label>
-                            <input type=integer name="membres" placeholder="Nombre de membres" required="required"/>
-
-                            <label>Nom du president</label>
-                            <input type=text name="nompres" placeholder="Nom president" required="required"/>
-
-                            <label>Réalisation</label>
-                            <textarea name="realisations" placeholder="Réalisations" required="required"></textarea>
-                            
-                            <input type="submit" name="enregistrer" value="Enregistrer" class="btn btn-info"/>
-                        </form>
-                    </div>
-                </div>
-                
-				<?php
-                    include('php/liste_club.php');
-                ?>
-			</div>
-	</div>
-</div>
 
 <script>
 // Permet de cacher toute la liste des clubs
