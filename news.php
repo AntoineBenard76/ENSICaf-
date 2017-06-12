@@ -61,7 +61,7 @@ while($res = $req->fetch()){
                     </div>
                     <!-- /#réactions -->
                 </div>
-        <!-- Panel caché pour commenter -->
+                <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
                         <img class="img-circle" src="img/profile_test1.png" alt="profile_test1.png">
                         <div class="panel-custom-textarea">
