@@ -24,6 +24,45 @@ button:focus {
     outline: 0 !important;
 }
 
+#img-logo {
+    display: inline-block;
+    max-height: 50px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+#slogan {
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+legend {
+    background-color: #25252D;
+    border: 0px solid #E8DE97;
+    border-bottom: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #F7F3D3;
+    margin: auto;
+    margin-bottom: 0px;
+    padding: 5px;
+    padding-left: 20px;
+    width: 59.4%;
+}
+
+legend > span {
+    margin-right: 10px;
+}
+
+.legend-settings {
+    width: 38%;
+}
+
+/* Notification message avec des couleurs */
+.label-as-badge {
+    border-radius: 1em;
+}
+
 /* ---------- Alert ---------- */
 
 .alert {
@@ -33,6 +72,26 @@ button:focus {
     width: 100%;
 }
 
+/* ---------- Jumbotron ---------- */
+
+.custom-jumbotron {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DE97;
+    border-top: none;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+}
+
+.custom-jumbotron > .navbar {
+    margin-top: -40px;
+    margin-bottom: -20px;
+}
+
+.custom-jumbotron li,
+.custom-jumbotron li span {
+    margin-right: 5px;
+}
+
 /* ---------- Navigation Bar ---------- */
 
 .navbar {
@@ -40,12 +99,6 @@ button:focus {
     min-height: 60px;
     position: relative;
     background: #FFFFFF;
-}
-
-.navbar h1 {
-    float: left;
-    color: #25252d;
-    margin-top: -5px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -59,7 +112,13 @@ button:focus {
 .navbar-inverse .navbar-nav > li > a:focus {
     color: #25252d;
     background-color: #f7f3d3;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     line-height: 25px;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 /* ---------- Media ---------- */
@@ -201,10 +260,20 @@ button:focus {
     color: #f7f3d3;
 }
 
+.sidebar-nav li span {
+    margin-left: -20px;
+    margin-right: 5px; 
+}
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #FFF;
     background: rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .sidebar-nav li a:active,
@@ -317,6 +386,7 @@ button:focus {
     background-color: #25252D;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    cursor: pointer;
     text-align: center;
 }
 
@@ -359,6 +429,10 @@ button:focus {
 }
 
 /* ---------- Panel Publications ---------- */
+
+#news li {
+    list-style-type: none;
+}
 
 .panel-custom {                             /* Post (fil d'actualité) */
     position: relative;
@@ -423,7 +497,7 @@ button:focus {
     margin-top: 15px;
 }
 
-.panel-custom > .panel-body > .pull-left > .input-placeholder {    /* Commenter */
+.panel-custom > .panel-body > .pull-left > .input-placeholder {
     border: 1px solid rgb(217, 217, 217);
     border-radius: 6px;
     display: inline-block;
@@ -433,14 +507,17 @@ button:focus {
     margin-left: -20px;
 }
 
-.panel-custom > .panel-body > .pull-left > .input-placeholder:hover {    /* Commenter */
+.panel-custom > .panel-body > .pull-left > .input-placeholder:hover {
     background-color: #F6F6F6;
     cursor: pointer;
 }
 
+.panel-custom > .panel-body > .pull-right {
+    margin-right: -30px;
+}
+
 .panel-custom > .panel-body > .pull-right > button {
-    margin-left: 40px;
-    margin-right: -10px;
+    margin-left: 20px;
 }
 
 .panel-custom > .panel-body > .pull-right > .btn-circle {
@@ -453,6 +530,27 @@ button:focus {
 
 .panel-custom > .panel-body > .pull-right > .btn-circle:focus {
     outline: none;
+}
+
+.panel-custom > .panel-body > .pull-right > .btn-dislike:hover {
+    background-color: #cccccc;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.panel-custom > .panel-body > .pull-right > .btn-like {
+    background-color: #d9534f;
+    color: white;
+}
+
+.panel-custom > .panel-body > .pull-right > .btn-like:hover {
+    background-color: #d1332e;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .panel-custom.panel-custom-show-comment > .panel-body > .pull-left > .input-placeholder {
@@ -517,7 +615,7 @@ button:focus {
     height: 250px;
 }
 
-.panel .panel-heading {         /* Barre chat général */
+.chatbox-panel .panel-heading {         /* Barre chat général */
     background-color: #25252D;
     cursor: pointer;
     margin-bottom: -1px;
@@ -560,12 +658,20 @@ button:focus {
     color: #25252d;
 }
 
-.panel-footer .glyphicon, .chat .glyphicon {
+.chat .glyphicon {
     margin-right: 5px;
 }
 
 .panel-footer {
     background-color: #25252d;
+}
+
+.panel-footer > .input-group > form > input {
+    width: 80%;
+}
+
+.panel-footer > .input-group > form > input {
+    width: 80%;
 }
 
 ::-webkit-scrollbar-track {
@@ -589,9 +695,9 @@ button:focus {
     position: fixed;
     color: #f7f3d3;
     background-color: #25252d;
-    right: 0;
+    right: 0px;
     bottom: 0px;
-    left: 0;
+    left: 0px;
     width: 100%;
     height: 30px;
     text-align: center;
@@ -668,6 +774,10 @@ button:focus {
     font-size: 12px;
 }
 
+.panel-profile .panel-heading {
+    background-color: #25252D;
+}
+
 .panel-profile .panel-heading a {
     color: #F7F3D3;
     margin-left: 5px;
@@ -728,6 +838,44 @@ button:focus {
 /* ----------------------------------------------------------------------------------------------- */
 
 
+/* ---------- pageclub.php ---------- */
+
+.panel-page-club .panel-info-club img {
+    height: 200px;
+    width: 200px;
+}
+
+.panel-page-club .panel-info-club p,
+.panel-page-club .hidden-description-club p {
+    font-size: 12px;
+}
+
+.panel-page-club .panel-event-list .panel {
+    margin-bottom: 20px;
+}
+
+.panel-page-club .panel-event-list .panel-heading {
+    background-color: #25252D;
+}
+
+.panel-page-club .panel-event-list .panel-heading a {
+    color: #F7F3D3;
+    text-decoration: none;
+}
+
+.panel-page-club .panel-event-list .panel-heading h4 {
+    display: inline;
+    margin-left: 10px;
+}
+
+.panel-page-club .panel-event-list .panel-heading .date-event-club {
+    margin-right: 10px;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
 /* ---------- settings.php ---------- */
 
 .settings-avatar > .media-left > img {
@@ -753,40 +901,115 @@ button:focus {
 
 /* ---------- reception.php ---------- */
 
-.panel-reception {
-    background-color: #FFFFFF;
-    border: 1px solid #E8DE97;
+.reception-list {
+    padding-top: 20px;
 }
 
-.conversation-wrap div:hover{
+.reception-list:hover {
     background-color: #F7F3D3;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    padding: 5px;
+    padding-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
-.conversation-wrap div.active {
-    background-color: #F7F3D3;
-    padding: 5px;
-    border: 1px solid #E8DE97;
-    border-radius: 5px;
+.reception-list p {
+    font-size: 15px;
 }
 
-.conversation-wrap .conversation .pull-left img,
-.message-wrap .msg .pull-left img {
+.reception-list > .msg-anchor {
+    color: #25252D;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.reception-list > .msg-anchor > .pull-left > img {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
 }
 
-.message-wrap .media-body .media-heading {
+.reception-list > .msg-anchor > .media-body > h5 {
+    display: inline-block;
+    margin-right: 5px;
     font-weight: 600;
 }
 
-.message-wrap > form > textarea {
-    margin-top: 20px;
-    margin-bottom: 10px;
+.reception-list > .msg-anchor > .media-body > small {
+    margin-left: 5px;
 }
 
-.message-wrap > form > button {
-    margin-right: 8px;
+.reception-list > .msg-anchor > .media-body > .msg-lu {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- envoi.php ---------- */
+
+.form-envoi label {
+    line-height: 30px;
+}
+
+.form-envoi > .envoi-destinataire {
+    margin: 0px -30px 15px 0px;
+}
+
+.form-envoi > .btn-envoi {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- apropos.php ---------- */
+
+.panel-apropos .panel-heading {
+    background-color: #25252D;
+}
+
+.panel-apropos > .panel-equipe .media-list img {
+    border: 5px solid #E8DE97;
+    height: 125px;
+    width: 125px;
+}
+
+.panel-apropos .panel-equipe .media-list .media-body h4 {
+    display: inline-block;
+}
+
+.panel-apropos .panel-equipe .media-list .media-body span {
+    font-size: 12px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.panel-apropos .panel-equipe .media-list .media-body blockquote {
+    border-left: none;
+    margin-bottom: 0;
+}
+
+.panel-apropos > .panel > .panel-heading > a {
+    color: #F7F3D3;
+    font-size: 18px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+#logo-ensisa {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    max-height: 100px;
 }

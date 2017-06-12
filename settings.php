@@ -12,7 +12,7 @@
             $newmail = htmlspecialchars($_POST['newmail']);
             $insertmail = $bdd->prepare("UPDATE membres SET mail = ? WHERE id = ?");
             $insertmail->execute(array($newmail, $_SESSION['id']));
-            header('Location:profil.php?id='.$_SESSION['id']);
+            header('Location: reload.php?id='.$_SESSION['id']);
         }
         
         if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2']))
@@ -23,7 +23,7 @@
             {
                 $insertmdp = $bdd->prepare('UPDATE membres SET motdepasse = ? WHERE id = ?');
                 $insertmdp->execute(array($mdp1, $_SESSION['id']));
-                header('Location:profil.php?id='.$_SESSION['id']);
+                header('Location: reload.php?id='.$_SESSION['id']);
             }
             else 
             {
@@ -36,7 +36,7 @@
             $newspecialite = htmlspecialchars($_POST['newspecialite']);
             $insertmail = $bdd->prepare("UPDATE membres SET specialite = ? WHERE id = ?");
             $insertmail->execute(array($newspecialite, $_SESSION['id']));
-            header('Location:profil.php?id='.$_SESSION['id']);
+            header('Location:reload.php?id='.$_SESSION['id']);
         }
 
         if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name']))
@@ -57,7 +57,7 @@
                             'avatar' => $_SESSION['id'].".".$extensionUpload,
                             'id' => $_SESSION['id']
                         ));
-                        header('Location:profil.php?id='.$_SESSION['id']);
+                        header('Location:reload.php?id='.$_SESSION['id']);
                     }
                     else
                     {
@@ -79,7 +79,7 @@
             $newparcours = htmlspecialchars($_POST['newparcours']);
             $insertparcours = $bdd->prepare("UPDATE membres SET parcours = ? WHERE id = ?");
             $insertparcours->execute(array($newparcours, $_SESSION['id']));
-            header('Location:profil.php?id='.$_SESSION['id']);
+            header('Location:reload.php?id='.$_SESSION['id']);
         }
         
      
@@ -87,13 +87,16 @@
 
 <!-- Contenu principal -->
 
+<legend class="legend-settings">
+    <span class="glyphicon glyphicon-cog"></span>
+    Paramètres
+</legend>
+
 <div class="container">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-settings">
 
 			<div class="panel-body">
-			<legend>Paramètres</legend>
-				
                 <!-- Avatar -->
 				<div class="media settings-avatar">
                     <div class="media-left">
@@ -127,9 +130,9 @@
                 <!-- /#avatar -->
 
                 <br>
-
-                <!-- Mail -->
+                
                 <form method="POST">
+                    <!-- Mail -->
                     <div class="form-group">
     					<label class="col-md-4 control-label">Adresse mail</label>
     					<div class="col-md-4">

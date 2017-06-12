@@ -1,6 +1,7 @@
 <?php
     include('php/header.php');
 ?>
+
 <!---->
 <div class="container">
 
@@ -98,7 +99,6 @@
 
 
     <!-- ********** PUBLICATION : envoyer une publication ********** -->
-
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
             <!-- Panel -->
@@ -113,37 +113,39 @@
 
                 <div id="collapse-publication" class="panel-collapse collapse" role="tabpanel">
                     <div class="panel-body">
-                        <!-- Envoyer une image -->
-                        <div class="input-group preview">
-                            <input type="text" class="form-control preview-filename" disabled="disabled">
-                            <span class="input-group-btn">
-                            <!-- preview-clear button -->
-                            <button type="button" class="btn btn-default preview-clear" style="display:none;">
-                                <span class="glyphicon glyphicon-remove"></span> Annuler
-                            </button>
-                            <!-- preview-input -->
-                            <div class="btn btn-default preview-input">
-                                <span class="glyphicon glyphicon-folder-open"></span>
-                                <span class="preview-input-title">Image</span>
-                                <input type="file" accept="image/png, image/jpeg, image/gif" name="file-preview" />
+                        <form accept-charset="utf-8" class="form-group publication-msg" method="POST" action="traitementFichier.php">
+                            <!-- Envoyer une image -->
+                            <div class="input-group preview">
+                                <input type="text" class="form-control preview-filename" disabled="disabled">
+                                <span class="input-group-btn">
+                                <!-- preview-clear button -->
+                                <button type="button" class="btn btn-default preview-clear" style="display:none;">
+                                    <span class="glyphicon glyphicon-remove"></span> Annuler
+                                </button>
+                                <!-- preview-input -->
+                                <div class="btn btn-default preview-input">
+                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                    <span class="preview-input-title">Image</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="file-preview" />
+                                </div>
+                                </span>
                             </div>
-                            </span>
-                        </div>
-                        <!-- /#envoyer-une-image -->
+                            <!-- /#envoyer-une-image -->
 
-                        <!-- Envoyer un message -->
-                        <form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">
-                            <textarea class="form-control" name="publier" placeholder="Entrez votre message" rows="2"></textarea>
-                            <button class="[ btn btn-primary disabled ]" type="submit">Poster</button>
-                            <button class="[ btn btn-default ]" type="reset">Annuler</button>
-                            <div class="btn-group pull-right" data-toggle="buttons">
-                                <label class="btn btn-info active">
-                                    <input type="radio" name="btn-publication" autocomplete="off"> Publication
-                                </label>
-                                <label class="btn btn-info">
-                                    <input type="radio" name="btn-publication" autocomplete="off"> Annonce
-                                </label>
-                            </div>
+                            <!-- Envoyer un message -->
+                            <!--<form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">-->
+                                <textarea class="form-control" placeholder="Entrez votre message" rows="2" name="contenu"></textarea>
+                                <!--<button class="[ btn btn-primary disabled ]" type="submit" id="poster">Poster</button>-->
+                                <input class="[ btn btn-primary ]" type="submit" name="Poster" value="Poster" />
+                                <button class="[ btn btn-default ]" type="reset">Annuler</button>
+                                <div class="btn-group pull-right" data-toggle="buttons">
+                                    <label class="btn btn-info active">
+                                        <input type="radio" name="btn-publication" autocomplete="off"> Publication
+                                    </label>
+                                    <label class="btn btn-info">
+                                        <input type="radio" name="btn-publication" autocomplete="off"> Annonce
+                                    </label>
+                                </div>
                         </form>
                         <!-- /#envoyer-un-message -->
                     </div>
@@ -156,206 +158,17 @@
 
 
     <!-- ********** POST : publications sur la page d'accueil ********** -->
-
+    <script src="js/news.js" type="text/javascript"></script>
     <div class="row">
         <div class="col-md-10 col-lg-offset-1">
-
-            <!-- Post 1 -->
-            <div class="[panel panel-default] panel-custom">
-
-                <!-- Auteur : image, nom, tags -->
-                <div class="panel-heading">
-                    <button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <img class="[ img-circle pull-left ]" src="img/profile_test1.png" alt="profile.jpg"/>
-                    <h3>Le chat blasé du designer</h3>
-                    <span class="label label-info">Chat</span>
-                    <span class="label label-warning">Mangeur de croquettes</span>
-                    <h5><span>Il y a 5 minutes</span></h5>
-                    <div class="border-bottom"></div>
-                </div>
-
-                <!-- Corps du message -->
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-
-                    <!-- Input -->
-                    <div class="pull-left">
-                        <div class="input-placeholder">Commenter...</div>
-                    </div>
-
-                    <!-- Réactions : dislike / like / love -->
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-                        <button type="button" class="btn btn-danger btn-circle"><span class="glyphicon glyphicon-heart"></span></button>
-                    </div>
-                </div>
-
-                <!-- Panel caché pour commenter -->
-                <div class="panel-comment">
-                        <img class="img-circle" src="img/profile_test1.png" alt="profile_test1.png">
-                        <div class="panel-custom-textarea">
-                            <textarea rows="2"></textarea>
-                            <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
-                            <button type="reset" class="[ btn btn-default ]">Annuler</button>
-                        </div>
-                        <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- /#post1 -->
-
-            <!-- Post 2 -->
-            <div class="[panel panel-default] panel-custom">
-                <div class="panel-heading">
-                    <button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <img class="[ img-circle pull-left ]" src="img/profile_test2.jpg" alt="profile.jpg"/>
-                    <h3>Kermit</h3>
-                    <span class="label label-success">Grenouille</span>
-                    <h5><span>Il y a 8 minutes et 14 nanosecondes</span></h5>
-                    <div class="border-bottom"></div>
-                </div>
-
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-
-                    <div class="pull-left">
-                        <div class="input-placeholder">Commenter...</div>
-                    </div>
-
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-                        <button type="button" class="btn btn-danger btn-circle"><span class="glyphicon glyphicon-heart"></span></button>
-                    </div>
-                </div>
-
-                    <div class="panel-comment">
-                        <img class="img-circle" src="img/profile_test1.png" alt="profile_test1.png">
-                        <div class="panel-custom-textarea">
-                            <textarea rows="2"></textarea>
-                            <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
-                            <button type="reset" class="[ btn btn-default ]">Annuler</button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-            </div>
-            <!-- /#post2 -->
-
-            <!-- Post 3 -->
-            <div class="[panel panel-default] panel-custom">
-                <div class="panel-heading">
-                    <button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <img class="[ img-circle pull-left ]" src="img/profile_test1.png" alt="profile.jpg"/>
-                    <h3>Le chat blasé du designer</h3>
-                    <span class="label label-info">Chat</span>
-                    <span class="label label-warning">Mangeur de croquettes</span>
-                    <h5><span>Il y a 30 minutes</span></h5>
-                    <div class="border-bottom"></div>
-                </div>
-
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-
-                    <div class="pull-left">
-                        <div class="input-placeholder">Commenter...</div>
-                    </div>
-
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-                        <button type="button" class="btn btn-danger btn-circle"><span class="glyphicon glyphicon-heart"></span></button>
-                    </div>
-                </div>
-
-                <div class="panel-comment">
-                    <img class="img-circle" src="img/profile_test1.png" alt="profile_test1.png">
-                    <div class="panel-custom-textarea">
-                        <textarea rows="2"></textarea>
-                        <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
-                        <button type="reset" class="[ btn btn-default ]">Annuler</button>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- /#post3 -->
-
-            <!-- Post 3 -->
-            <div class="[panel panel-default] panel-custom">
-                <div class="panel-heading">
-                    <button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <img class="[ img-circle pull-left ]" src="img/profile_test1.png" alt="profile.jpg"/>
-                    <h3>Le chat blasé du designer</h3>
-                    <span class="label label-info">Chat</span>
-                    <span class="label label-warning">Mangeur de croquettes</span>
-                    <h5><span>Il y a 30 minutes</span></h5>
-                    <div class="border-bottom"></div>
-                </div>
-
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-
-                    <div class="pull-left">
-                        <div class="input-placeholder">Commenter...</div>
-                    </div>
-
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-                        <button type="button" class="btn btn-danger btn-circle"><span class="glyphicon glyphicon-heart"></span></button>
-                    </div>
-                </div>
-
-                <div class="panel-comment">
-                    <img class="img-circle" src="img/profile_test1.png" alt="profile_test1.png">
-                    <div class="panel-custom-textarea">
-                        <textarea rows="2"></textarea>
-                        <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
-                        <button type="reset" class="[ btn btn-default ]">Annuler</button>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <!-- /#post3 -->
+            <ul id="news">
+                <?php 
+                   include('news.php');
+                ?>
+            </ul>
         </div>
     </div>
     <!-- /#post -->
-</div>
 <!-- /#container -->
 
 <?php
