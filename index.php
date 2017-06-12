@@ -14,6 +14,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
+
+            <!-- "Votre compte a bien été créé" -->
+            <?php 
+                if(isset($_SESSION['erreur'])) {
+                    ?><div class="alert alert-info alert-dismissable" role="alert" align="center">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <span class="msg-alert"><?php echo $_SESSION['erreur'] ?></span>
+                     </div><?php ;
+                }
+            ?>
+
             <!-- Formulaire -->
             <div class="form-body">
 
@@ -51,14 +64,22 @@
                 }
                 else
                 {
-                    ?><div class="alert alert-danger" role="alert" align="center">
+                    ?><div class="alert alert-danger alert-dismissable" role="alert" align="center">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         <span class="msg-alert">Mauvais mail ou mot de passe !</span>
                       </div><?php ;
                 }
             }
             else 
             {
-                $erreur = "Tous les champs doivent être complétés !";
+                ?><div class="alert alert-warning alert-dismissable" role="alert" align="center">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <span class="msg-alert">Tous les champs doivent être complétés !</span>
+                    </div><?php ;
             }
         }
                         ?>
@@ -140,15 +161,8 @@
             <!-- /#formulaire -->
         </div>
     </div>
-    <!-- mettre ça en joli (alert) -->
-    <div align="center">
-            <?php 
-                if(isset($_SESSION['erreur']))
-                {
-                    echo '<font color="red">'.$_SESSION['erreur'].'</font>';
-                }
-            ?>
-    </div>
+
+
 </div>
 
 <?php
