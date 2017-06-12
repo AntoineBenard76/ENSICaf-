@@ -40,12 +40,12 @@ if(isset($_POST['Poster'])){
     $avatarActu=htmlspecialchars($_SESSION['avatar']);
     $attributActu=htmlspecialchars($_SESSION['attribut']);
 	//Début des vérifications de sécurité...
-	if(in_array($extension, $extensionsimg)/* && empty($_POST['url'])*/) //Si l'extension est pas dans le tableau
+	if(in_array($extension, $extensionsimg)) //Si l'extension est pas dans le tableau
 	{
 		$status="image";
 		echo "c'est une image";
 	}
-	if(in_array($extension, $extensionsvid)/* && empty($_POST['url'])*/) //Si l'extension est pas dans le tableau
+	if(in_array($extension, $extensionsvid)) //Si l'extension est pas dans le tableau
 	{
 		$status="video";
 		echo "c'est une video";
@@ -53,11 +53,11 @@ if(isset($_POST['Poster'])){
 	if(!in_array($extension, $extensionsvid) && !in_array($extension, $extensionsimg)){
 		$erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, mp4, ogv ou webm.';
 	}
-	if($taille>$taille_maxi /*&& empty($_POST['url'])*/)
+	if($taille>$taille_maxi)
 	{
 		 $erreur = 'Le fichier est trop gros...';
 	}
-	if(!isset($erreur) /*&& empty($_POST['url']) */&& $status=="image") //S'il n'y a pas d'erreur, on upload
+	if(!isset($erreur) && $status=="image") //S'il n'y a pas d'erreur, on upload
 	{
 		 //On formate le nom du fichier ici...
 		 $fichier = strtr($fichier, 
@@ -73,7 +73,7 @@ if(isset($_POST['Poster'])){
 			  echo 'Echec de l\'upload !';
 		 }
 	}
-	if(!isset($erreur) && /*empty($_POST['url']) &&*/ $status=="video") //S'il n'y a pas d'erreur, on upload
+	if(!isset($erreur) && $status=="video") //S'il n'y a pas d'erreur, on upload
 	{
 		 //On formate le nom du fichier ici...
 		 $fichier = strtr($fichier, 
@@ -93,15 +93,7 @@ if(isset($_POST['Poster'])){
 	{
 		 echo $erreur;
 	}
-	if(!empty($fichier) && $status=="image"){
-		$fichier2 = htmlspecialchars($fichier);
-		$stockage="disque";
-		/* pour tester la requete sql
-		if(!empty($insertion)){
-			print_r($bdd->errorInfo());
-		}*/
-	}
-	if(!empty($fichier) && $status=="video"){
+	if(!empty($fichier)){
 		$fichier2 = htmlspecialchars($fichier);
 		$stockage="disque";
 		/* pour tester la requete sql

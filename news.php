@@ -45,15 +45,15 @@ while($res = $req->fetch()){
 							if($res['stockage']=="disque"){
 								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="400" height="400"/></a>';
 							}
-							if($res['stockage']=="url"){
+							else if($res['stockage']=="url"){
 								echo '<img src="'.$im['url'].'" alt="une image" width="400" height="400"/>';
 							}
 						}
-						if($res['typefichier']=="video"){
+						else if($res['typefichier']=="video"){
 							if($res['stockage']=="disque"){
 								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="400" height="400"/>une video</video>';
 							}
-							if($res['stockage']=="url"){
+							else if($res['stockage']=="url"){
 								$save=$res['fichier'];
 								$url=substr($res['fichier'],0,23);
 								$url=$url."/embed/".substr($save,32);
@@ -91,9 +91,8 @@ while($res = $req->fetch()){
                             <textarea rows="2"></textarea>
                             <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
                             <button type="reset" class="[ btn btn-default ]">Annuler</button>
-                        </div>
-                        <div class="clearfix"></div>
-                </div>
+						</div>
+                <div class="clearfix"></div>
             </div>
             <!-- /#post1 -->
 <?php
