@@ -84,6 +84,11 @@ button:focus {
     margin-right: 5px;
 }
 
+.custom-jumbotron-mdp {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DE97;
+}
+
 /* ---------- Navigation Bar ---------- */
 
 .navbar {
