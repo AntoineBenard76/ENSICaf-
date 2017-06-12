@@ -65,32 +65,27 @@
                 <div class="panel panel-default panel-info-club">
                     <div class="panel-body">
                         <!-- Image club -->
-                        <img class="thumbnail img-responsive center-block" src="img/profile_test1.png" alt="img_club.png">
+                        <img class="thumbnail img-responsive center-block" src="img/avatars/<?php echo $res['photo']; ?>" alt="img_club.png">
                         <hr>
 
                         <!-- Description -->
                         <h4><strong>Description</strong></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><?php echo $res['description']; ?></p>
                         <hr>
 
                         <!-- Réalisations -->
                         <h4><strong>Réalisations</strong></h4>
-                        <p>Regrouper des noobs qui feedent sur LoL</p>
+                        <p><?php echo $res['realisation']; ?></p>
                         <hr>
 
                         <!-- Président -->
                         <h4><strong>Président</strong></h4>
-                        <p>Moi</p>
+                        <p><?php echo $res['president']; ?></p>
                         <hr>
 
                         <!-- Membres -->
                         <h4><strong>Membres</strong></h4>
-                        <p>Toi, plus moi, plus eux, plus tous ceux qui le veulent, plus lui, plus elle, et tous ceux qui sont seuls</p>
+                        <p><?php echo $res['membres']; ?></p>
                     </div>
                 </div>
             </div>
@@ -101,12 +96,7 @@
                 <!-- Description pour petits écrans -->
                 <div class="hidden-lg hidden-md hidden-description-club">
                     <h4><strong>Description</strong></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><?php echo $res['description']; ?></p>
                     <hr>
                 </div>
                 <!-- /#description -->
@@ -127,12 +117,7 @@
                         <!-- Contenu -->
                         <div id="collapseEvent_1" class="panel-collapse collapse in" role="tabpanel">
                             <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Tous à 17h30 chez Michel !</p>
                             </div>
                         </div>
                     </div>
@@ -163,45 +148,6 @@
 </div>
 <!-- /#container -->
 
-
-
-
-
-
-
-
-
-<div class="club-panel">
-    <div class="club-panel">
-        <div class="club-title">
-            <div class="club-caption">
-				<span class="caption-name text-uppercase"><?php echo $res['nom']; ?></span>
-                <p><?php echo $res['president']; ?></p>
-            </div>
-        </div>
-    </div>
-    <div class="club-body"><br>
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object" src="img/avatars/<?php echo $res['photo']; ?>" alt="photo_club" />
-            </div>
-            <!--Peu de style--> 
-            <div class="media-body">
-                <p><?php echo $res['description']; ?></p>
-                <p><?php echo $res['membres']; ?></p>
-                <p><?php echo $res['realisation']; ?></p>
-                <p><?php echo $res['evenements']; ?></p>
-            </div>
-        </div>
-    </div>
-</div>
-    <!--echo '<p>Nom du club : '.$res['nom'].'</p>';
-    echo '<p>'.$res['photo'].'</p>';
-    echo '<p>Présidé par : '.$res['president'].'</p>';
-    echo '<p>Composé de : '.$res['membres'].' membres</p>';
-    echo '<p>Description : '.$res['description'].'</p>';
-    echo '<p>Realisations : '.$res['realisation'].'</p>';
-    echo '<p>Evenements : '.$res['evenements'].'</p>';-->
 <?php
     include('chatbox.php');
     include('php/footer.php');

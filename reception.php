@@ -89,8 +89,8 @@
         </div>
     
     <div align="center">
-        <form method="POST" action="nonlu.php">
-            <input type="submit" value="Marquer tous les messages comme non lus"/>
+        <form method="POST" action="lu.php">
+            <input type="submit" value="Marquer tous les messages comme lus"/>
         </form>    
     </div>
     </div>
