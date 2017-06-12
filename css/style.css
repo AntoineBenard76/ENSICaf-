@@ -894,6 +894,10 @@ button:focus {
 
 /* ---------- reception.php ---------- */
 
+.panel-reception > .navbar > .navbar-collapse form {
+    margin-top: -7px;
+}
+
 .reception-list {
     padding-top: 20px;
 }
