@@ -288,6 +288,11 @@ button:focus {
     background: none;
 }
 
+.sidebar-divider {
+    border-color: #F7F3D3;
+    margin: 10px 0px;
+}
+
 /* ---------- Carousel News ---------- */
 
 #carousel-news {
