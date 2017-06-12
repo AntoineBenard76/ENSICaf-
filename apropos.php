@@ -32,6 +32,12 @@
                                     <h4>Antoine Bénard</h4>
                                     <span class="label label-primary">Chef de projet</span>
                                     <p>Chef du Projet ensicafé, étudiant dynamique et motivé qui a fait de son mieux pour booster les troupes ! :D</p>
+                                    <blockquote>
+                                        <p>
+                                            <q> Hassenforder, on l'adore ! </q>
+                                            <small>Antoine, 5 minutes avant l'envoi du chèque.</small>
+                                        </p>
+                                    </blockquote>
                                 </div>
                             </li>
                             <hr class="divider">
