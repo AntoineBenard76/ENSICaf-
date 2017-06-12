@@ -59,7 +59,6 @@ button:focus {
 /* ---------- Alert ---------- */
 
 .alert {
-    position: fixed;
     top: 60px;
     left: 0px;
     width: 100%;
