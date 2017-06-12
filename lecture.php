@@ -30,41 +30,55 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
     </div>
     <!-- /#titre -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default">
-        <!-- Header : collapse pour les écrans réduits -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="reception-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
-        </div>
-        <!-- /#header -->
+    <!-- Panel lecture -->
+    <div class="jumbotron custom-jumbotron panel-lecture">
 
-        <!-- Barre de navigation -->
-        <div class="collapse navbar-collapse" id="reception-navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <p class="navbar-btn">
-                        <a href="club.php" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pawn"></span>Liste des clubs
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p class="navbar-btn">
-                        <a href="#" class="btn btn-warning">
-                            <span class="glyphicon glyphicon-envelope"></span>Autre option ?
-                        </a>
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <!-- /#barre-de-navigation -->
-    </nav>
-    <!-- /#navigation -->
+        <!-- Navigation -->
+        <nav class="navbar navbar-default">
+            <!-- Header : collapse pour les écrans réduits -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="reception-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- /#header -->
 
+            <!-- Barre de navigation -->
+            <div class="collapse navbar-collapse" id="reception-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <p class="navbar-btn">
+                            <a href="club.php" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                Boîte de réception
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="navbar-btn">
+                            <a href="#" class="btn btn-info">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                Répondre
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="navbar-btn">
+                            <a href="#" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                Supprimer
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#barre-de-navigation -->
+        </nav>
+        <!-- /#navigation -->
 
+    </div>
+    <!-- /#panel-lecture -->
 
     <!-- à enlever -->
     <div class="jumbotron" style="background-color: white;">
