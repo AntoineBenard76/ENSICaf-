@@ -60,7 +60,7 @@
                 <div class="panel panel-default panel-info-club">
                     <div class="panel-body">
                         <!-- Image club -->
-                        <img class="thumbnail img-responsive center-block" src="img/profile_test1.png">
+                        <img class="thumbnail img-responsive center-block" src="img/profile_test1.png" alt="img_club.png">
                         <hr>
 
                         <!-- Description -->
