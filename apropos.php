@@ -83,7 +83,7 @@
                                     <blockquote>
                                         <p>
                                             <q> JE SAIS PAS, JE SAIS PAS !! </q>
-                                            <small>Saad, en se voyant devant le jury.</small>
+                                            <small>Saad, en se retrouvant devant le jury.</small>
                                         </p>
                                     </blockquote>
                                 </div>
@@ -101,7 +101,7 @@
                                 <div class="media-body">
                                     <h4>Thomas Blangero</h4>
                                     <span class="label label-warning">Thomas</span>
-                                    <p></p>
+                                    <p>L'homme qui se balade partout et upload les données. L'otaku du groupe.</p>
                                 </div>
                             </li>
                             <hr class="divider">
