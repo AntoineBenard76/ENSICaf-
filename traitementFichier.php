@@ -20,29 +20,32 @@ if(is_dir($dossier2)){
 else{
    mkdir($dossier2);
 }
+$status="";
+$stockage="";
+$fichier2="";
+$_SESSION['auteur']="";
+$auteur=$bdd->query('SELECT nom,prenom FROM membres WHERE "'.$_SESSION['id'].'"=id');
+foreach($auteur as $a){
+	$_SESSION['auteur']=$a['prenom']." ".$a['nom'];
+}
    // traitement du fichier
-if(isset($_POST['poster'])){
+if(isset($_POST['Poster'])){
 	$fichier = basename($_FILES['file-preview']['name']);
 	$taille_maxi = 100000000;
 	$taille = filesize($_FILES['file-preview']['tmp_name']);
 	$extensionsimg = array('.png', '.gif', '.jpg', '.jpeg');
 	$extensionsvid = array('.mp4', '.ogv', '.webm');
 	$extension = strrchr($_FILES['file-preview']['name'], '.'); 
-	echo $extension;
-    //Initialisation des variables
-    $fichier2="";
-    $status="";
-    $stockage="";
-    //Récupération du nom,avatar et attribut de l'auteur
+    //Récupération avatar de l'auteur et son attribut
     $avatarActu=htmlspecialchars($_SESSION['avatar']);
     $attributActu=htmlspecialchars($_SESSION['attribut']);
 	//Début des vérifications de sécurité...
-	if(in_array($extension, $extensionsimg)/* && empty($_POST['url'])*/) //Si l'extension est pas dans le tableau
+	if(in_array($extension, $extensionsimg)) //Si l'extension est pas dans le tableau
 	{
 		$status="image";
 		echo "c'est une image";
 	}
-	if(in_array($extension, $extensionsvid)/* && empty($_POST['url'])*/) //Si l'extension est pas dans le tableau
+	if(in_array($extension, $extensionsvid)) //Si l'extension est pas dans le tableau
 	{
 		$status="video";
 		echo "c'est une video";
@@ -50,11 +53,11 @@ if(isset($_POST['poster'])){
 	if(!in_array($extension, $extensionsvid) && !in_array($extension, $extensionsimg)){
 		$erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, mp4, ogv ou webm.';
 	}
-	if($taille>$taille_maxi /*&& empty($_POST['url'])*/)
+	if($taille>$taille_maxi)
 	{
 		 $erreur = 'Le fichier est trop gros...';
 	}
-	if(!isset($erreur) /*&& empty($_POST['url']) */&& $status=="image") //S'il n'y a pas d'erreur, on upload
+	if(!isset($erreur) && $status=="image") //S'il n'y a pas d'erreur, on upload
 	{
 		 //On formate le nom du fichier ici...
 		 $fichier = strtr($fichier, 
@@ -70,7 +73,7 @@ if(isset($_POST['poster'])){
 			  echo 'Echec de l\'upload !';
 		 }
 	}
-	if(!isset($erreur) && /*empty($_POST['url']) &&*/ $status=="video") //S'il n'y a pas d'erreur, on upload
+	if(!isset($erreur) && $status=="video") //S'il n'y a pas d'erreur, on upload
 	{
 		 //On formate le nom du fichier ici...
 		 $fichier = strtr($fichier, 
@@ -90,7 +93,7 @@ if(isset($_POST['poster'])){
 	{
 		 echo $erreur;
 	}
-	if(!empty($fichier) && $status=="image"){
+	if(!empty($fichier)){
 		$fichier2 = htmlspecialchars($fichier);
 		$stockage="disque";
 		/* pour tester la requete sql
@@ -98,36 +101,34 @@ if(isset($_POST['poster'])){
 			print_r($bdd->errorInfo());
 		}*/
 	}
-	if(!empty($fichier) && $status=="video"){
-		$fichier2 = htmlspecialchars($fichier);
-		$stockage="disque";
-		/* pour tester la requete sql
-		if(!empty($insertion)){
-			print_r($bdd->errorInfo());
-		}*/
-	}
-	/* pour l'url
+	// pour l'url
 	if(!empty($_POST['image'])){
-		$image2 = htmlspecialchars($_POST['image']);
+		$fichier2 = htmlspecialchars($_POST['image']);
 		$stockage="url";
-		$insertion2 = $bdd->prepare('INSERT INTO image(url,stockage) VALUES(?,?)');
-		$insertion2->execute(array($image2,$stockage));
+		$status="image";
 		/* pour tester la requete sql
 		if(!empty($insertion2)){
 			print_r($bdd->errorInfo());
-		}
-	}*/
+		}*/
+	}
+	if(!empty($_POST['video'])){
+		$fichier2 = htmlspecialchars($_POST['video']);
+		$stockage="url";
+		$status="video";
+		/* pour tester la requete sql
+		if(!empty($insertion2)){
+			print_r($bdd->errorInfo());
+		}*/
+	}
 }
 $_SESSION['dossier']=$dossier;
 $_SESSION['dossier2']=$dossier2;
 // fin traitement du fichier
-if(!empty($_POST['contenu'])){
+if(isset($_POST['Poster'])){
 	$publier = htmlspecialchars($_POST['contenu']);
 	$type=htmlspecialchars($_POST['btn-publication']);
-    echo $publier;
-    echo $type;
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
-    $insertion->execute(array($_SESSION['auteur'],$publier,$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
+    $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }
-//header("Location:accueil.php");
+header("Location:accueil.php");
 ?>
