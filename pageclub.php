@@ -118,10 +118,10 @@
                         </div>
                     </div>
                     <form method="POST" action="traitementEvenement.php?nb=<?php echo $res['id']; ?>">
-                                <input type="text" name="nomEvent" placeholder="Nom de l'évènement"/>
+                        <input type="text" name="nomEvent" placeholder="Nom de l'évènement"/>
                                 
-                                <textarea name="descEvent"  placeholder="Descriptif de l'évènement"></textarea>
-                                <input type="submit" name="sauvegarder" value="Sauvegarder les changements"/>
+                        <textarea name="descEvent"  placeholder="Descriptif de l'évènement"></textarea>
+                        <input type="submit" name="sauvegarder" value="Sauvegarder les changements"/>
                     </form>
                     <!-- /#evenement 1 -->
 
