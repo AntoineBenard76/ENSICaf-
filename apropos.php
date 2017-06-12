@@ -69,7 +69,7 @@
                                 <div class="media-body">
                                     <h4>Nolwenn Bernard</h4>
                                     <span class="label label-info">Nolwenn</span>
-                                    <p>Travailleuse acharnée, elle est également la touche féminine de ce projet !</p>
+                                    <p>Travailleuse acharnée, elle a officiellement déclaré la guerre aux bases de données !</p>
                                 </div>
                             </li>
                             <hr class="divider">
@@ -77,12 +77,18 @@
                             <!-- Saad -->
                             <li class="media">
                                 <div class="media-body text-right">
-                                    <span class="label label-success">Saad</span>
+                                    <span class="label label-success">Nageur</span>
                                     <h4>Saad Bennani</h4>
-                                    <p></p>
+                                    <p>Nageur professionnel, il ne sait pas comment il s'est retrouvé dans cette galère ...</p>
+                                    <blockquote>
+                                        <p>
+                                            <q> JE SAIS PAS, JE SAIS PAS !! </q>
+                                            <small>Saad, en se voyant devant le jury.</small>
+                                        </p>
+                                    </blockquote>
                                 </div>
                                 <div class="media-right">
-                                    <img class="img-circle" src="img/profile_test1.png" alt="saad.jpg"/>
+                                    <img class="img-circle" src="img/equipe/saad.png" alt="saad.jpg"/>
                                 </div>
                             </li>
                             <hr class="divider">
