@@ -18,6 +18,7 @@ while($res = $req->fetch()){
         print '<script>setId('.$res['id'].');</script>';
         $first = false;
     }
+    $_SESSION['auteur']=$res['auteur'];
     //Supprimer la puce avec le css
     print '<li>';
 ?>
@@ -50,8 +51,28 @@ while($res = $req->fetch()){
                     <!-- Réactions : dislike / like / love -->
                     <!--Affichage peu esthétique-->
                     <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button><?php echo $res['nbDislike']; ?>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button><?php echo $res['nbLike']; ?>
+                        <form method="post"> <!--action="traitementLike.php"-->
+                            <!--<button type="button" class="btn btn-basic btn-circle" onclick="<?/*php $insert_dislike=$bdd->query('UPDATE actu SET nbDislike=\'nbDislike+1\' WHERE id="'.$res['id'].'"');*/?>"><span class="glyphicon glyphicon-thumbs-down"></span></button><?php /*echo $res['nbDislike'];*/ ?>
+                            <button type="button" class="btn btn-primary btn-circle" onclick="<?p/*hp $insert_like=$bdd->query('UPDATE actu SET nbLike=\'nbLike+1\' WHERE id="'.$res['id'].'"');*/?>"><span class="glyphicon glyphicon-thumbs-up"></span></button><?/*php echo $res['nbLike'];*/ ?>-->
+                            <button type="submit" class="btn btn-basic btn-circle" name="dislike"><span class="glyphicon glyphicon-thumbs-down"></span>
+                            <?php 
+                                if(isset($_POST['dislike'])){
+                                    $insert_dislike=$bdd->prepare('UPDATE actu SET nbDislike=\'nbDislike+1\' WHERE id=?');
+                                    $insert_dislike->execute(array($res['id']));
+                                }
+                                echo $res['nbDislike']; 
+                            ?>
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-circle" name ="like"><span class="glyphicon glyphicon-thumbs-up"></span>
+                            <?php 
+                                if(isset($_POST['like'])){
+                                    $insert_like=$bdd->prepare('UPDATE actu SET nbLike=\'nbLike+1\' WHERE id=?');
+                                    $insert_like->execute(array($res['id']));
+                                }
+                                echo $res['nbLike'];
+                            ?>
+                            </button>
+                        </form>
                     </div>
                 </div>
         <!-- Panel caché pour commenter -->

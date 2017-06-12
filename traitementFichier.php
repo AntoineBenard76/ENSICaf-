@@ -29,7 +29,11 @@ if(isset($_POST['poster'])){
 	$extensionsvid = array('.mp4', '.ogv', '.webm');
 	$extension = strrchr($_FILES['file-preview']['name'], '.'); 
 	echo $extension;
-    //Récupération avatar de l'auteur et son attribut
+    //Initialisation des variables
+    $fichier2="";
+    $status="";
+    $stockage="";
+    //Récupération du nom,avatar et attribut de l'auteur
     $avatarActu=htmlspecialchars($_SESSION['avatar']);
     $attributActu=htmlspecialchars($_SESSION['attribut']);
 	//Début des vérifications de sécurité...
@@ -117,11 +121,13 @@ if(isset($_POST['poster'])){
 $_SESSION['dossier']=$dossier;
 $_SESSION['dossier2']=$dossier2;
 // fin traitement du fichier
-if(!empty($_POST['publier'])){
+if(!empty($_POST['contenu'])){
 	$publier = htmlspecialchars($_POST['contenu']);
 	$type=htmlspecialchars($_POST['btn-publication']);
+    echo $publier;
+    echo $type;
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
-    $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
+    $insertion->execute(array($_SESSION['auteur'],$publier,$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }
-header("Location:accueil.php");
+//header("Location:accueil.php");
 ?>

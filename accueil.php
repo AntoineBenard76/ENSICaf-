@@ -136,7 +136,7 @@
                             <!--<form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">-->
                                 <textarea class="form-control" placeholder="Entrez votre message" rows="2" name="contenu"></textarea>
                                 <!--<button class="[ btn btn-primary disabled ]" type="submit" id="poster">Poster</button>-->
-                                <input class="[ btn btn-primary ]" type="submit" id="poster" value="Poster" />
+                                <input class="[ btn btn-primary ]" type="submit" name="poster" value="Poster" />
                                 <button class="[ btn btn-default ]" type="reset">Annuler</button>
                                 <div class="btn-group pull-right" data-toggle="buttons">
                                     <label class="btn btn-info active">
