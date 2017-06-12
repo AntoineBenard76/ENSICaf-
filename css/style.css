@@ -36,26 +36,19 @@ button:focus {
     margin-left: 15px;
 }
 
-legend {
+.panel > .panel-page-title {
     background-color: #25252D;
     border: 0px solid #E8DE97;
-    border-bottom: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     color: #F7F3D3;
-    margin: auto;
-    margin-bottom: 0px;
-    padding: 5px;
+    font-size: 18px;
+    margin-bottom: -20px;
     padding-left: 20px;
-    width: 59.4%;
 }
 
-legend > span {
-    margin-right: 10px;
-}
-
-.legend-settings {
-    width: 38%;
+.panel > .panel-page-title > .glyphicon {
+    margin-right: 5px;
 }
 
 /* Notification message avec des couleurs */
