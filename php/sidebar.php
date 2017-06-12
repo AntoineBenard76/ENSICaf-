@@ -27,6 +27,7 @@
                     <li><a href="http://www.ensisa.uha.fr/"><span class="glyphicon glyphicon-education"></span>ENSISA</a></li>
                     <li><a href="https://www.e-services.uha.fr/"><span class="glyphicon glyphicon-globe"></span>e-services</a></li>
                     <li><a href="http://www.emploisdutemps.fr/edt/PIWvD"><span class="glyphicon glyphicon-calendar"></span>Emploi du temps (IR/AS)</a></li>
+                    <li><a href="http://www.emploisdutemps.fr/edt/LNzcL"><span class="glyphicon glyphicon-calendar"></span>Emploi du temps (Text/Méca)</a></li>
                     <hr class="sidebar-divider">
                     <li><a href="apropos.php"><span class="glyphicon glyphicon-question-sign"></span>A propos</a></li>
                 </ul>
