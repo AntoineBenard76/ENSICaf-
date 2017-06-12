@@ -1,25 +1,70 @@
 <?php
-    include('php/header.php');
-    if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
+include('php/header.php');
+if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
+{
+    if(isset($_GET['id']) AND !empty($_GET['id']))
     {
-        if(isset($_GET['id']) AND !empty($_GET['id']))
-        {
-            $id_message = intval($_GET['id']);
-            
-            $msg = $bdd->prepare('SELECT * FROM messages WHERE id = ? AND id_destinataire = ?');
-            $msg->execute(array($_GET['id'],$_SESSION['id']));
-            $msg_nbr = $msg->rowCount();
-            $m = $msg->fetch();
-            
-            $p_exp = $bdd->prepare('SELECT mail FROM membres WHERE id = ?');
-            $p_exp->execute(array($m['id_expediteur']));
-            $p_exp = $p_exp->fetch();
-            $p_exp = $p_exp['mail'];
+        $id_message = intval($_GET['id']);
+
+        $msg = $bdd->prepare('SELECT * FROM messages WHERE id = ? AND id_destinataire = ?');
+        $msg->execute(array($_GET['id'],$_SESSION['id']));
+        $msg_nbr = $msg->rowCount();
+        $m = $msg->fetch();
+
+        $p_exp = $bdd->prepare('SELECT mail FROM membres WHERE id = ?');
+        $p_exp->execute(array($m['id_expediteur']));
+        $p_exp = $p_exp->fetch();
+        $p_exp = $p_exp['mail'];
 ?>
 
 <!-- Contenu principal -->
 
 <div class="container">
+
+    <!-- Titre -->
+    <div class="panel panel-default">
+        <div class="panel-heading panel-page-title">
+            <span class="glyphicon glyphicon-user"></span>
+            <?= $p_exp ?>
+        </div>
+    </div>
+    <!-- /#titre -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <!-- Header : collapse pour les écrans réduits -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="reception-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- /#header -->
+
+        <!-- Barre de navigation -->
+        <div class="collapse navbar-collapse" id="reception-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <p class="navbar-btn">
+                        <a href="club.php" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pawn"></span>Liste des clubs
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p class="navbar-btn">
+                        <a href="#" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-envelope"></span>Autre option ?
+                        </a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <!-- /#barre-de-navigation -->
+    </nav>
+    <!-- /#navigation -->
+
+
 
     <!-- à enlever -->
     <div class="jumbotron" style="background-color: white;">
@@ -39,10 +84,10 @@
 <!-- Contenu principal -->
 
 <?php
-            $lu = $bdd->prepare('UPDATE messages SET lu = 1 WHERE id = ?');
+        $lu = $bdd->prepare('UPDATE messages SET lu = 1 WHERE id = ?');
         $lu->execute(array($m['id']));
-            
-        }
+
     }
-    include('php/footer.php');
+}
+include('php/footer.php');
 ?>
