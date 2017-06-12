@@ -10,12 +10,17 @@
 
 <!-- Contenu principal -->
 
-<legend>
-    <span class="glyphicon glyphicon-envelope"></span>
-    Vos messages
-</legend>
-
 <div class="container">
+    
+    <!-- Titre -->
+    <div class="panel panel-default">
+        <div class="panel-heading panel-page-title">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Vos messages
+        </div>
+    </div>
+    <!-- /#titre -->
+    
     <div class="jumbotron custom-jumbotron panel-reception">
 
         <!-- Navigation -->

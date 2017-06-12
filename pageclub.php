@@ -10,12 +10,17 @@
     $res=$sql->fetch();
 ?>
 
-<legend>
-    <span class="glyphicon glyphicon-pawn"></span>
-    <span class="text-uppercase">club <?php echo $res['nom']; ?></span>
-</legend>
-
 <div class="container">
+    
+    <!-- Titre -->
+    <div class="panel panel-default">
+        <div class="panel-heading panel-page-title">
+            <span class="glyphicon glyphicon-pawn"></span>
+            <span class="text-uppercase">club <?php echo $res['nom']; ?></span>
+        </div>
+    </div>
+    <!-- /#titre -->
+    
     <div class="jumbotron custom-jumbotron panel-page-club">
 
         <!-- Navigation -->
