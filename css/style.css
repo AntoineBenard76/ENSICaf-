@@ -879,6 +879,18 @@ button:focus {
     font-size: 12px;
 }
 
+.panel-page-club .panel-creer-evenement {
+    border: 1px solid #E9E9E9;
+}
+
+.panel-page-club .panel-creer-evenement .panel-body {
+    margin-top: -20px;
+}
+
+.panel-page-club .panel-creer-evenement .panel-body button {
+    margin-right: 10px;
+}
+
 .panel-page-club .panel-event-list .panel {
     margin-bottom: 20px;
 }
