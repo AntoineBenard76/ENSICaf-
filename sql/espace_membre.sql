@@ -168,6 +168,7 @@ CREATE TABLE `messages` (
   `id_destinataire` int(11) NOT NULL,
   `message` text COLLATE utf8_unicode_ci NOT NULL,
   `lu` int(11) NOT NULL,
+  `dateEnvoi` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
@@ -175,9 +176,9 @@ CREATE TABLE `messages` (
 -- Contenu de la table `messages`
 --
 
-INSERT INTO `messages` (`id`, `id_expediteur`, `id_destinataire`, `message`, `lu`) VALUES
-(11, 17, 16, 'coucou jacky\r\n', 0),
-(12, 17, 16, 'earzarter', 0);
+INSERT INTO `messages` (`id`, `id_expediteur`, `id_destinataire`, `message`, `lu`, `dateEnvoi`) VALUES
+(11, 17, 16, 'coucou jacky\r\n', 0, 0000-00-00),
+(12, 17, 16, 'earzarter', 0, 0000-00-00);
 
 -- --------------------------------------------------------
 
