@@ -126,7 +126,10 @@ $_SESSION['dossier2']=$dossier2;
 // fin traitement du fichier
 if(isset($_POST['Poster'])){
 	$publier = htmlspecialchars($_POST['contenu']);
-	$type=htmlspecialchars($_POST['btn-publication']);
+	//$type=htmlspecialchars($_POST['btn-publication']);
+    $type = "test";
+    $stockage = "neutre";
+    $status = "ok";
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
     $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }

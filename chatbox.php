@@ -42,7 +42,7 @@
                         <span class="chat-img pull-left"><img src="img/<?php echo $msg['avatarMes'];?>" alt="user_profile" class="img-circle" /></span>
                         <div class="chat-body clearfix">
                             <div class="header">
-                                <strong class="primary-font"><?php echo utf8_decode($msg['nomExp']); echo utf8_decode($msg['prenomExp']);?></strong>
+                                <strong class="primary-font"><?php echo $msg['nomExp']; echo $msg['prenomExp'];?></strong>
                                 <span class="label label-info"><?php echo utf8_decode($msg['attributExp']);?></span>
                                 <small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span><?php echo utf8_decode($msg['dateMes']);?></small>
                             </div>

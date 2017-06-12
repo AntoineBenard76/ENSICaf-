@@ -10,14 +10,21 @@
 
 <!-- Contenu principal -->
 
-<legend>
-    <span class="glyphicon glyphicon-envelope"></span>
-    Vos messages
-</legend>
-
 <div class="container">
+    
+    <!-- Titre -->
+    <div class="panel panel-default">
+        <div class="panel-heading panel-page-title">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Vos messages
+        </div>
+    </div>
+    <!-- /#titre -->
+    
+    <!-- Panel reception -->
     <div class="jumbotron custom-jumbotron panel-reception">
 
+        <!-- Navigation -->
         <nav class="navbar navbar-default">
             <!-- Header : collapse pour les écrans réduits -->
             <div class="navbar-header">
@@ -41,25 +48,35 @@
                             <a href="envoi.php" class="btn btn-info"><span class="glyphicon glyphicon-envelope"></span>Envoyer un message</a>
                         </p>
                     </li>
+                    <li>
+                        <p class="navbar-btn">
+                            <form method="POST" action="lu.php">
+                                <button type="submit" class="btn btn-warning">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                    Marquer comme lus
+                                </button>
+                            </form>
+                        </p>
+                    </li>
                 </ul>
             </div>
             <!-- /#barre-de-navigation -->
         </nav>
+        <!-- /#navigation -->
 
         <hr class="divider">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <?php 
-
-            if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
-            while($m = $msg->fetch()) {
-            $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
-            $p_exp->execute(array($m['id_expediteur']));
-            $donnees_exp = $p_exp->fetch();
-            $mail_exp = $donnees_exp['mail'];
-        ?>
-              <!-- Message 1 -->
+        <div class="row">
+            <div class="col-md-12">
+                <?php 
+                    if($msg_nbr == 0){ echo "Vous n'avez aucun message ..."; }
+                    while($m = $msg->fetch()) {
+                    $p_exp = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
+                    $p_exp->execute(array($m['id_expediteur']));
+                    $donnees_exp = $p_exp->fetch();
+                    $mail_exp = $donnees_exp['mail'];
+                ?>
+                    <!-- Message -->
                     <div class="media media-middle reception-list" id="msg_1">
                         <a href="lecture.php?id=<?= $m['id'] ?>" class="msg-anchor">
                             <span class="pull-left">
@@ -76,18 +93,13 @@
                             </div>
                         </a>
                     </div>
-                    <hr class="divider">
-                                <?php } ?>
-                </div>
+                    <!-- /#message -->
+                <hr class="divider">
+                <?php } ?>
             </div>
-    
-    <div align="center">
-        <form method="POST" action="nonlu.php">
-            <input type="submit" value="Marquer tous les messages comme non lus"/>
-        </form>    
+        </div>
     </div>
-    </div>
-
+    <!-- /#panel-reception -->
 </div>
 
 <!-- Contenu principal -->
