@@ -20,6 +20,13 @@ if(is_dir($dossier2)){
 else{
    mkdir($dossier2);
 }
+$status="";
+$stockage="";
+$_SESSION['auteur']="";
+$auteur=$bdd->query('SELECT nom,prenom FROM membres WHERE "'.$_SESSION['id'].'"=id');
+foreach($auteur as $a){
+	$_SESSION['auteur']=$a['prenom']." ".$a['nom'];
+}
    // traitement du fichier
 if(isset($_POST['Poster'])){
 	$fichier = basename($_FILES['file-preview']['name']);
@@ -28,7 +35,6 @@ if(isset($_POST['Poster'])){
 	$extensionsimg = array('.png', '.gif', '.jpg', '.jpeg');
 	$extensionsvid = array('.mp4', '.ogv', '.webm');
 	$extension = strrchr($_FILES['file-preview']['name'], '.'); 
-	echo $extension;
     //Récupération avatar de l'auteur et son attribut
     $avatarActu=htmlspecialchars($_SESSION['avatar']);
     $attributActu=htmlspecialchars($_SESSION['attribut']);
@@ -102,7 +108,8 @@ if(isset($_POST['Poster'])){
 			print_r($bdd->errorInfo());
 		}*/
 	}
-	/* pour l'url
+	/*
+	// pour l'url
 	if(!empty($_POST['image'])){
 		$image2 = htmlspecialchars($_POST['image']);
 		$stockage="url";
@@ -118,11 +125,9 @@ $_SESSION['dossier']=$dossier;
 $_SESSION['dossier2']=$dossier2;
 // fin traitement du fichier
 if(isset($_POST['Poster'])){
+	echo "<p> on envoit l'actu</p>";
 	$publier = htmlspecialchars($_POST['contenu']);
-	//$type=htmlspecialchars($_POST['btn-publication']);
-    $type = "test";
-    $stockage = "neutre";
-    $status = "ok";
+	$type=htmlspecialchars($_POST['btn-publication']);
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
     $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }

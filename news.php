@@ -39,6 +39,29 @@ while($res = $req->fetch()){
 
                 <!-- Corps du message -->
                 <div class="panel-body">
+				<?php
+					if(!($res['fichier'])==""){
+						if($res['typefichier']=="image"){
+							if($res['stockage']=="disque"){
+								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="400" height="400"/></a>';
+							}
+							if($res['stockage']=="url"){
+								echo '<img src="'.$im['url'].'" alt="une image" width="400" height="400"/>';
+							}
+						}
+						if($res['typefichier']=="video"){
+							if($res['stockage']=="disque"){
+								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="400" height="400"/>une video</video>';
+							}
+							if($res['stockage']=="url"){
+								$save=$vid['url'];
+								$url=substr($vid['url'],0,23);
+								$url=$url."/embed/".substr($save,32);
+								echo '<iframe width="400" height="400" src="'.$url.'" frameborder="0" allowfullscreen></iframe>';
+							}
+						}
+					}
+				?>
                     <p><?php echo $res['contenu']; ?>
                     </p>
 
