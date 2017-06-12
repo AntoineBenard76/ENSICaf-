@@ -112,14 +112,14 @@
 </div>
 
 <!-- ??? -->
-        <?php
-            if ($club->rowCount() > 0) { ?>
-                <ul id='resultat'>
-                    <?php while( $c=$club->fetch() ) { ?>
-                        <li><?php echo $c['nom'];?></li>
-                    <?php } ?>
-                </ul>
-        <?php } else { echo 'Aucun résultat pour : '.$nom; } ?>
+<?php
+    if ($club->rowCount() > 0) { ?>
+        <ul id='resultat'>
+        <?php while( $c=$club->fetch() ) { ?>
+            <li><?php echo $c['nom'];?></li>
+            <?php } ?>
+        </ul>
+<?php } else { echo 'Aucun résultat pour : '.$nom; } ?>
 
 <script>
 // Permet de cacher toute la liste des clubs
