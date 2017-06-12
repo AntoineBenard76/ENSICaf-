@@ -242,6 +242,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- OLIVIER ICIIIIIIIIIIIIIII LE FORMULAIRE MOCHE-->
                     <form method="POST" action="traitementEvenement.php?nb=<?php echo $res['id']; ?>">
                                 <input type="text" name="nomEvent" placeholder="Nom de l'évènement"/>
                                 
