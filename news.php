@@ -118,13 +118,6 @@ while($res = $req->fetch()){
                 <div class="panel-comment">
                         <img class="img-circle" src="img/avatars/<?php echo $_SESSION['avatar']; ?>" alt="profile_test1.png">
                         <div class="panel-custom-textarea">
-<!-- commentaire Thomas à vérifier
-                            <textarea rows="2"></textarea>
-                            <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
-                            <button type="reset" class="[ btn btn-default ]">Annuler</button>
-						</div>
-                <div class="clearfix"></div>
--->
                             <form method="post" action="article.php?name=commenter&id=<?php echo $res['id']; ?>">
                                 <textarea rows="2" name="commentaire" required></textarea>
                                 <input type="submit" class="[ btn btn-info ]" value="Envoyer" name="submit_com"/>

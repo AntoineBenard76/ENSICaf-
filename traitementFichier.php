@@ -31,7 +31,7 @@ foreach($auteur as $a){
    // traitement du fichier
 if(isset($_POST['Poster'])){
 	$fichier = basename($_FILES['file-preview']['name']);
-	$taille_maxi = 100000000;
+	$taille_maxi = 1000000000;
 	$taille = filesize($_FILES['file-preview']['tmp_name']);
 	$extensionsimg = array('.png', '.gif', '.jpg', '.jpeg');
 	$extensionsvid = array('.mp4', '.ogv', '.webm');
@@ -130,5 +130,5 @@ if(isset($_POST['Poster'])){
     $insertion = $bdd->prepare('INSERT INTO actu(id,auteur,contenu,date,type,fichier,typefichier,stockage,nbLike,nbDislike,avatarActu,attributActu) VALUES(NULL,?,?,NOW(),?,?,?,?,0,0,?,?)'); 
     $insertion->execute(array($_SESSION['auteur'],$_POST['contenu'],$type,$fichier2,$status,$stockage,$avatarActu,$attributActu));
 }
-header("Location:accueil.php");
+//header("Location:accueil.php");
 ?>
