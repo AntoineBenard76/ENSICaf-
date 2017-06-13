@@ -211,7 +211,7 @@
                 <div class="panel panel-default panel-info-club">
                     <div class="panel-body">
                         <!-- Image club -->
-                        <img class="thumbnail img-responsive center-block" src="img/avatars/<?php echo $res['photo']; ?>" alt="img_club.png">
+                        <img class="thumbnail img-responsive center-block" src="img/<?php echo $res['photo']; ?>" alt="img_club.png">
                         <hr>
 
                         <!-- Description -->

@@ -42,17 +42,6 @@ while($res = $req->fetch()){
                     <p><?php echo $res['contenu']; ?>
                     </p>
 
-                    <!-- Input -->
-                    <div class="pull-left">
-                        <div class="input-placeholder">Commenter...</div>
-                    </div>
-
-                    <!-- Réactions : dislike / like / love -->
-                    <!--Affichage peu esthétique-->
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-basic btn-circle"><span class="glyphicon glyphicon-thumbs-down"></span></button><?php echo $res['nbDislike']; ?>
-                        <button type="button" class="btn btn-primary btn-circle"><span class="glyphicon glyphicon-thumbs-up"></span></button><?php echo $res['nbLike']; ?>
-                    </div>
                 </div>
         <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
