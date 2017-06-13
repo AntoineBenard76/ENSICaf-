@@ -32,7 +32,7 @@
                                 <div class="media-body">
                                     <h4>Antoine Bénard</h4>
                                     <span class="label label-primary">Chef de projet</span>
-                                    <p>Chef du Projet ensicafé, étudiant dynamique et motivé qui a fait de son mieux pour booster les troupes ! :D</p>
+                                    <p>Chef du projet ensicafé, étudiant dynamique et motivé qui a fait de son mieux pour booster les troupes ! :D</p>
                                     <blockquote>
                                         <p>
                                             <q> Hassenforder, on l'adore ! </q>
@@ -48,11 +48,11 @@
                                 <div class="media-body text-right">
                                     <span class="label label-danger">Designer</span>
                                     <h4>Olivier Tinh</h4>
-                                    <p>Roi du design, cet homme a rendu non-radioactif le style de tout le projet !</p>
+                                    <p>Designer en herbe, cet homme fut le responsable du style du projet dans son entièreté !</p>
                                     <blockquote>
                                         <p>
-                                            <q> J'ai faim. </q>
-                                            <small>Olivier, lors de l'édition de cette page.</small>
+                                            <q> Oui. </q>
+                                            <small>Olivier, lorsqu'on lui demande de choisir entre "bleu" et "vert".</small>
                                         </p>
                                     </blockquote>
                                 </div>
