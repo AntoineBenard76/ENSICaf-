@@ -28,7 +28,7 @@
                 <div class="media">
                     <div class="media-left">
 
-                        <img class="thumbnail media-object" src="img/avatars/<?php echo $value['photo']; ?>" alt="photo_club" />
+                        <img class="thumbnail media-object" src="img/<?php echo $value['photo']; ?>" alt="photo_club" />
 
                     </div>
                     <div class="media-body">
