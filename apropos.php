@@ -174,7 +174,7 @@
                 <div id="collapse-remerciement" class="panel-collapse collapse in" role="tabpanel">
                     <div class="panel-body">
                         <div class="col-md-12">
-                            <p>Un grand remerciement à toute l'équipe de ce projet sans qui rien ne se serait fait ! Et un big-up spécial à François Straebler dont le soutien a été incroyable !</p>
+                            <p>Un grand remerciement à toute l'équipe de ce projet sans qui rien ne se serait fait ! Et un big-up spécial à François dont le soutien a été incroyable ! Ainsi qu'à Gabin pour ses visites régulières de notre salle ;)</p>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-#Fichier .htaccess inaccessible depuis le web
+﻿#Fichier .htaccess inaccessible depuis le web
 <Files .htaccess>
 order allow,deny
 deny from all
@@ -28,3 +28,8 @@ deny from all
 #Redéfinition des pages d'erreurs
 ErrorDocument 404 /ENSICafe-SiteDesign-Connexion/SiteDesign/notfound.php
 ErrorDocument 403 /ENSICafe-SiteDesign-Connexion/SiteDesign/error403.php
+
+#Modification des limites de la méthode POST
+php_value memory_limit 1000M
+php_value post_max_size 800M
+php_value upload_max_filesize 800M
