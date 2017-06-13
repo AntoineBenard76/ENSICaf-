@@ -13,12 +13,14 @@ if(isset($_POST['envoyer'])){
     $_SESSION['erreur']="";
     if(!empty($_POST['email'])){
         $email=htmlspecialchars($_POST['email']);
+        $_SESSION['email']=$email;
         if(filter_var($email,FILTER_VALIDATE_EMAIL)){
             $emailexist=$bdd->prepare('SELECT id FROM membres WHERE mail=?');
             $emailexist->execute(array($email));
             $emailexist=$emailexist->rowcount();
+
             if($emailexist==1){
-                $_SESSION['email']=$email;
+                //$_SESSION['email']=$email;
                 $code="";
                 // Création du code qui sera envoyé à l'utilisateur
                 for($i=0;$i<8;$i++){
@@ -69,7 +71,7 @@ if(isset($_POST['envoyer'])){
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
                 } else {
                    //echo 'message envoyé';
-                   header("Location:http://127.0.0.1/VersionFinale/mdp.php?section=code");
+                   header("Location:http://127.0.0.1/ensicaf-/mdp.php?section=code");
                 }
             }else{
                 $_SESSION['erreur']= 'Cette adresse n\'est pas enregistrée';
@@ -80,8 +82,8 @@ if(isset($_POST['envoyer'])){
     }else{
             $_SESSION['erreur']= 'Veuillez indiquer votre adresse e-mail';
         }
+    echo $_SESSION['email'];
 }
-
 // Traitement du code de récupération
 if(isset($_POST['envoyer_code'],$_POST['code'])){
     if(!empty($_POST['code'])){
@@ -96,7 +98,7 @@ if(isset($_POST['envoyer_code'],$_POST['code'])){
 /*            $del_req=$bdd->prepare('DELETE FROM recuperation WHERE mail=?');
             $del_req->execute(array($_SESSION['mail']));*/
             // Redirection vers un formulaire pour modifier le mdp
-            header("Location:http://127.0.0.1/VersionFinale/mdp.php?section=changemdp");
+            header("Location:http://127.0.0.1/ensicaf-/mdp.php?section=changemdp");
         }else{
            $_SESSION['erreur']="Code invalide"; 
         }
@@ -125,7 +127,7 @@ if(isset($_POST['enregistrer'])){
                     $del_req=$bdd->prepare('DELETE FROM recuperation WHERE mail=?');
                     $del_req->execute(array($_SESSION['email']));
                     // Redirection vers la page de connexion
-                    header("Location:http://127.0.0.1/VersionFinale/index.php");
+                    header("Location:http://127.0.0.1/ensicaf-/index.php");
                 }else{
                     $_SESSION['erreur']="Vos mots de passes ne correspondent pas";
                 }
