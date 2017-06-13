@@ -4,17 +4,12 @@
 
 <!-- Contenu principal -->
 
+<legend>
+    <span class="glyphicon glyphicon-envelope"></span>
+    Envoyer un message
+</legend>
+
 <div class="container">
-    
-    <!-- Titre -->
-    <div class="panel panel-default">
-        <div class="panel-heading panel-page-title">
-            <span class="glyphicon glyphicon-envelope"></span>
-            Envoyer un message
-        </div>
-    </div>
-    <!-- /#titre -->
-    
     <div class="jumbotron custom-jumbotron">
         <!-- Barre de navigation -->
         <nav class="navbar navbar-default">

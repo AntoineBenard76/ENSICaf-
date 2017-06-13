@@ -38,6 +38,7 @@
         {
             $r = htmlspecialchars($_GET['r']);
         }
-    header('Location:envoi.php');
+    //header('Location: reception.php');
     }
+    header('Location: reception.php');
 ?>
