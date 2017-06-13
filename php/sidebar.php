@@ -20,8 +20,7 @@
                     </li>
                     <li><a href="club.php"><span class="glyphicon glyphicon-pawn"></span>Clubs</a></li>
                     <li><a href="reception.php"><span class="glyphicon glyphicon-envelope"></span>Boîte de réception</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span>Annonces</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cercles</a></li>
+                    <li><a href="annonce.php"><span class="glyphicon glyphicon-bullhorn"></span>Annonces</a></li>
                     <hr class="sidebar-divider">
                     <li><a href="http://www.emploisdutemps.fr/edt/LNzcL"><span class="glyphicon glyphicon-calendar"></span>Emploi du temps (Text/Méca)</a></li>
                     <li><a href="http://www.emploisdutemps.fr/edt/PIWvD"><span class="glyphicon glyphicon-calendar"></span>Emploi du temps (IR/AS)</a></li>

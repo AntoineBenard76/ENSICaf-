@@ -101,8 +101,14 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>Thomas Blangero</h4>
-                                    <span class="label label-warning">Thomas</span>
+                                    <span class="label label-warning">Saboteur</span>
                                     <p>L'homme qui se balade partout et upload les données. L'otaku du groupe.</p>
+                                    <blockquote>
+                                        <p>
+                                            
+                                            <small>Thomas, quand on lui  demandé ce qu'il avait fait.</small>
+                                        </p>
+                                    </blockquote>
                                 </div>
                             </li>
                             <hr class="divider">
@@ -168,7 +174,7 @@
                 <div id="collapse-remerciement" class="panel-collapse collapse in" role="tabpanel">
                     <div class="panel-body">
                         <div class="col-md-12">
-                            <p>Un grand remerciement à toute l'équipe de ce projet sans qui rien ne se serait fait ! Et un big-up spécial à François Straebler dont le soutien a été incroyable !</p>
+                            <p>Un grand remerciement à toute l'équipe de ce projet sans qui rien ne se serait fait ! Et un big-up spécial à François dont le soutien a été incroyable ! Ainsi qu'à Gabin pour ses visites régulières de notre salle ;)</p>
                         </div>
                     </div>
                 </div>
