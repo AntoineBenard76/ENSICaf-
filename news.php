@@ -55,7 +55,7 @@ while($res = $req->fetch()){
 						}
 						else if($res['typefichier']=="video"){
 							if($res['stockage']=="disque"){
-								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="720" height="480"/>une video</video>';
+								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="720" height="480"/></video>';
 							}
 							else if($res['stockage']=="url"){
 								$save=$res['fichier'];
