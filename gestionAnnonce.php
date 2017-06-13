@@ -38,9 +38,35 @@ while($res = $req->fetch()){
 
                 <!-- Corps du message -->
                 <div class="panel-body">
-                    <p><?php echo $res['contenu']; ?>
-                    </p>
+                    <div class="jumbotron custom-jumbotron-publication" align="center">
+                        <p>&ldquo; <?php echo $res['contenu']; ?> &bdquo;</p>
+                    </div>
 
+                    <!-- Input -->
+                    <div class="pull-left">
+                        <div class="input-placeholder">Commenter...</div>
+                    </div>
+
+                    <!-- Réactions : dislike / like -->
+                    <div class="pull-right">
+                        <!-- Dislike -->
+                        <a class="btn btn-circle btn-dislike" href="article.php?name=dislike&id=<?php echo $res['id']; ?>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="text-muted">
+                            <?php echo $res['nbDislike']; ?>
+                        </span>
+
+                        <!-- Like -->
+                        <a class="btn btn-circle btn-like" href="article.php?name=like&id=<?php echo $res['id']; ?>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="text-muted">
+                            <?php echo $res['nbLike']; ?>
+                        </span>                                        
+                    </div>
+                    <!-- /#réactions -->
+                    
                 </div>
         <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
