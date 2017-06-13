@@ -42,20 +42,20 @@ while($res = $req->fetch()){
                 </div>
 
                 <!-- Corps du message -->
-                <div align="center" class="panel-body">
+                <div class="panel-body text-center">
 				<?php
 					if(!($res['fichier'])==""){
 						if($res['typefichier']=="image"){
 							if($res['stockage']=="disque"){
-								echo '<a href="img/'.$res['fichier'].'"" ><img class="thumbnail" src="img/'.$res['fichier'].'" alt="img" width="480" height="320" /></a>';
+								echo '<a class="thumbnail img-responsive center-block" href="img/'.$res['fichier'].'"" ><img class="thumbnail" src="img/'.$res['fichier'].'" alt="img" width="240" height="160" /></a>';
 							}
 							else if($res['stockage']=="url"){
-								echo '<img class="thumbnail" src="'.$res['fichier'].'" alt="une image" width="480" height="320" />';
+								echo '<img class="thumbnail img-responsive center-block" src="'.$res['fichier'].'" alt="une image" max-width="240" max-height="160" />';
 							}
 						}
 						else if($res['typefichier']=="video"){
 							if($res['stockage']=="disque"){
-								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="720" height="480"/></video>';
+								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="480" height="320"/></video>';
 							}
 							else if($res['stockage']=="url"){
 								$save=$res['fichier'];

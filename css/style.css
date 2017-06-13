@@ -593,6 +593,16 @@ button:focus {
     transition: all 0.3s ease;
 }
 
+.panel-custom > .panel-body a.thumbnail {
+    border: none;
+    max-width: 320px;
+    padding: 0px;
+}
+
+.panel-custom > .panel-body img.thumbnail {
+    margin: 0px auto;
+}
+
 /* Post commentaire */
 
 .panel-custom .chat li {
