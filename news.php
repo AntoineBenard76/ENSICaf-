@@ -47,7 +47,7 @@ while($res = $req->fetch()){
 					if(!($res['fichier'])==""){
 						if($res['typefichier']=="image"){
 							if($res['stockage']=="disque"){
-								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="480" height="320" /></a>';
+								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="img" width="480" height="320" /></a>';
 							}
 							else if($res['stockage']=="url"){
 								echo '<img src="'.$res['fichier'].'" alt="une image" width="480" height="320" />';
@@ -66,9 +66,9 @@ while($res = $req->fetch()){
 						}
 					}
 				?>
-                    <div class="jumbotron custom-jumbotron">
-                    <p><?php echo htmlspecialchars($res['contenu']); ?>
-                    </p>
+                    <!-- Contenu des publications -->
+                    <div class="jumbotron custom-jumbotron-publication">
+                        <p>&ldquo; <?php echo htmlspecialchars($res['contenu']); ?> &bdquo;</p>
                     </div>
                     
                     <!-- Input -->
@@ -77,19 +77,27 @@ while($res = $req->fetch()){
                     </div>
 
 
-                    <!-- Réactions : dislike / like / love -->
+                    <!-- Réactions : dislike / like -->
                     <div class="pull-right">
-                            <a class="btn btn-basic btn-circle" href="article.php?name=dislike&id=<?php echo $res['id']; ?>"><span class="glyphicon glyphicon-thumbs-down"></span></a>
-                            <?php 
-                                echo $res['nbDislike']; 
-                            ?>
-                            <a class="btn btn-basic btn-circle" href="article.php?name=like&id=<?php echo $res['id']; ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a>
-                            <?php 
-                                echo $res['nbLike'];
-                            ?>                                            
+                        <!-- Dislike -->
+                        <a class="btn btn-circle btn-dislike" href="article.php?name=dislike&id=<?php echo $res['id']; ?>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="text-muted">
+                            <?php echo $res['nbDislike']; ?>
+                        </span>
+
+                        <!-- Like -->
+                        <a class="btn btn-circle btn-like" href="article.php?name=like&id=<?php echo $res['id']; ?>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="text-muted">
+                            <?php echo $res['nbLike']; ?>
+                        </span>                                        
                     </div>
                    
                 </div>
+
                 <!--Affichage des commentaires-->
                 <div>
                     <ul class="chat">
@@ -98,7 +106,7 @@ while($res = $req->fetch()){
                             $commentaires->execute(array($res['id']));
                             while($com=$commentaires->fetch()){
                         ?>
-                        <li class="left clearfix">
+                        <li class="left post-comment">
                             <span class="chat-img pull-left"><img src="img/avatars/<?php echo $com['avatar']; ?>" alt="user_profile" class="img-circle" /></span>
                             <div class="chat-body clearfix">
                                 <div class="header">
@@ -116,6 +124,7 @@ while($res = $req->fetch()){
                     </ul>
 
                 </div>
+
                 <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
                         <img class="img-circle" src="img/avatars/<?php echo $_SESSION['avatar']; ?>" alt="profile_test1.png">
@@ -127,9 +136,9 @@ while($res = $req->fetch()){
 						</div>
                 <div class="clearfix"></div>
 -->
-                            <form method="post" action="article.php?name=commenter&id=<?php echo $res['id']; ?>">
-                                <textarea rows="2" name="commentaire" required></textarea>
-                                <input type="submit" class="[ btn btn-info ]" value="Envoyer" name="submit_com"/>
+                            <form class="form-group" method="post" action="article.php?name=commenter&id=<?php echo $res['id']; ?>">
+                                <textarea class="form-control" rows="2" name="commentaire" required></textarea>
+                                <input type="submit" class="[ btn btn-primary ]" value="Envoyer" name="submit_com"/>
                                 <input type="reset" class="[ btn btn-default ]" value="Annuler" />
                             </form>
                         </div>
