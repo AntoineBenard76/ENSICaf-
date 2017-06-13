@@ -31,7 +31,7 @@ foreach($auteur as $a){
    // traitement du fichier
 if(isset($_POST['Poster'])){
 	$fichier = basename($_FILES['file-preview']['name']);
-	$taille_maxi = 100000000;
+	$taille_maxi = 1000000000;
 	$taille = filesize($_FILES['file-preview']['tmp_name']);
 	$extensionsimg = array('.png', '.gif', '.jpg', '.jpeg');
 	$extensionsvid = array('.mp4', '.ogv', '.webm');

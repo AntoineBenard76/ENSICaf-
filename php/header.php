@@ -1,4 +1,7 @@
 <?php
+	ini_set('memory_limit','1000M');
+	ini_set('post_max_size','800M');
+	ini_set('upload_max_filesize','800M');
     session_start();
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
 ?>
