@@ -70,8 +70,14 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>Nolwenn Bernard</h4>
-                                    <span class="label label-info">Nolwenn</span>
+                                    <span class="label label-info">Pro SQL</span>
                                     <p>Travailleuse acharnée, elle a officiellement déclaré la guerre aux bases de données !</p>
+                                    <blockquote>
+                                        <p>
+                                            <q> Je sais pas, je suis pas inspirée. </q>
+                                            <small>Nolwenn, car elle n'est pas inspirée.</small>
+                                        </p>
+                                    </blockquote>
                                 </div>
                             </li>
                             <li><hr class="divider"></li>
@@ -106,7 +112,7 @@
                                     <p>L'homme qui se balade partout et upload les données. L'otaku du groupe.</p>
                                     <blockquote>
                                         <p>
-                                            
+                                            <q>   </q>
                                             <small>Thomas, quand on lui a demandé ce qu'il avait fait.</small>
                                         </p>
                                     </blockquote>
