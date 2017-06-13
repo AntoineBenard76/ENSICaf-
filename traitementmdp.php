@@ -1,7 +1,6 @@
 <?php
     session_start();
     include('php/header-login.php');
-    
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
 
 if(isset($_GET['section'])){
@@ -13,6 +12,7 @@ if(isset($_POST['envoyer'])){
     $_SESSION['erreur']="";
     if(!empty($_POST['email'])){
         $email=htmlspecialchars($_POST['email']);
+        echo $email;
         $_SESSION['email']=$email;
         if(filter_var($email,FILTER_VALIDATE_EMAIL)){
             $emailexist=$bdd->prepare('SELECT id FROM membres WHERE mail=?');
@@ -84,7 +84,7 @@ if(isset($_POST['envoyer'])){
         }
 }
 // Traitement du code de récupération
-if(isset($_POST['envoyer_code'],$_POST['code'])){
+if(isset($_POST['envoyer_code'])){
     if(!empty($_POST['code'])){
         $verif_code=htmlspecialchars($_POST['code']);
         $verif_req=$bdd->prepare('SELECT id FROM recuperation WHERE mail=? AND code=?');

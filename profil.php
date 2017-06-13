@@ -25,7 +25,7 @@
 			</div>
 			<div class="profile-title">
 				<span class="profile-name"><?php echo $userinfo['nom'];?>&nbsp;<?php echo $userinfo['prenom']; ?></span><br>
-				<span class="label label-info">Etudiant</span>
+				<span class="label label-info"><?php echo $userinfo['attribut'];?></span>
 				<!--<span class="label label-danger">Griffeur</span>-->
 			</div>
 		</div>
