@@ -119,7 +119,6 @@
                 <!-- /#créer-un-événement -->
 
                 <!-- Liste d'événements -->
-                <!-- /!\ id à changer en ligne 116 et 123 pour chaque panel généré /!\ -->
                 <div class="panel-group panel-event-list" id="accordion" role="tablist" aria-multiselectable="true">
                     <!-- Evenement 1 -->
                     <div class="panel panel-default">
@@ -133,7 +132,7 @@
 
                         <!-- Contenu -->
                         <div id="collapseEvent_1" class="panel-collapse collapse in" role="tabpanel">
-                            <div class="panel-body">
+                            <div class="panel-body contenu-event">
                                 <p><?= $res['evenements'];?></p>
                             </div>
                         </div>

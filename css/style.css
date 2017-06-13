@@ -18,6 +18,7 @@ html {
 body {
     overflow-x: hidden;
     background: #f7f3d3;
+    font-family: 'Roboto', sans-serif, 'Helvetica', 'Arial';
 }
 
 button:focus {
@@ -95,8 +96,8 @@ button:focus {
 }
 
 .custom-jumbotron-publication p {
+    font-family: 'Bitter', serif;
     font-size: 24px;
-    font-style: italic;
 }
 
 /* ---------- Navigation Bar ---------- */
@@ -351,6 +352,14 @@ button:focus {
 
 #carousel-news .carousel-inner blockquote span {
     font-size: 15px;
+}
+
+#carousel-news .carousel-inner blockquote .news-contenu {
+    font-family: 'Bitter', serif;
+}
+
+#carousel-news .carousel-inner blockquote .news-date {
+    margin-top: 10px;
 }
 
 #carousel-news .carousel-inner .news-more {
@@ -956,6 +965,10 @@ button:focus {
 
 .panel-page-club .panel-event-list .panel-heading .date-event-club {
     margin-right: 10px;
+}
+
+.panel-page-club .panel-event-list .contenu-event {
+    font-family: 'Bitter', serif;
 }
 
 /* ----------------------------------------------------------------------------------------------- */

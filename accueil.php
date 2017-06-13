@@ -34,9 +34,9 @@
                                 <!-- Contenu (titre, message, redirection) -->
                                 <div class="col-md-9">
                                     <h4>Accord de Paris : l’UE s’inquiète de la décision américaine</h4>
-                                    <span>Dans l’attente de l’annonce d’une sortie éventuelle des Etats-Unis, l’Union européenne, la Chine et la Russie défendent le traité visant à limiter le réchauffement climatique.</span>
+                                    <span class="news-contenu">Dans l’attente de l’annonce d’une sortie éventuelle des Etats-Unis, l’Union européenne, la Chine et la Russie défendent le traité visant à limiter le réchauffement climatique.</span>
                                     <a href="#"><span class="news-more"> Lire la suite...</span></a>
-                                    <br><small>14 juin 2028</small>
+                                    <br><small class="news-date">14 juin 2028</small>
                                 </div>
                             </div>
                         </blockquote>
@@ -49,16 +49,16 @@
                                 <div class="col-md-3 author-outer">
                                     <div class="author-inner">
                                         <img class="img-circle" src="img/profile_test1.png" alt="news2" />
-                                        <p>Le chat présent partout
+                                        <p>Le chat du designer  
                                         <span class="label label-info">Chat</span>
                                         <span class="label label-warning">Testeur</span></p>
                                     </div>
                                 </div>
                                     <div class="col-md-9">
                                         <h4>Trois fabricants de croquettes animales condamnés à 35 millions d'euros d'amende pour entente</h4>
-                                        <span>Les groupes sanctionnés sont le suisse Nestlé (Purina), et les américains Mars (Royal Canin) et Colgate-Palmolive (Hill's Pet Nutrition).</span>
+                                        <span class="news-contenu">Les groupes sanctionnés sont le suisse Nestlé (Purina), et les américains Mars (Royal Canin) et Colgate-Palmolive (Hill's Pet Nutrition).</span>
                                         <a href="#"><span class="news-more"> Lire la suite...</span></a>
-                                        <br><small>14 juin 2028</small>
+                                        <br><small class="news-date">14 juin 2028</small>
                                     </div>
                             </div>
                         </blockquote>
@@ -77,9 +77,9 @@
                                 </div>
                                 <div class="col-md-9">
                                     <h4>L’Inde assure la France de son soutien à l’accord de Paris sur le climat</h4>
-                                    <span>Après le retrait américain de l’accord de Paris, le climat était au cœur de la rencontre entre Narendra Modi et Emmanuel Macron, samedi à Paris.</span>
+                                    <span class="news-contenu">Après le retrait américain de l’accord de Paris, le climat était au cœur de la rencontre entre Narendra Modi et Emmanuel Macron, samedi à Paris.</span>
                                     <a href="#"><span class="news-more"> Lire la suite...</span></a>
-                                    <br><small>14 juin 2028</small>
+                                    <br><small class="news-date">14 juin 2028</small>
                                 </div>
                             </div>
                         </blockquote>
