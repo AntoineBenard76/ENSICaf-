@@ -38,9 +38,12 @@
         <!-- /#alert -->
 
         <form class="form-group" method="post" >
-            <label for="code">Votre code de vérification : </label>
+            <label>Votre code de vérification : </label>
             <input class="form-control" type="text" name="code" placeholder="Code de vérification" />
             <input class="btn btn-primary" type="submit" name="envoyer_code" value="Envoyer" />
         </form>
     </div>
 </div>
+<?php
+    include('php/footer.php');
+?>
