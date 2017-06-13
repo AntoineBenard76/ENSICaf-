@@ -18,7 +18,6 @@ while($res = $req->fetch()){
         print '<script>setId('.$res['id'].');</script>';
         $first = false;
     }
-    //Supprimer la puce avec le css
     print '<li>';
 ?>
     <!-- Post 1 -->

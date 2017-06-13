@@ -112,6 +112,7 @@
 
                 <div id="collapse-publication" class="panel-collapse collapse" role="tabpanel">
                     <div class="panel-body">
+                        <!-- Upload (publication) -->
                         <form enctype="multipart/form-data" accept-charset="utf-8" class="form-group publication-msg" method="POST" action="traitementFichier.php">
                             <!-- Envoyer une image -->
                             <div class="input-group preview">
@@ -130,31 +131,38 @@
                                 </span>
                             </div>
                             <!-- /#envoyer-une-image -->
-								<input type="text" name="image" placeholder="pour l'url d'une image" />
-								<input type="text" name="video" placeholder="pour l'url d'une video" />
+
+                            <!-- URL -->
+							<input class="form-control" type="text" name="image" placeholder="URL image (.png, .jpg, .jpeg, .gif)" />
+							<input class="form-control" type="text" name="video" placeholder="URL vidéo (Youtube)" />
+                            <!-- /#URL -->
+
                             <!-- Envoyer un message -->
-                            <!--<form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">-->
-                                <textarea class="form-control" placeholder="Entrez votre message" rows="2" name="contenu"></textarea>
-                                <!--<button class="[ btn btn-primary disabled ]" type="submit" id="poster">Poster</button>-->
-								<input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
-                                <input class="[ btn btn-primary ]" type="submit" name="Poster" value="Poster" />
-                                <button class="[ btn btn-default ]" type="reset">Annuler</button>
-                                <div class="btn-group pull-right" data-toggle="buttons">
-								<p>
-                                    <input type="radio" name="btn-publication" value="Publication" autocomplete="off">
-									<label class="btn btn-info active">
-										Publication
-                                    </label>
-								</p>
-								<p>
-                                    <input type="radio" name="btn-publication" value="Annonce" autocomplete="off">
-									<label class="btn btn-info">
-										Annonce
-                                    </label>
-								</p>
-                                </div>
+                            <textarea class="form-control" placeholder="Entrez votre message" rows="3" name="contenu"></textarea>
+							<input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
+                            <input class="[ btn btn-primary ]" type="submit" name="Poster" value="Poster" />
+                            <button class="[ btn btn-default ]" type="reset">Annuler</button>
+                            <div class="btn-group pull-right" data-toggle="buttons">
+
+                            <!-- Annonce/publication -->
+                            <div class="btn-group btn-annonce" data-toggle="buttons">
+
+                                <label class="btn btn-success active">
+                                    <input type="radio" name="btn-publication" value="Publication" checked>
+                                    <span class="glyphicon glyphicon-ok"></span> Publication
+                                </label>
+
+                                <label class="btn btn-info">
+                                    <input type="radio" name="btn-publication" value="Annonce">
+                                    <span class="glyphicon glyphicon-ok"></span> Annonce
+                                </label>
+                                
+                            </div>
+                            <!-- /#annonce/publication -->
+
+                            </div>
                         </form>
-                        <!-- /#envoyer-un-message -->
+                        <!-- /#upload-publication -->
                     </div>
                 </div>
             </div>

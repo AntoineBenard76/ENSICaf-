@@ -97,6 +97,7 @@ while($res = $req->fetch()){
                     </div>
                    
                 </div>
+
                 <!--Affichage des commentaires-->
                 <div>
                     <ul class="chat">
@@ -105,7 +106,7 @@ while($res = $req->fetch()){
                             $commentaires->execute(array($res['id']));
                             while($com=$commentaires->fetch()){
                         ?>
-                        <li class="left clearfix">
+                        <li class="left post-comment">
                             <span class="chat-img pull-left"><img src="img/avatars/<?php echo $com['avatar']; ?>" alt="user_profile" class="img-circle" /></span>
                             <div class="chat-body clearfix">
                                 <div class="header">
@@ -123,6 +124,7 @@ while($res = $req->fetch()){
                     </ul>
 
                 </div>
+
                 <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
                         <img class="img-circle" src="img/avatars/<?php echo $_SESSION['avatar']; ?>" alt="profile_test1.png">
@@ -134,9 +136,9 @@ while($res = $req->fetch()){
 						</div>
                 <div class="clearfix"></div>
 -->
-                            <form method="post" action="article.php?name=commenter&id=<?php echo $res['id']; ?>">
-                                <textarea rows="2" name="commentaire" required></textarea>
-                                <input type="submit" class="[ btn btn-info ]" value="Envoyer" name="submit_com"/>
+                            <form class="form-group" method="post" action="article.php?name=commenter&id=<?php echo $res['id']; ?>">
+                                <textarea class="form-control" rows="2" name="commentaire" required></textarea>
+                                <input type="submit" class="[ btn btn-primary ]" value="Envoyer" name="submit_com"/>
                                 <input type="reset" class="[ btn btn-default ]" value="Annuler" />
                             </form>
                         </div>
