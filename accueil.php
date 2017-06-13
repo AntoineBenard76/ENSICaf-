@@ -103,10 +103,10 @@
             <!-- Panel -->
             <div class="panel panel-publication">
                 <!-- Panel heading -->
-                <div class="panel-heading" id="accordion-toggle" data-toggle="collapse" data-target="#collapse-publication">
+                <div class="panel-heading" id="accordion-toggle" data-toggle="collapse" data-target="#collapse-publication" onclick="togglePublication(event)">
                     <span class="glyphicon glyphicon-comment"></span><span class="chatbox-name"> Créer une publication</span>
-                    <span class="glyphicon glyphicon-chevron-down pull-left"></span>
-                    <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                    <span class="glyphicon glyphicon-chevron-down pull-left toggle-publication"></span>
+                    <span class="glyphicon glyphicon-chevron-down pull-right toggle-publication"></span>
                 </div>
                 <!-- /#panel-heading -->
 

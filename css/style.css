@@ -100,6 +100,9 @@ button:focus {
     font-size: 24px;
 }
 
+/* ---------- Rotation ---------- */
+
+
 /* ---------- Navigation Bar ---------- */
 
 .navbar {
@@ -669,6 +672,7 @@ button:focus {
 }
 
 .panel .glyphicon-chevron-down,
+.panel .glyphicon-chevron-up,
 .panel .glyphicon-comment,
 .panel .chatbox-name {
     color: #F7F3D3;
@@ -835,6 +839,9 @@ button:focus {
     margin-right: 10px;
 }
 
+.panel-profile .panel-heading span.glyphicon {
+    margin-top: -17px;
+}
 
 /* ----------------------------------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------- */

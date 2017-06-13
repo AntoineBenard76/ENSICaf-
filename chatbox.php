@@ -16,10 +16,10 @@
 
         <!-- Chatbox header -->
         <div class="panel">
-            <div class="panel-heading" id="accordion" data-toggle="collapse" data-target="#chatbox-collapse">
+            <div class="panel-heading" id="accordion" data-toggle="collapse" data-target="#chatbox-collapse" onclick="toggleChatbox()">
                 <span class="glyphicon glyphicon-comment"></span><span class="chatbox-name"> Chat général</span>
-                <div class="btn-group pull-right" data-toggle="dropup">
-                    <span class="glyphicon glyphicon-chevron-down"></span>
+                <div class="btn-group pull-right" id="toggle-chatbox" data-toggle="dropup">
+                    <span class="glyphicon glyphicon-chevron-up toggle-chatbox"></span>
                 </div>
             </div>
         </div>
