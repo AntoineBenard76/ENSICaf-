@@ -10,12 +10,18 @@
 
 <!-- Contenu principal -->
 
-<legend>
-    <span class="glyphicon glyphicon-envelope"></span>
-    Vos messages
-</legend>
-
 <div class="container">
+    
+    <!-- Titre -->
+    <div class="panel panel-default">
+        <div class="panel-heading panel-page-title">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Vos messages
+        </div>
+    </div>
+    <!-- /#titre -->
+    
+    <!-- Panel reception -->
     <div class="jumbotron custom-jumbotron panel-reception">
 
         <!-- Navigation -->
@@ -40,6 +46,16 @@
                     <li>
                         <p class="navbar-btn">
                             <a href="envoi.php" class="btn btn-info"><span class="glyphicon glyphicon-envelope"></span>Envoyer un message</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="navbar-btn">
+                            <form method="POST" action="lu.php">
+                                <button type="submit" class="btn btn-warning">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                    Marquer comme lus
+                                </button>
+                            </form>
                         </p>
                     </li>
                 </ul>
@@ -82,14 +98,8 @@
                 <?php } ?>
             </div>
         </div>
-    
-    <div align="center">
-        <form method="POST" action="lu.php">
-            <input type="submit" value="Marquer tous les messages comme lus"/>
-        </form>    
     </div>
-    </div>
-
+    <!-- /#panel-reception -->
 </div>
 
 <!-- Contenu principal -->

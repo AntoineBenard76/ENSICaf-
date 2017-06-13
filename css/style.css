@@ -36,26 +36,19 @@ button:focus {
     margin-left: 15px;
 }
 
-legend {
+.panel > .panel-page-title {
     background-color: #25252D;
     border: 0px solid #E8DE97;
-    border-bottom: none;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     color: #F7F3D3;
-    margin: auto;
-    margin-bottom: 0px;
-    padding: 5px;
+    font-size: 18px;
+    margin-bottom: -20px;
     padding-left: 20px;
-    width: 59.4%;
 }
 
-legend > span {
-    margin-right: 10px;
-}
-
-.legend-settings {
-    width: 38%;
+.panel > .panel-page-title > .glyphicon {
+    margin-right: 5px;
 }
 
 /* Notification message avec des couleurs */
@@ -66,7 +59,6 @@ legend > span {
 /* ---------- Alert ---------- */
 
 .alert {
-    position: fixed;
     top: 60px;
     left: 0px;
     width: 100%;
@@ -90,6 +82,11 @@ legend > span {
 .custom-jumbotron li,
 .custom-jumbotron li span {
     margin-right: 5px;
+}
+
+.custom-jumbotron-mdp {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DE97;
 }
 
 /* ---------- Navigation Bar ---------- */
@@ -294,6 +291,11 @@ legend > span {
 .sidebar-nav > .sidebar-brand a:hover {
     color: #FFF;
     background: none;
+}
+
+.sidebar-divider {
+    border-color: #F7F3D3;
+    margin: 10px 0px;
 }
 
 /* ---------- Carousel News ---------- */
@@ -807,13 +809,41 @@ legend > span {
     padding: 20px;
 }
 
+.club-panel > .form-inline > .form-group,
+.club-panel > .form-inline > .form-group > label {
+    margin-right: 5px;
+}
+
+.club-panel > .form-inline > button[type=submit] {
+    margin-top: 10px;
+}
+
+.club-panel {
+    border: none;
+}
+
+.club-panel > .club-title {
+    background-color: #25252D;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #F7F3D3;
+}
+
 .club-panel > .club-title > .club-caption {
     display: inline;
+    padding-left: 10px;
 }
 
 .club-panel > .club-title > .club-caption > .caption-name {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.club-panel > .club-title > .club-actions a {
+    color: #F7F3D3;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 5px;
 }
 
 .club-panel > .club-title > .club-actions span {
@@ -826,11 +856,19 @@ legend > span {
     border-bottom: 1px solid #eee;
 }
 
-.club-panel > .club-body > .media > .media-left > img,
-.club-panel > .club-body > .media > .media-right > img {
-    border: 2px solid #E8DE97;
+.club-panel > .club-body {
+    background-color: #FFFFFF;
+    border: 1px solid #e9e9e9;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-top: -1px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.club-panel > .club-body > .media > .media-left > img {
     max-width: 200px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 
@@ -848,6 +886,18 @@ legend > span {
 .panel-page-club .panel-info-club p,
 .panel-page-club .hidden-description-club p {
     font-size: 12px;
+}
+
+.panel-page-club .panel-creer-evenement {
+    border: 1px solid #E9E9E9;
+}
+
+.panel-page-club .panel-creer-evenement .panel-body {
+    margin-top: -20px;
+}
+
+.panel-page-club .panel-creer-evenement .panel-body button {
+    margin-right: 10px;
 }
 
 .panel-page-club .panel-event-list .panel {
@@ -900,6 +950,10 @@ legend > span {
 
 
 /* ---------- reception.php ---------- */
+
+.panel-reception > .navbar > .navbar-collapse form {
+    margin-top: -7px;
+}
 
 .reception-list {
     padding-top: 20px;
@@ -1012,4 +1066,17 @@ legend > span {
     margin-top: 10px;
     margin-bottom: -10px;
     max-height: 100px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+/* ---------- lecture.php ---------- */
+
+.panel-lecture > .lecture-message {
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 0px;
 }
