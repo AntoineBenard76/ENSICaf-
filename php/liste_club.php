@@ -20,14 +20,16 @@
                             <!--<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span>Voir</button>-->
                     <!--Problème avec l'icone-->
                     <!--<input type="button" class="btn btn-info" value="Voir" onclick="javascript:location.href='./pageclub.php'"/><span class="glyphicon glyphicon-log-in"></span>-->
-                    <a class="btn btn-info" href="pageclub.php?nb=<?php echo $value['id']; ?>">Voir <span class="glyphicon glyphicon-log-in"></span></a>
+                    <a href="pageclub.php?nb=<?php echo $value['id']; ?>">Voir <span class="glyphicon glyphicon-log-in"></span></a>
 					<!--</a>-->
 				</div>
 			</div>
 			<div class="club-body"><br>
                 <div class="media">
                     <div class="media-left">
-                        <img class="media-object" src="img/avatars/<?php echo $value['photo']; ?>" alt="photo_club" />
+
+                        <img class="thumbnail media-object" src="img/avatars/<?php echo $value['photo']; ?>" alt="photo_club" />
+
                     </div>
                     <div class="media-body">
                         <p><?php echo $value['description']; ?></p>
@@ -35,6 +37,7 @@
                 </div>
 			</div>
 		</div>
+        <hr>
 <?php
     }
 ?>

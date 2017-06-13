@@ -87,13 +87,18 @@
 
 <!-- Contenu principal -->
 
-<legend class="legend-settings">
-    <span class="glyphicon glyphicon-cog"></span>
-    Paramètres
-</legend>
-
 <div class="container">
 	<div class="col-md-8 col-md-offset-2">
+        
+        <!-- Titre -->
+        <div class="panel panel-default">
+            <div class="panel-heading panel-page-title">
+                <span class="glyphicon glyphicon-cog"></span>
+                Paramètres
+            </div>
+        </div>
+        <!-- /#titre -->
+        
 		<div class="panel panel-settings">
 
 			<div class="panel-body">

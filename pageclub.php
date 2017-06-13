@@ -1,21 +1,22 @@
 <?php
-    try{ // essaie
-        $bdd = new PDO('mysql:host=localhost;dbname=espace_membre;charset=utf8','root',''); 
-    }
-    catch(Exception $e){ 
-        die('Erreur : '.$e->getMessage()); 
-    }
     include('php/header.php');
+    if(isset($_GET['nb'])){
     $sql=$bdd->query('SELECT * FROM clubs where id='.$_GET['nb'].'');
     $res=$sql->fetch();
 ?>
-
-<legend>
-    <span class="glyphicon glyphicon-pawn"></span>
-    <span class="text-uppercase">club <?php echo $res['nom']; ?></span>
-</legend>
+<meta charset="utf-8">
 
 <div class="container">
+    
+    <!-- Titre -->
+    <div class="panel panel-default">
+        <div class="panel-heading panel-page-title">
+            <span class="glyphicon glyphicon-pawn"></span>
+            <span class="text-uppercase">club <?php echo $res['nom']; ?></span>
+        </div>
+    </div>
+    <!-- /#titre -->
+    
     <div class="jumbotron custom-jumbotron panel-page-club">
 
         <!-- Navigation -->
@@ -40,11 +41,11 @@
                         </p>
                     </li>
                     <li>
-                        <p class="navbar-btn">
+                        <!--<p class="navbar-btn">
                             <a href="#" class="btn btn-warning">
                                 <span class="glyphicon glyphicon-envelope"></span>Autre option ?
                             </a>
-                        </p>
+                        </p>-->
                     </li>
                 </ul>
             </div>
@@ -96,6 +97,27 @@
                 </div>
                 <!-- /#description -->
 
+                <!-- Créer un événement -->
+                <div class="panel panel-creer-evenement">
+                    <div class="panel-heading">
+                        <p>Publier un événement</p>
+                    </div>
+
+                    <div class="panel-body">
+                        <form method="POST" action="traitementEvenement.php?nb=<?php echo $res['id']; ?>">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="nomEvent" placeholder="Nom de l'événement"/>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="descEvent" placeholder="Descriptif de l'événement"></textarea>
+                            </div>
+                            <button class="btn btn-primary" type="submit" name="sauvegarder"/>Publier
+                            <button class="btn btn-danger" type="reset" name="annuler"/>Annuler
+                        </form>
+                    </div>
+                </div>
+                <!-- /#créer-un-événement -->
+
                 <!-- Liste d'événements -->
                 <!-- /!\ id à changer en ligne 116 et 123 pour chaque panel généré /!\ -->
                 <div class="panel-group panel-event-list" id="accordion" role="tablist" aria-multiselectable="true">
@@ -104,7 +126,7 @@
                         <!-- Header -->
                         <div class="panel-heading">
                             <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseEvent_1">
-                                <h4>Tournoi de morpion !</h4>
+                                <h4><?= $res['nomEvenement'];?></h4>
                                 <span class="pull-right date-event-club">Date <span class="glyphicon glyphicon-calendar"></span></span>
                             </a>
                         </div>
@@ -112,28 +134,12 @@
                         <!-- Contenu -->
                         <div id="collapseEvent_1" class="panel-collapse collapse in" role="tabpanel">
                             <div class="panel-body">
-                                <p>Tous à 17h30 chez Michel !</p>
+                                <p><?= $res['evenements'];?></p>
                             </div>
                         </div>
                     </div>
                     <!-- /#evenement 1 -->
 
-                    <!-- Evenement 2 -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseEvent_2">
-                                <h4>Podcast Minecraft avec DylanDu68200</h4>
-                                <span class="pull-right date-event-club">Date <span class="glyphicon glyphicon-calendar"></span></span>
-                            </a>
-                        </div>
-
-                        <div id="collapseEvent_2" class="panel-collapse collapse in" role="tabpanel">
-                            <div class="panel-body">
-                                <p>Venez nombreux !</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /#evenement 2 -->
                 </div>
                 <!-- /#liste-d'événements -->
             </div>
@@ -144,6 +150,12 @@
 <!-- /#container -->
 
 <?php
+    } 
+    if(isset($_GET['nbr'])) {
+        $sql=$bdd->query('SELECT * FROM clubs where id='.$_GET['nbr'].'');
+        $res=$sql->fetch();
+    }
+
     include('chatbox.php');
     include('php/footer.php');
 ?>

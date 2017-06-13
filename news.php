@@ -6,6 +6,7 @@
         die('Erreur : '.$e->getMessage()); 
     }
 
+//Gesttion actualité
 if(!isset($_GET['id']))
   $req=$bdd->prepare("SELECT * FROM `actu` ORDER BY date DESC LIMIT 3");
 else
@@ -18,6 +19,7 @@ while($res = $req->fetch()){
         print '<script>setId('.$res['id'].');</script>';
         $first = false;
     }
+
     //Supprimer la puce avec le css
     print '<li>';
 ?>
@@ -31,7 +33,9 @@ while($res = $req->fetch()){
                         <span class="sr-only">Close</span>
                     </button>
                     <img class="[ img-circle pull-left ]" src="img/avatars/<?php echo $res['avatarActu']; ?>" alt="profile.jpg"/>
-                    <h3><?php echo $res['auteur']; ?></h3>
+
+                    <h3><?php echo utf8_decode($res['auteur']); ?></h3>
+
                     <span class="label label-info"><?php echo $res['attributActu']; ?></span>
                     <h5><span></span><?php echo $res['date']; ?></h5>
                     <div class="border-bottom"></div>
@@ -64,35 +68,71 @@ while($res = $req->fetch()){
 				?>
                     <p><?php echo $res['contenu']; ?>
                     </p>
-
+                    
                     <!-- Input -->
                     <div class="pull-left">
                         <div class="input-placeholder">Commenter...</div>
                     </div>
 
-                    <!-- Réactions : dislike / like -->
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-dislike btn-circle">
-                            <span class="glyphicon glyphicon-heart dislike"></span>
-                        </button>
-                        <span class="text-muted"><?php echo $res['nbDislike']; ?></span>
 
-                        <button type="button" class="btn btn-like btn-circle">
-                            <span class="glyphicon glyphicon-heart like"></span>
-                        </button>
-                        <span class="text-muted"><?php echo $res['nbLike']; ?></span>
+                    <!-- Réactions : dislike / like / love -->
+                    <div class="pull-right">
+                            <a class="btn btn-basic btn-circle" href="article.php?name=dislike&id=<?php echo $res['id']; ?>"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+                            <?php 
+                                echo $res['nbDislike']; 
+                            ?>
+                            <a class="btn btn-basic btn-circle" href="article.php?name=like&id=<?php echo $res['id']; ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+                            <?php 
+                                echo $res['nbLike'];
+                            ?>                                            
                     </div>
-                    <!-- /#réactions -->
+                   
                 </div>
-        <!-- Panel caché pour commenter -->
+                <!--Affichage des commentaires-->
+                <div>
+                    <ul class="chat">
+                        <?php
+                            $commentaires=$bdd->prepare('SELECT * FROM commentaire WHERE idactu=?');
+                            $commentaires->execute(array($res['id']));
+                            while($com=$commentaires->fetch()){
+                        ?>
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left"><img src="img/avatars/<?php echo $com['avatar']; ?>" alt="user_profile" class="img-circle" /></span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font"><?php echo utf8_decode($com['nomAuteur'])."  ".utf8_decode($com['prenomAuteur']); ?></strong>
+                                    <span class="label label-info"><?php echo utf8_decode($com['attributCom']);?></span>
+                                </div>
+                                <p>
+                                    <?php echo $com['commentaire'];?>
+                                </p>
+                            </div>
+                        </li>
+                        <?php
+                            }
+                        ?>
+                    </ul>
+
+                </div>
+                <!-- Panel caché pour commenter -->
                 <div class="panel-comment">
-                        <img class="img-circle" src="img/profile_test1.png" alt="profile_test1.png">
+                        <img class="img-circle" src="img/avatars/<?php echo $_SESSION['avatar']; ?>" alt="profile_test1.png">
                         <div class="panel-custom-textarea">
+<!-- commentaire Thomas à vérifier
                             <textarea rows="2"></textarea>
                             <button type="submit" class="[ btn btn-info disabled ]">Envoyer</button>
                             <button type="reset" class="[ btn btn-default ]">Annuler</button>
 						</div>
                 <div class="clearfix"></div>
+-->
+                            <form method="post" action="article.php?name=commenter&id=<?php echo $res['id']; ?>">
+                                <textarea rows="2" name="commentaire" required></textarea>
+                                <input type="submit" class="[ btn btn-info ]" value="Envoyer" name="submit_com"/>
+                                <input type="reset" class="[ btn btn-default ]" value="Annuler" />
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                </div>
             </div>
             <!-- /#post1 -->
 <?php
