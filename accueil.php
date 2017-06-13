@@ -117,18 +117,18 @@
                             <!-- Envoyer une image -->
                             <div class="input-group preview">
                                 <input type="text" class="form-control preview-filename" disabled="disabled">
-                                <span class="input-group-btn">
-                                <!-- preview-clear button -->
-                                <button type="button" class="btn btn-default preview-clear" style="display:none;">
-                                    <span class="glyphicon glyphicon-remove"></span> Annuler
-                                </button>
-                                <!-- preview-input -->
-                                <div class="btn btn-default preview-input">
-                                    <span class="glyphicon glyphicon-folder-open"></span>
-                                    <span class="preview-input-title">Fichier</span>
-                                    <input type="file" accept="image/png, image/jpeg, image/gif, video/mp4, video/ogv, video/webm, image/jpg" name="file-preview" />
+                                <div class="input-group-btn">
+                                    <!-- preview-clear button -->
+                                    <button type="button" class="btn btn-default preview-clear" style="display:none;">
+                                        <span class="glyphicon glyphicon-remove"></span> Annuler
+                                    </button>
+                                    <!-- preview-input -->
+                                    <div class="btn btn-default preview-input">
+                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                        <span class="preview-input-title">Fichier</span>
+                                        <input type="file" accept="image/png, image/jpeg, image/gif, video/mp4, video/ogv, video/webm, image/jpg" name="file-preview" />
+                                    </div>
                                 </div>
-                                </span>
                             </div>
                             <!-- /#envoyer-une-image -->
 

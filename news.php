@@ -47,10 +47,12 @@ while($res = $req->fetch()){
 					if(!($res['fichier'])==""){
 						if($res['typefichier']=="image"){
 							if($res['stockage']=="disque"){
-								echo '<a class="thumbnail img-responsive center-block" href="img/'.$res['fichier'].'"" ><img class="thumbnail" src="img/'.$res['fichier'].'" alt="img" width="240" height="160" /></a>';
+								echo '  <a class="thumbnail img-responsive center-block" href="img/'.$res['fichier'].'">
+                                            <img class="thumbnail" src="img/'.$res['fichier'].'" alt="img" width="240" height="160">
+                                        </a>';
 							}
 							else if($res['stockage']=="url"){
-								echo '<img class="thumbnail img-responsive center-block" src="'.$res['fichier'].'" alt="une image" max-width="240" max-height="160" />';
+								echo '<img class="thumbnail img-responsive center-block" src="'.$res['fichier'].'" alt="img" max-width="240" max-height="160">';
 							}
 						}
 						else if($res['typefichier']=="video"){
