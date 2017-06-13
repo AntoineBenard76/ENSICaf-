@@ -1,6 +1,6 @@
 <?php
-    include('php/header.php');
-    
+    session_start();
+    $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
     if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
     {
         if(isset($_POST['envoi_message']))
@@ -21,16 +21,16 @@
                     $ins = $bdd->prepare('INSERT INTO messages(id_expediteur, id_destinataire, message, lu, dateEnvoi) VALUES (?, ?, ?, ?, NOW())');
                     $ins->execute(array($_SESSION['id'],$id_destinataire,$message, $lu));
                     
-                    $_SESSION['erreur'] = "Votre message a bien été envoyé !";
+                    $_SESSION['error'] = "Votre message a bien été envoyé !";
                 }
                 else
                 {
-                    $_SESSION['erreur'] = "Cet utilisateur n'existe pas !";
+                    $_SESSION['error'] = "Cet utilisateur n'existe pas !";
                 }
             }
             else 
             {
-                $_SESSION['erreur'] = "Veuillez compléter tous les champs.";   
+                $_SESSION['error'] = "Veuillez compléter tous les champs.";   
             }
         }
     
@@ -38,6 +38,6 @@
         {
             $r = htmlspecialchars($_GET['r']);
         }
-    header('Location:envoi.php');
+header('Location:envoi.php');
     }
 ?>

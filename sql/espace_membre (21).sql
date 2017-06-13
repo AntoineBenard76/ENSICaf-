@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 12 Juin 2017 à 17:06
+-- Généré le :  Mar 13 Juin 2017 à 10:11
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -46,10 +46,10 @@ CREATE TABLE `actu` (
 --
 
 INSERT INTO `actu` (`id`, `auteur`, `contenu`, `date`, `type`, `fichier`, `typefichier`, `stockage`, `nbLike`, `nbDislike`, `avatarActu`, `attributActu`) VALUES
-(1, '', '', '0000-00-00 00:00:00', '', '', '', '', 5, 3, '', ''),
-(2, '', '', '0000-00-00 00:00:00', 'annonce', '', '', '', 1, 5, '', ''),
-(3, '', '', '0000-00-00 00:00:00', 'annonce', '', '', '', 1, 5, '', ''),
-(4, '', '', '0000-00-00 00:00:00', '', '', '', '', 1, 1, '', '');
+(5, 'Antoine BÃ©nard', 'Super musique !', '2017-06-13 09:48:48', 'Publication', 'https://www.youtube.com/watch?v=DBpbktOUctQ', 'video', 'url', 0, 0, '17.gif', 'Etudiant'),
+(7, 'Antoine BÃ©nard', 'Wah le hibou !', '2017-06-13 10:07:21', 'Publication', 'https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg', 'image', 'url', 0, 0, '17.gif', 'Etudiant'),
+(8, 'Antoine BÃ©nard', 'testestest', '2017-06-13 10:08:23', 'Publication', '', '', '', 0, 0, '17.gif', 'Etudiant'),
+(9, 'Jacky Tuning', 'testfichier', '2017-06-13 10:10:40', '', '5910dadaeace2-Sanstitre-1.thumb.png.99aff6ce886da48bc127401a9b012682.png', 'image', 'disque', 0, 0, 'default.jpg', 'Etudiant');
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,7 @@ CREATE TABLE `clubs` (
 --
 
 INSERT INTO `clubs` (`id`, `nom`, `description`, `photo`, `membres`, `president`, `realisation`, `evenements`, `nomEvenement`) VALUES
-(1, 'XID', 'Club info', '8.png', 1, 'test', 'zrze', 'Mardi 25 venez nombreux', 'Soirée codage'),
+(1, 'XID', 'Club info', '8.png', 1, 'test', 'zrze', 'zfzef', 'erf'),
 (2, 'JDR', 'Jeux de rôles', '', 1, 'Georges', 'rzqefqz', 'zefzef', ''),
 (3, 'Rototo', 'uzrghurege', '1.jpg', 10, 'azrt', 'zefz', 'zef', ''),
 (4, 'Try', 'super club', '1.jpg', 15, 'AntoineLeThug', 'Création d\'une église', 'Grosse fiesta vers l\'ensisa', 'SUPER SOIREE');
@@ -251,7 +251,7 @@ ALTER TABLE `recuperation`
 -- AUTO_INCREMENT pour la table `actu`
 --
 ALTER TABLE `actu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `chat`
 --

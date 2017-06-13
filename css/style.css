@@ -59,7 +59,6 @@ button:focus {
 /* ---------- Alert ---------- */
 
 .alert {
-    position: fixed;
     top: 60px;
     left: 0px;
     width: 100%;
@@ -83,6 +82,11 @@ button:focus {
 .custom-jumbotron li,
 .custom-jumbotron li span {
     margin-right: 5px;
+}
+
+.custom-jumbotron-mdp {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DE97;
 }
 
 /* ---------- Navigation Bar ---------- */
@@ -287,6 +291,11 @@ button:focus {
 .sidebar-nav > .sidebar-brand a:hover {
     color: #FFF;
     background: none;
+}
+
+.sidebar-divider {
+    border-color: #F7F3D3;
+    margin: 10px 0px;
 }
 
 /* ---------- Carousel News ---------- */

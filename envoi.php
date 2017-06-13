@@ -79,7 +79,7 @@
                     <button type="submit" class="btn btn-warning btn-envoi" name="envoi_message">Envoyer</button>
                     <button type="reset" class="btn btn-danger btn-envoi">Annuler</button>
                     <?php
-                if(isset($_SESSION['erreur'])) { echo '<span style="color:red">'.$_SESSION['erreur'].'</span>'; $_SESSION['erreur'] = "";}
+                if(isset($_SESSION['error'])) { echo '<span style="color:red">'.$_SESSION['error'].'</span>'; $_SESSION['error'] = "";}
             ?>
                     <!-- /#input -->
                 </form>
