@@ -79,8 +79,6 @@ if(isset($_POST['envoyer'])){
             $_SESSION['erreur']= 'Veuillez indiquer votre adresse e-mail';
         }
 }
-<<<<<<< HEAD
-=======
 // Traitement du code de récupération
 if(isset($_POST['envoyer_code'])){
     if(!empty($_POST['code'])){
@@ -139,5 +137,4 @@ if(isset($_POST['enregistrer'])){
 }
 }
 
->>>>>>> a8d43c5324e6d28c01344618b71ada76036a74f9
 ?>
