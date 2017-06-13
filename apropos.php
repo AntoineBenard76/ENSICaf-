@@ -106,7 +106,7 @@
                                     <blockquote>
                                         <p>
                                             
-                                            <small>Thomas, quand on lui  demandé ce qu'il avait fait.</small>
+                                            <small>Thomas, quand on lui a demandé ce qu'il avait fait.</small>
                                         </p>
                                     </blockquote>
                                 </div>
