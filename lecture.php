@@ -49,7 +49,7 @@ if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
                 <ul class="nav navbar-nav">
                     <li>
                         <p class="navbar-btn">
-                            <a href="club.php" class="btn btn-primary">
+                            <a href="reception.php" class="btn btn-primary">
                                 <span class="glyphicon glyphicon-envelope"></span>
                                 Boîte de réception
                             </a>
