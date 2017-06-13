@@ -18,7 +18,7 @@ include('php/header-login.php');
 
     <form class="form-group" method="post" action="traitementmdp.php">
         <label>Votre mail UHA</label>
-        <input class="form-control" type="mail" name="email" placeholder="prenom.nom@uha.fr" />
+        <input class="form-control" type="email" name="email" placeholder="prenom.nom@uha.fr" />
         <button class="btn btn-primary" type="submit" name="envoyer">Envoyer</button>
     </form>
 

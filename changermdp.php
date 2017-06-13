@@ -55,3 +55,6 @@ if(isset($_POST['enregistrer'])){
         </form>
     </div>
 </div>
+<?php
+    include('php/footer.php');
+?>
