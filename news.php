@@ -47,10 +47,10 @@ while($res = $req->fetch()){
 					if(!($res['fichier'])==""){
 						if($res['typefichier']=="image"){
 							if($res['stockage']=="disque"){
-								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="img" width="480" height="320" /></a>';
+								echo '<a href="img/'.$res['fichier'].'"" ><img class="thumbnail" src="img/'.$res['fichier'].'" alt="img" width="480" height="320" /></a>';
 							}
 							else if($res['stockage']=="url"){
-								echo '<img src="'.$res['fichier'].'" alt="une image" width="480" height="320" />';
+								echo '<img class="thumbnail" src="'.$res['fichier'].'" alt="une image" width="480" height="320" />';
 							}
 						}
 						else if($res['typefichier']=="video"){
@@ -95,6 +95,7 @@ while($res = $req->fetch()){
                             <?php echo $res['nbLike']; ?>
                         </span>                                        
                     </div>
+                    <!-- /#réactions -->
                    
                 </div>
 
