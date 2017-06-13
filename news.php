@@ -42,32 +42,34 @@ while($res = $req->fetch()){
                 </div>
 
                 <!-- Corps du message -->
-                <div class="panel-body">
+                <div align="center" class="panel-body">
 				<?php
 					if(!($res['fichier'])==""){
 						if($res['typefichier']=="image"){
 							if($res['stockage']=="disque"){
-								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="400" height="400"/></a>';
+								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="480" height="320" /></a>';
 							}
 							else if($res['stockage']=="url"){
-								echo '<img src="'.$res['fichier'].'" alt="une image" width="400" height="400"/>';
+								echo '<img src="'.$res['fichier'].'" alt="une image" width="480" height="320" />';
 							}
 						}
 						else if($res['typefichier']=="video"){
 							if($res['stockage']=="disque"){
-								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="400" height="400"/>une video</video>';
+								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="720" height="480"/>une video</video>';
 							}
 							else if($res['stockage']=="url"){
 								$save=$res['fichier'];
 								$url=substr($res['fichier'],0,23);
 								$url=$url."/embed/".substr($save,32);
-								echo '<iframe width="400" height="400" src="'.$url.'" frameborder="0" allowfullscreen></iframe>';
+								echo '<iframe width="480" height="320" src="'.$url.'" frameborder="0" allowfullscreen></iframe>';
 							}
 						}
 					}
 				?>
-                    <p><?php echo $res['contenu']; ?>
+                    <div class="jumbotron custom-jumbotron">
+                    <p><?php echo htmlspecialchars($res['contenu']); ?>
                     </p>
+                    </div>
                     
                     <!-- Input -->
                     <div class="pull-left">
