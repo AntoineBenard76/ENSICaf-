@@ -50,7 +50,7 @@ while($res = $req->fetch()){
 								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="400" height="400"/></a>';
 							}
 							else if($res['stockage']=="url"){
-								echo '<img src="'.$im['url'].'" alt="une image" width="400" height="400"/>';
+								echo '<img src="'.$res['fichier'].'" alt="une image" width="400" height="400"/>';
 							}
 						}
 						else if($res['typefichier']=="video"){
