@@ -4,7 +4,6 @@
     $sql=$bdd->query('SELECT * FROM clubs where id='.$_GET['nb'].'');
     $res=$sql->fetch();
 ?>
-<meta charset="utf-8">
 
 <div class="container">
     
@@ -153,7 +152,6 @@
     if(isset($_GET['nbr'])) {
         $sql=$bdd->query('SELECT * FROM clubs where id='.$_GET['nbr'].'');
         $res=$sql->fetch();?>
-        <meta charset="utf-8">
 
 <div class="container">
     
@@ -161,7 +159,7 @@
     <div class="panel panel-default">
         <div class="panel-heading panel-page-title">
             <span class="glyphicon glyphicon-pawn"></span>
-            <span class="text-uppercase">club <?php echo $res['nom']; ?></span>
+            <span class="text-uppercase">club <?php echo utf8_decode($res['nom']); ?></span>
         </div>
     </div>
     <!-- /#titre -->
@@ -215,7 +213,7 @@
 
                         <!-- Description -->
                         <h4><strong>Description</strong></h4>
-                        <p><?php echo $res['description']; ?></p>
+                        <p><?php echo utf8_decode($res['description']); ?></p>
                         <hr>
 
                         <!-- Réalisations -->
@@ -225,7 +223,7 @@
 
                         <!-- Président -->
                         <h4><strong>Président</strong></h4>
-                        <p><?php echo $res['president']; ?></p>
+                        <p><?php echo utf8_decode($res['president']); ?></p>
                         <hr>
 
                         <!-- Membres -->
@@ -241,7 +239,7 @@
                 <!-- Description pour petits écrans -->
                 <div class="hidden-lg hidden-md hidden-description-club">
                     <h4><strong>Description</strong></h4>
-                    <p><?php echo $res['description']; ?></p>
+                    <p><?php echo utf8_decode($res['description']); ?></p>
                     <hr>
                 </div>
                 <!-- /#description -->
@@ -260,8 +258,8 @@
                             <div class="form-group">
                                 <textarea class="form-control" name="descEvent" placeholder="Descriptif de l'événement"></textarea>
                             </div>
-                            <button class="btn btn-primary" type="submit" name="sauvegarder"/>Publier
-                            <button class="btn btn-danger" type="reset" name="annuler"/>Annuler
+                            <button class="btn btn-primary" type="submit" name="sauvegarder">Publier</button>
+                            <button class="btn btn-danger" type="reset" name="annuler">Annuler</button>
                         </form>
                     </div>
                 </div>
@@ -283,7 +281,7 @@
                         <!-- Contenu -->
                         <div id="collapseEvent_1" class="panel-collapse collapse in" role="tabpanel">
                             <div class="panel-body">
-                                <p><?= $res['evenements'];?></p>
+                                <p><?= utf8_decode($res['evenements']);?></p>
                             </div>
                         </div>
                     </div>
