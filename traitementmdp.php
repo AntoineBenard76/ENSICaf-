@@ -141,5 +141,4 @@ if(isset($_POST['enregistrer'])){
         $_SESSION['erreur']="Veuillez remplir tous les champs";
 }
 }
-}
 ?>
