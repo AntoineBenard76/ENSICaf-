@@ -19,7 +19,6 @@
 
                 <!-- Carousel Slides / News -->
                 <div class="carousel-inner">
-
                     <!-- News 1 -->
                     <div class="item active">
                         <blockquote>
@@ -113,7 +112,7 @@
 
                 <div id="collapse-publication" class="panel-collapse collapse" role="tabpanel">
                     <div class="panel-body">
-                        <form accept-charset="utf-8" class="form-group publication-msg" method="POST" action="traitementFichier.php">
+                        <form enctype="multipart/form-data" accept-charset="utf-8" class="form-group publication-msg" method="POST" action="traitementFichier.php">
                             <!-- Envoyer une image -->
                             <div class="input-group preview">
                                 <input type="text" class="form-control preview-filename" disabled="disabled">
@@ -125,28 +124,34 @@
                                 <!-- preview-input -->
                                 <div class="btn btn-default preview-input">
                                     <span class="glyphicon glyphicon-folder-open"></span>
-                                    <span class="preview-input-title">Image</span>
-                                    <input type="file" accept="image/png, image/jpeg, image/gif" name="file-preview" />
+                                    <span class="preview-input-title">Fichier</span>
+                                    <input type="file" accept="image/png, image/jpeg, image/gif, video/mp4, video/ogv, video/webm, image/jpg" name="file-preview" />
                                 </div>
                                 </span>
                             </div>
                             <!-- /#envoyer-une-image -->
-
+								<input type="text" name="image" placeholder="pour l'url d'une image" />
+								<input type="text" name="video" placeholder="pour l'url d'une video" />
                             <!-- Envoyer un message -->
                             <!--<form accept-charset="utf-8" action="" class="form-group publication-msg" method="post">-->
                                 <textarea class="form-control" placeholder="Entrez votre message" rows="2" name="contenu"></textarea>
                                 <!--<button class="[ btn btn-primary disabled ]" type="submit" id="poster">Poster</button>-->
-
-                                <input class="[ btn btn-primary ]" type="submit" name="poster" value="Poster" />
-
+								<input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
+                                <input class="[ btn btn-primary ]" type="submit" name="Poster" value="Poster" />
                                 <button class="[ btn btn-default ]" type="reset">Annuler</button>
                                 <div class="btn-group pull-right" data-toggle="buttons">
-                                    <label class="btn btn-info active">
-                                        <input type="radio" name="btn-publication" autocomplete="off"> Publication
+								<p>
+                                    <input type="radio" name="btn-publication" value="Publication" autocomplete="off">
+									<label class="btn btn-info active">
+										Publication
                                     </label>
-                                    <label class="btn btn-info">
-                                        <input type="radio" name="btn-publication" autocomplete="off"> Annonce
+								</p>
+								<p>
+                                    <input type="radio" name="btn-publication" value="Annonce" autocomplete="off">
+									<label class="btn btn-info">
+										Annonce
                                     </label>
+								</p>
                                 </div>
                         </form>
                         <!-- /#envoyer-un-message -->

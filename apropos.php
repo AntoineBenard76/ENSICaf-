@@ -101,8 +101,14 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>Thomas Blangero</h4>
-                                    <span class="label label-warning">Thomas</span>
+                                    <span class="label label-warning">Saboteur</span>
                                     <p>L'homme qui se balade partout et upload les données. L'otaku du groupe.</p>
+                                    <blockquote>
+                                        <p>
+                                            
+                                            <small>Thomas, quand on lui  demandé ce qu'il avait fait.</small>
+                                        </p>
+                                    </blockquote>
                                 </div>
                             </li>
                             <hr class="divider">
