@@ -37,8 +37,8 @@ while($res = $req->fetch()){
                 </div>
 
                 <!-- Corps du message -->
-                <div class="panel-body">
-                    <div class="jumbotron custom-jumbotron-publication" align="center">
+                <div class="panel-body text-center">
+                    <div class="jumbotron custom-jumbotron-publication">
                         <p>&ldquo; <?php echo $res['contenu']; ?> &bdquo;</p>
                     </div>
 
