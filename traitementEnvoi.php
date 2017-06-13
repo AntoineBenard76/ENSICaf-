@@ -1,6 +1,6 @@
 <?php
-    include('php/header.php');
-    
+    session_start();
+    $bdd = new PDO('mysql:host=127.0.0.1;dbname=espace_membre', 'root', '');
     if(isset($_SESSION['id']) AND !empty($_SESSION['id']))
     {
         if(isset($_POST['envoi_message']))
@@ -38,7 +38,6 @@
         {
             $r = htmlspecialchars($_GET['r']);
         }
-    //header('Location: reception.php');
+header('Location:reception.php');
     }
-    header('Location: reception.php');
 ?>

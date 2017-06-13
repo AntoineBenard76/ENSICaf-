@@ -28,6 +28,4 @@
         <?php
         include('sidebar.php');
         ?>
-
-        <!-- Page Content : tout le contenu principal à mettre ici -->
         <div id="page-content-wrapper">
