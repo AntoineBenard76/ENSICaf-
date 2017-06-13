@@ -62,7 +62,7 @@
             <!-- Chatbox footer : envoyer un message -->
             <div class="panel-footer">
                 <div class="input-group">
-                    <form class="chatbox-send" method="post" role="form" action="">
+                    <form class="chatbox-send" method="post" role="form">
                         <input type="text" name="contenuMes" class="form-control" placeholder="Envoyer un message...">
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-warning">

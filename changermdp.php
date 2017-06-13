@@ -34,7 +34,7 @@ if(isset($_POST['enregistrer'])){
         }
     }else{
         $_SESSION['erreur']="Veuillez remplir tous les champs";
-}
+    }
 }
 ?>
 <div class="container">
