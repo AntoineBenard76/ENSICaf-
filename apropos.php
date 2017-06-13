@@ -6,7 +6,7 @@
 <div class="container">
 
     <div class="col-md-10 col-md-offset-1">
-        <div class="panel-group panel-apropos" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel-group panel-apropos" role="tablist" aria-multiselectable="true">
 
             <!-- L'EQUIPE -->
             <div class="panel panel-default panel-equipe">
@@ -42,7 +42,7 @@
                                     </blockquote>
                                 </div>
                             </li>
-                            <hr class="divider">
+                            <li><hr class="divider"></li>
 
                             <!-- Olivier -->
                             <li class="media">
@@ -61,7 +61,7 @@
                                     <img class="img-circle" src="img/equipe/olivier.jpg" alt="olivier.jpg"/>
                                 </div>
                             </li>
-                            <hr class="divider">
+                            <li><hr class="divider"></li>
 
                             <!-- Nolwenn -->
                             <li class="media">
@@ -74,7 +74,7 @@
                                     <p>Travailleuse acharnée, elle a officiellement déclaré la guerre aux bases de données !</p>
                                 </div>
                             </li>
-                            <hr class="divider">
+                            <li><hr class="divider"></li>
 
                             <!-- Saad -->
                             <li class="media">
@@ -93,7 +93,7 @@
                                     <img class="img-circle" src="img/equipe/saad.png" alt="saad.jpg"/>
                                 </div>
                             </li>
-                            <hr class="divider">
+                            <li><hr class="divider"></li>
 
                             <!-- Thomas -->
                             <li class="media">
@@ -112,7 +112,7 @@
                                     </blockquote>
                                 </div>
                             </li>
-                            <hr class="divider">
+                            <li><hr class="divider"></li>
 
                             <!-- Baptiste -->
                             <li class="media">
