@@ -27,13 +27,14 @@
                 <!-- Avatar -->
 				<div class="media settings-avatar">
                     <div class="media-left">
-                        <img class="media-object img-circle" src="img/avatars/<?php echo $user['avatar']?>" height="150px" width="150px" alt="avatar">
+                        <img class="media-object img-circle" src="img/avatars/<?php echo $user['avatar']?>" height="150" width="150" alt="avatar">
                     </div>
                     
                     <div class="media-body">
                         <h4><br>Changer d'image de profil</h4>
                         <!-- Send image -->
-                        <form method="POST" action="reload.php?id='.$_SESSION['id']" enctype="multipart/form-data">
+                        <!--<form method="POST" action="reload.php?id='.$_SESSION['id']" enctype="multipart/form-data">-->
+                        <form method="POST" action="reload.php?id=<?php echo $_SESSION['id']; ?>" enctype="multipart/form-data">
                             <div class="input-group preview">
                                 <input type="text" class="form-control preview-filename" disabled="disabled">
                                 <span class="input-group-btn">
@@ -58,7 +59,8 @@
 
                 <br>
                 
-                <form method="POST" action="reload.php?id='.$_SESSION['id']">
+                <!--<form method="POST" action="reload.php?id='.$_SESSION['id']">-->
+                <form method="POST" action="reload.php?id=<?php echo $_SESSION['id']; ?>">
                     <!-- Mail -->
                     <div class="form-group">
     					<label class="col-md-4 control-label">Adresse mail</label>

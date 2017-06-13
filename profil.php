@@ -24,7 +24,7 @@
                      src="img/avatars/<?php echo $userinfo['avatar']?>" alt="img/avatars/<?php echo $userinfo['avatar']?>"/>
 			</div>
 			<div class="profile-title">
-				<span class="profile-name"><?php echo $userinfo['nom'];?>&nbsp;<?php echo $userinfo['prenom']; ?></span><br>
+				<span class="profile-name"><?php echo utf8_decode($userinfo['nom']);?>&nbsp;<?php echo utf8_decode($userinfo['prenom']); ?></span><br>
 				<span class="label label-info"><?php echo $userinfo['attribut'];?></span>
 				<!--<span class="label label-danger">Griffeur</span>-->
 			</div>
@@ -35,7 +35,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
-						<a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseOne""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Actions</a>
+						<a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseOne"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Actions</a>
 						<span class="glyphicon glyphicon-chevron-down pull-right"></span>
 					</h4>
 				</div>
