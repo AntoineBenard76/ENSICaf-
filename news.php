@@ -47,7 +47,7 @@ while($res = $req->fetch()){
 					if(!($res['fichier'])==""){
 						if($res['typefichier']=="image"){
 							if($res['stockage']=="disque"){
-								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="une image" width="480" height="320" /></a>';
+								echo '<a href="img/'.$res['fichier'].'"" ><img src="img/'.$res['fichier'].'" alt="img" width="480" height="320" /></a>';
 							}
 							else if($res['stockage']=="url"){
 								echo '<img src="'.$res['fichier'].'" alt="une image" width="480" height="320" />';
@@ -55,7 +55,7 @@ while($res = $req->fetch()){
 						}
 						else if($res['typefichier']=="video"){
 							if($res['stockage']=="disque"){
-								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="720" height="480"/>une video</video>';
+								echo '<video controls="controls" src="video/'.$res['fichier'].'" width="720" height="480"/>video</video>';
 							}
 							else if($res['stockage']=="url"){
 								$save=$res['fichier'];
@@ -66,9 +66,9 @@ while($res = $req->fetch()){
 						}
 					}
 				?>
-                    <div class="jumbotron custom-jumbotron">
-                    <p><?php echo htmlspecialchars($res['contenu']); ?>
-                    </p>
+                    <!-- Contenu des publications -->
+                    <div class="jumbotron custom-jumbotron-publication">
+                        <p>&ldquo; <?php echo htmlspecialchars($res['contenu']); ?> &bdquo;</p>
                     </div>
                     
                     <!-- Input -->
@@ -77,16 +77,23 @@ while($res = $req->fetch()){
                     </div>
 
 
-                    <!-- Réactions : dislike / like / love -->
+                    <!-- Réactions : dislike / like -->
                     <div class="pull-right">
-                            <a class="btn btn-basic btn-circle" href="article.php?name=dislike&id=<?php echo $res['id']; ?>"><span class="glyphicon glyphicon-thumbs-down"></span></a>
-                            <?php 
-                                echo $res['nbDislike']; 
-                            ?>
-                            <a class="btn btn-basic btn-circle" href="article.php?name=like&id=<?php echo $res['id']; ?>"><span class="glyphicon glyphicon-thumbs-up"></span></a>
-                            <?php 
-                                echo $res['nbLike'];
-                            ?>                                            
+                        <!-- Dislike -->
+                        <a class="btn btn-circle btn-dislike" href="article.php?name=dislike&id=<?php echo $res['id']; ?>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="text-muted">
+                            <?php echo $res['nbDislike']; ?>
+                        </span>
+
+                        <!-- Like -->
+                        <a class="btn btn-circle btn-like" href="article.php?name=like&id=<?php echo $res['id']; ?>">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="text-muted">
+                            <?php echo $res['nbLike']; ?>
+                        </span>                                        
                     </div>
                    
                 </div>

@@ -89,6 +89,16 @@ button:focus {
     border: 1px solid #E8DE97;
 }
 
+.custom-jumbotron-publication {
+    background-color: #FFFFFF;
+    padding: 20px 0px 0px 0px;
+}
+
+.custom-jumbotron-publication p {
+    font-size: 24px;
+    font-style: italic;
+}
+
 /* ---------- Navigation Bar ---------- */
 
 .navbar {
@@ -518,7 +528,7 @@ button:focus {
     margin-right: -30px;
 }
 
-.panel-custom > .panel-body > .pull-right > button {
+.panel-custom > .panel-body > .pull-right > a {
     margin-left: 20px;
 }
 
@@ -534,8 +544,13 @@ button:focus {
     outline: none;
 }
 
+.panel-custom > .panel-body > .pull-right > .btn-dislike {
+    background-color: #CCCCCC;
+    color: black;
+}
+
 .panel-custom > .panel-body > .pull-right > .btn-dislike:hover {
-    background-color: #cccccc;
+    background-color: #b7b7b7;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
