@@ -35,7 +35,8 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
-						<a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseOne"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Actions</a>
+						<a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseOne""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Actions</a>
+						<span class="glyphicon glyphicon-chevron-down pull-right"></span>
 					</h4>
 				</div>
 				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
@@ -75,6 +76,7 @@
 				<div class="panel-heading">
 					<h4 class="panel-title">
 						<a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseTwo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Bio</a>
+						<span class="glyphicon glyphicon-chevron-down pull-right"></span>
 					</h4>
 				</div>
 				<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel">
@@ -103,6 +105,7 @@
 				<div class="panel-heading">
 					<h4 class="panel-title">
 						<a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseThree"><span class="glyphicon glyphicon-road" aria-hidden="true"></span>Parcours</a>
+						<span class="glyphicon glyphicon-chevron-down pull-right"></span>
 					</h4>
 				</div>
 				<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel">

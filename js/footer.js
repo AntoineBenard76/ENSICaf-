@@ -1,9 +1,19 @@
 // GENERAL: gère l'ouverture et la fermeture du menu gauche
-        function toggleMenu(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-            $("#menu-toggle").find('span').toggleClass('glyphicon-forward').toggleClass('glyphicon-backward');
-        }
+function toggleMenu(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    $("#menu-toggle").find('span').toggleClass('glyphicon-forward').toggleClass('glyphicon-backward');
+}
+
+// ROTATION: change l'icône des chevrons
+function toggleChatbox(e) {
+    $(".toggle-chatbox").toggleClass('glyphicon-chevron-up').toggleClass('glyphicon-chevron-down');
+}
+
+// PUBLICATION: change l'icône des chevrons
+function togglePublication(e) {
+    $(".toggle-publication").toggleClass('glyphicon-chevron-up').toggleClass('glyphicon-chevron-down');
+}
 
         // accueil.php : fait disparaître la publication lorsqu'on clique sur la croix
         $(".close").click(function () {
