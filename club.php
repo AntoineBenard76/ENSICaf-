@@ -1,15 +1,8 @@
 <?php
     include('php/header.php');
-//Possibilité d'utiliser un explode 
-    $club=$bdd->query('SELECT nom FROM clubs ORDER BY id DESC');
-    if(isset($_POST['recherche']) AND !empty($_POST['recherche'])){
-        $nom=htmlspecialchars($_POST['recherche']);
-        $club=$bdd->query('SELECT nom FROM clubs WHERE nom LIKE "%"'.$nom.'"%"');
-        if($club->rowCount()==0){
-            $club=$bdd->query('SELECT nom FROM clubs WHERE CONCAT(nom,description) LIKE "%'.$nom.'%"');
-        }
-    }
 ?>
+    
+
 
 <div class="container">
     
@@ -45,14 +38,31 @@
                     <li class="">
                         <form class="navbar-form navbar-left" method="post">
                             <div class="form-group">
-                                <input type="search" id="recherche" class="form-control" placeholder="Chercher un club...">
+                                <input type="search" name="recherche" class="form-control" placeholder="Chercher un club...">
                             </div>
-                            <input type="submit" id="search" class="btn btn-info" value="Chercher" />
+                            <input type="submit" name="search" class="btn btn-info" value="Chercher" />
                         </form>
                     </li>
                 </ul>
             </div>
             <!-- /#barre-de-navigation -->
+            <!--Affichage des résultats de la barre de recherche-->
+            <?php
+                if(isset($_POST['search'],$_POST['recherche']) AND !empty($_POST['recherche'])){
+                    $nom=htmlspecialchars($_POST['recherche']);
+                    $club=$bdd->prepare('SELECT id,nom FROM clubs WHERE nom LIKE "%?%"');
+                    $club->execute(array($nom));
+                    if($club->rowCount()==0){                            
+                        $club=$bdd->query('SELECT id,nom FROM clubs WHERE CONCAT(nom,description) LIKE "%'.$nom.'%"');
+                    }
+
+                if ($club->rowCount() > 0) { ?>
+                    <ul id='resultat'>
+                        <?php while( $c=$club->fetch() ) { ?>
+                            <li><a href="pageclub.php?nb=<?php echo $c['id']; ?>">
+                                <?php echo $c['nom'];?></a></li>
+                        <?php } ?>                        </ul>
+            <?php } else { echo 'Aucun résultat pour : '.$nom; }} ?>
         </nav>
         <!-- /#navigation -->
 
@@ -95,7 +105,7 @@
                             <textarea class="form-control" name="realisations" placeholder="Réalisations"></textarea>
                         </div>           -->                  
 
-                        <button type="submit" name="enregistrer" value="Enregistrer" class="btn btn-primary form-control"/>Enregistrer</button>
+                        <button type="submit" name="enregistrer" value="Enregistrer" class="btn btn-primary form-control">Enregistrer</button>
                     </form>
                 </div>
                 
@@ -112,24 +122,7 @@
 
 </div>
 
-<!-- ??? -->
-        <?php
-            if ($club->rowCount() > 0) { ?>
-                <ul id='resultat'>
-                    <?php while( $c=$club->fetch() ) { ?>
-                        <li><?php echo $c['nom'];?></li>
-                    <?php } ?>
-                </ul>
-        <?php } else { echo 'Aucun résultat pour : '.$nom; } ?>
-
 <script>
-// Permet de cacher toute la liste des clubs
-    $(document).ready(function(){
-        $("#resultat").hide();
-        $("#search").click(function(){
-            $("#resultat").show();
-        });
-    });
 
 // On cache le formulaire de création de club
     $(document).ready(function(){
